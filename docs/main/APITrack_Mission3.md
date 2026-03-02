@@ -3,323 +3,357 @@
 icon: material/medal
 ---
 
-
-
-# Mission 5: Last Agent Routing
+# Mission 3: Last Agent Routing
 
 ## Story
-A common request for returning customers calling into a contact center is to work with the last person with which they had a good experience.  This may be because they are already familiar with what the customer needs or it may just be that the customer is familiar with the agent and enjoyed their last interaction. With the new Auto CSAT feature in the Webex Contact Center we can automatically account for this request and route to the last agent which had a high Auto CSAT with the customer.  
+A common request for returning customers calling into a contact center is to work with the last person with which they had a good experience.  This may be because they are already familiar with what the customer needs, or it may just be that the customer is familiar with the agent and enjoyed their last interaction. With the new Auto CSAT feature in the Webex Contact Center we can automatically account for this request and route to the last agent which had a high Auto CSAT with the customer.  
+
+<span style="color: red;">**[Important!]**</span> Since this is a lab environment where you will act as both the customer and the agent, accurately scoring a call will be challenging. Additionally, Auto CSAT has not been taught due to the insufficient number of calls required for AI to learn and generate proper scoring. In this lab, we will use a Global Variable to store the score, which is also used for Auto CSAT teaching. With a sufficient number of provided scores, Auto CSAT will eventually be able to score calls automatically.
 
 !!! Note
-    Because this is a lab environment and you will be playing both the role of the customer and agent, we are going to use a simulated CSAT as it would be difficult to properly score a call in these conditions.  
+    **<span style="color: red;">[Important!]</span> Auto CSAT is preconfigured for you on Control Hub. Please avoid changing the configuration.**
 
+    ![Profiles](../graphics/Lab2/AutoCSAT_ControlHub.gif)
 
-### High Level Explanation
-1. New call comes into the flow
-2. Call the Search API to find the last agent with which they had a good CSAT
-3. If the agent is available, we will route the call to that agent
-4. If the agent is not available or if no recent good CSAT scores exits for the caller, we will route the call to the queue for the next available agent. 
+## Call Flow Overview
+1. New call comes into the flow.
+2. Call the Search API to find the last agent with which they had a good Auto CSAT.
+3. If the Auto CSAT is greater or equal **4** and agent is available, we will route the call to that agent.
+4. If the agent is not available or if no recent good AutoCSAT scores exist for the caller, we will route the call to the queue for the next available agent. 
 
-!!! Note
-  We are going to touch Subflow which is the feature that enables easier management of complex flows by breaking down commonly used and repeated portions into reusable subflows. This improves readability of flows, increases reusability of repeated functionality in the subflow, as well as improves development time since there is no redundant design of the same flows.</br>
-  Subflows also introduce the ability to share commonly used subroutines between developers, between customers and will help unlock a library of subflows available in the marketplace.
+## Mission Details
 
+Your mission is to:
+
+1. Create a new flow from the scratch. </br>
+2. Build a Search API query to request information from Analyzer database and parse it into flow variables.</br>
+3. Prioritize the call if conditions match and route the call to agent.</br>
 
 ## Preconfigured elements
 1. Wait treatment Subflow which will provide Music in Queue and Queue Messages. 
-2. Connector for calling Webex Contact Center APIs
-3. Agent Editable and Reportable Global Variable for our simulated CSAT
+2. Auto CSAT flow **CCBU_PostCallSurvey_AutoCSAT**<span class="copy-static" data-copy-text="CCBU_PostCallSurvey_AutoCSAT"><span class="copy" title="Click to copy!"></span></span> has been created to help contact centers efficiently gather customer feedback through a simple automated post-call survey using DTMF tones.
 
 ---
 
 ## Build
 
-1. Create a flow named **<span class="attendee-id-container">LastAgentRouting_<span class="attendee-id-placeholder" data-prefix="LastAgentRouting_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and add these flow variables:
+1. Create a new flow from scratch named **<span class="attendee-id-container">LastAgentRouting_<span class="attendee-id-placeholder" data-prefix="LastAgentRouting_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and add these flow variables:
   
-    - Callback Status variable:
+    Agent ID variable:
     
-      >
-      > Name: **agentID**<span class="copy-static" data-copy-text="agentID"><span class="copy" title="Click to copy!"></span></span>
-      >
-      > Type: **String**
-      >
-      > Default Value: **empty**
+       > - Name: **agentID**<span class="copy-static" data-copy-text="agentID"><span class="copy" title="Click to copy!"></span></span>
+       >
+       > - Type: **String**
+       >
+       > - Default Value: leave it empty
+
+    Variable to write HTTP Response into it:
     
-    - Callback Connect Time variable:
-      
-      >
-      > Name: **queriedCSAT**<span class="copy-static" data-copy-text="queriedCSAT"><span class="copy" title="Click to copy!"></span></span>
-      >
-      > Type: **Decimal**
-      >
-      > Default Value: **0.0**<span class="copy-static" data-copy-text="0.0"><span class="copy" title="Click to copy!"></span></span>
+       > - Name: **JSONResponse**<span class="copy-static" data-copy-text="JSONResponse"><span class="copy" title="Click to copy!"></span></span>
+       >
+       > - Type: **String**
+       >
+       > - Default Value: leave it empty
 
-2. Add the Global Variable **simulatedCSAT**<span class="copy-static" data-copy-text="simulatedCSAT"><span class="copy" title="Click to copy!"></span></span> to the flow
-
-    >
-    > There are no values to set because it has already been configured globally
-
-      ![profiles](../graphics/Lab2/L2M5_CreateFlow.gif)
-
-3. Add a **Play Message** node 
+    String type AutoCSAT variable:
     
-    >
-    > Connect the **New Phone Contact** node edge to this **Play Message** node
-    >
-    > Enable Text-To-Speech
-    >
-    > Select the Connector: **Cisco Cloud Text-to-Speech**
-    >
-    > Click the Add Text-to-Speech Message button
-    >
-    > Delete the Selection for Audio File
-    >
-    > Text-to-Speech Message: ***Welcome to Mission 5 of Advanced Routing mission.***<span class="copy-static" data-copy-text="Welcome to Mission 5 of Advanced Routing mission."><span class="copy" title="Click to copy!"></span></span>
+       > - Name: **AutoCSATVar**<span class="copy-static" data-copy-text="AutoCSATVar"><span class="copy" title="Click to copy!"></span></span>
+       >
+       > - Type: **Decimal**
+       >
+       > - Default Value: **0.0**<span class="copy-static" data-copy-text="0.0"><span class="copy" title="Click to copy!"></span></span>
+       >
+       > - Turn on **Agent Viewable** toggle
+       >
+       > - Desktop Label: **Auto CSAT**<span class="copy-static" data-copy-text="Auto CSAT"><span class="copy" title="Click to copy!"></span></span>
 
-      ![profiles](../graphics/Lab2/L2M5_PlayMessage.gif)
+    ![profiles](../graphics/Lab2/LAR_FlowVars.gif)
 
-3.  Add an **HTTP Request** node for our query
+2. Add a **Play Message** node 
     
+    > - Connect the **New Phone Contact** node edge to this **Play Message** node
     >
-    > Connect the output node edge from the **Play Message** node to this node
+    > - Turn on **Enable Text-To-Speech** toggle
     >
-    > Select Use Authenticated Endpoint
+    > - Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Connector: **WxCC_API**
+    > - Click the **Add Text-to-Speech Message** button
+    >
+    > - Delete the selection for Audio File
+    >
+    > - Text-to-Speech Message: ***Welcome to the last agent routing mission.***<span class="copy-static" data-copy-text="Welcome to the last agent routing mission."><span class="copy" title="Click to copy!"></span></span>
+
+    ![profiles](../graphics/Lab2/LAR_PlayMessage.gif)
+
+3.  Add an **HTTPRequest** node for our query
+    
+    > - Activity Label: **GraphQL_Query**<span class="copy-static" data-copy-text="GraphQL_Query"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > - Connect the output node edge from the **Play Message** node to this node
+    >
+    > - Select Use Authenticated Endpoint
+    >
+    > - Connector: **WxCC_API**
     > 
-    > Path: **/search**
+    > - Request Path: **/search**<span class="copy-static" data-copy-text="/search"><span class="copy" title="Click to copy!"></span></span>
     > 
-    > Method: **POST**
+    > - Method: **POST**
     > 
-    > Content Type: **Application/JSON**
+    > - Content Type: **GraphQL**
     >
-    > Copy this GraphQL query into the request body:
-    ```JSON
-    {"query":"query simulatedCSAT($from:Long! $to:Long! $timeComparator:QueryTimeType $filter:TaskFilters $name:String!){task(from:$from,to:$to,timeComparator:$timeComparator,filter:$filter){tasks{owner{name id}simulatedCSAT:doubleGlobalVariables(name:$name){name value}}}}","variables":{"from":"{{now() | epoch(inMillis=true) - 604800000}}","to":"{{now() | epoch(inMillis=true)}}","timeComparator":"endedTime","filter":{"and":[{"status":{"equals":"ended"}},{"origin":{"equals":"{{NewPhoneContact.ANI}}"}},{"doubleGlobalVariables":{"name":{"equals":"simulatedCSAT"},"value":{"gte":3}}}]},"name":"simulatedCSAT"}}
-    ```
-    > <details><summary>Expanded Query For Understanding (optional)</summary>
-    ```GraphQL
-    query simulatedCSAT(
-      $from: Long!
-      $to: Long!
-      $timeComparator: QueryTimeType
-      $filter: TaskFilters
-      $name: String!
-    ) {
-      task(from: $from, to: $to, timeComparator: $timeComparator, filter: $filter) {
-        tasks {
-          owner {
-            name #Agent Name
-            id #Agent ID
-          }
-          simulatedCSAT: doubleGlobalVariables(name: $name) {
-            name
-            value #Value of the simulatedCSAT
+    > - Copy this GraphQL query into the Request Body:
+    >
+      ```GraphQL
+      query lastagentSearch($from: Long!, $to: Long!, $filter: TaskDetailsFilters) {
+      taskDetails(from: $from, to: $to, filter: $filter) {
+          tasks {
+            csatScore  
+            autoCsat
+            origin
+            owner {
+              id
+              name
+            }
+            doubleGlobalVariables(name: "AutoCSAT_GV"){
+              name
+              value
+            }
           }
         }
       }
-    }
-    ```
-    ```JSON
-    Variables:
-    
-    {
-      "from": "{{now() | epoch(inMillis=true) - 604800000}}", # time now - 1 week represented in EPOCH time(ms)
-      "to": "{{now() | epoch(inMillis=true)}}", # time now represented in EPOCH time(ms)
-      "timeComparator": "endedTime",
-      "filter": {
-        "and": [
-          {
-            "status": {
-              "equals": "ended"
-            }
-          },
-          {
-            "origin": {
-              "equals": "{{NewPhoneContact.ANI}}"
-            }
-          },
-          {
-            "doubleGlobalVariables": { #Filtering on the Global Variable simulatedCSAT to be greater or equal to 3 
-              "name": {
-                "equals": "simulatedCSAT" 
-              },
-              "value": {
-                "gte": 3
+      ```
+    >
+    > - Copy the following variables into the GraphQL Variables:
+    >
+      ```JSON
+      {
+        "from": "{{now() | epoch(inMillis=true) - 15000000}}",
+        "to": "{{now() | epoch(inMillis=true)}}",
+        "filter": {
+          "and": [
+            {"lastEntryPoint": {"id": {"equals": "{{NewPhoneContact.EntryPointId}}" }}},
+            { "status": { "equals": "ended" } },
+            { "origin": { "equals": "{{NewPhoneContact.ANI}}" }},
+            {
+              "doubleGlobalVariables": {
+                "name":   { "equals": "AutoCSAT_GV" },
+                "value":  { "gte": 4 }
               }
             }
-          }
-        ]
-      },
-      "name": "simulatedCSAT" #The Alias name used for the global variable in the returned fields
-    }
-    ```
-    </details>
-
+          ]
+        }
+      }
+      ```
+    >
     > Parse Settings:
     >
     > - Content Type: **JSON**
     >
     > - Output Variable: `agentID`<span class="copy-static" data-copy-text="agentID"><span class="copy" title="Click to copy!"></span></span>
+    > - Path Expression: `$.data.taskDetails.tasks[0].owner.id`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].owner.id"><span class="copy" title="Click to copy!"></span></span>
     >
-    > - Path Expression: `$.data.task.tasks[0].owner.id`<span class="copy-static" data-copy-text="$.data.task.tasks[0].owner.id"><span class="copy" title="Click to copy!"></span></span>
+    > Click on **+ Add New** to add new output variable
     >
-    > - Output Variable: `queriedCSAT`<span class="copy-static" data-copy-text="queriedCSAT"><span class="copy" title="Click to copy!"></span></span>
-    >
-    > - Path Expression: `$.data.task.tasks[0].simulatedCSAT.value`<span class="copy-static" data-copy-text="$.data.task.tasks[0].simulatedCSAT.value"><span class="copy" title="Click to copy!"></span></span>
-    >
+    > - Output Variable: `AutoCSATVar`<span class="copy-static" data-copy-text="AutoCSATVar"><span class="copy" title="Click to copy!"></span></span>
+    > - Path Expression: `$.data.taskDetails.tasks[0].doubleGlobalVariables.value`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].doubleGlobalVariables.value"><span class="copy" title="Click to copy!"></span></span>
 
-      ![profiles](../graphics/Lab2/L2M5_HTTPRequest.gif)
+    **<details><summary>Example of expected response <span style="color: orange;">[Optional]</span></summary>**
+    >
+      ```JSON
+      {
+        "data": {
+            "taskDetails": {
+                "tasks": [
+                    {
+                        "csatScore": 0,
+                        "autoCsat": null,
+                        "owner": {
+                            "id": "b9b45479-756f-4c55-8663-8ae7800a9a18",
+                            "name": "Agent140 Lab"
+                        },
+                        "doubleGlobalVariables": {
+                            "name": "AutoCSAT_GV",
+                            "value": 4.0
+                        }
+                    }
+                ]
+            }
+        }
+      }
+      ```
+    </details>
 
-4. Add a **Condition** node
+    ![profiles](../graphics/Lab2/LAR_HTTPRequest.gif)
 
-    >
-    > Connect the output node edge from teh **HTTP Request** node to this node
-    > 
-    > We will connect the **True** node in a future step.
-    >
-    > Expression: `{{agentID is empty}}`<span class="copy-static" data-copy-text="{{agentID is empty}}"><span class="copy" title="Click to copy!"></span></span>
-    >
-      ![profiles](../graphics/Lab2/L2M5_Condition.gif)
-
-5.  Add a **Queue To Agent** node
-
-    >
-    > Connect the **False** node edge of the **Condition** node created in previous step to this **Queue To Agent**.
-    > 
-    > Agent Variable: **agentID**<span class="copy-static" data-copy-text="agentID"><span class="copy" title="Click to copy!"></span></span>
-    >
-    > Agent Lookup Type: **ID**<span class="copy-static" data-copy-text="ID"><span class="copy" title="Click to copy!"></span></span>
-    >
-    > Set Contact Priority: **True**
-    >
-    > Select Static Priority
-    >
-    > Static Priority Value: **P1**
-    >
-    > Reporting Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
-    >
-    > Park Contact if Agent Unavailable: **False**
-    >
-    > Recovery Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
-    >
-
-
-      ![profiles](../graphics/Lab2/L2M5_QtoAgent.gif)
-
-6. Add a **Queue Contact** node
-
-    >
-    > Connect **Queue To Agent** Output and Error node edges created in previous step to this **Queue Contact**
-    >
-    > Connect the **True** node edge from the **Condition** node created in **Step 4** to this node
-    > 
-    > Select Static Queue
-    >
-    > Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
-    >
-      ![profiles](../graphics/Lab2/L2M5_QueueContact.gif)
-
-
-7. Add a **Subflow** node and **DisconnectContact** node
-
-    >
-    > In the Activity Library pane on the left side of the screen, click **Subflows**
-    >
-    > Find the **Subflow** names **WaitTreatment** and drag it onto the flow canvas like you would any other node.
-    >
-    > Connect the output node edge from this node to the **DisconnectContact** node.
-    >
-    > Connect the **Queue Contact** node edge that we created in previous step to this **Subflow** node
-    >
-    > Subflow Label: **Latest**
-    >
-    > Enable automatic updates: **True**
-    >
-    > Subflow Input Variables: **None**
-    >
-    > Subflow Output Variables: **None**
-    >
-      ![profiles](../graphics/Lab2/L2M5_Subflow.gif)   
-
-    <details><summary>Check your flow</summary>![Profiles](../graphics/Lab2/L2M5_LARwCSAT.png)</details>
-
-10.  Publish your flow
-
-    > Turn on Validation at the bottom right corner of the flow builder
-    >
-    > If there are no Flow Errors, Click **Publish**
-    >
-    > Add a publish note
-    >
-    > Add Version Label(s): **Latest** 
-    >
-    > Click **Publish** Flow
-
-11. Map your flow to your inbound channel
+4. Add **Set Variable** node
     
-    > Navigate to Control Hub > Contact Center > Channels
+    > - Activity Label: **GraphQL_Response**<span class="copy-static" data-copy-text="GraphQL_Response"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Locate your Inbound Channel (you can use the search): **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+    > - Connect **GraphQL_Query** to this node
     >
-    > Select the Routing Flow: **<span class="attendee-id-container">LastAgentRouting_<span class="attendee-id-placeholder" data-prefix="LastAgentRouting_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
+    > - We will connect **Set Variable** node in next step
     >
-    > Select the Version Label: **Latest**
+    > - Variable: **JSONResponse**<span class="copy-static" data-copy-text="JSONResponse"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Click Save in the lower right corner of the screen
+    > - Set To Variable: **GraphQL_Query.httpResponseBody**<span class="copy-static" data-copy-text="GraphQL_Query.httpResponseBody"><span class="copy" title="Click to copy!"></span></span>
+    
+    ![profiles](../graphics/Lab2/LAR_GraphQL_Response.gif)
 
-      ![profiles](../graphics/Lab2/L2M5_Publish&EPmap.gif)  
+5. Add a **Case** node
+
+    > - Activity Label: **Case_If_AgentIDEmpty**<span class="copy-static" data-copy-text="Case_If_AgentIDEmpty"><span class="copy" title="Click to copy!"></span></span>
+    > 
+    > - Connect the output node edge from teh **GraphQL_Response** node to this node
+    >
+    > - Select **Build Expression**
+    >
+    > - Expression: `{{agentID is empty}}`<span class="copy-static" data-copy-text="{{agentID is empty}}"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > - Change **Case 0** to **true**
+    >
+    > - Change **Case 1** to **false**
+    >
+    > - We will connect the **true** and **false** in future steps.  
+    
+    ![profiles](../graphics/Lab2/LAR_Case.gif)
+
+6. Add a **Condition** node
+
+    > - Activity Label: **CheckCSATValue**<span class="copy-static" data-copy-text="CheckCSATValue"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > - Connect **false** exit of **Case** node to this node
+    > 
+    > - We will connect the **True** and **False** output edges in future steps.
+    >
+    > - Expression: **{{AutoCSATVar>=4.0}}**<span class="copy-static" data-copy-text="{{AutoCSATVar>=4.0}}"><span class="copy" title="Click to copy!"></span></span>
+    
+    ![profiles](../graphics/Lab2/LAR_Condition.gif)
+
+7.  Add a **Queue To Agent** node
+
+    > - Connect the **True** node edge of the **CheckCSATValue** condition node created in previous step to this **Queue To Agent** node.
+    > 
+    > - Agent Variable: **agentID**<span class="copy-static" data-copy-text="agentID"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > - Agent Lookup Type: **ID**<span class="copy-static" data-copy-text="ID"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > - Turn on **Set Contact Priority**
+    >
+    > - Select **Static Priority**
+    >
+    > - Static Priority Value: **P1**
+    >
+    > - Reporting Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
+    >
+    > - **Park Contact if Agent Unavailable** toggle should remain off
+    >
+    > - Static Recovery Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
+    
+    ![profiles](../graphics/Lab2/LAR_QtoAgent.gif)
+
+8. Add a **Queue Contact** node
+
+    > - Connect the **False** node edge from the **CheckCSATValue** condition node created in **Step 6** to this node
+    >
+    > - Connect **true** node edge of **Case_If_AgentIDEmpty** node created in **Step 5** to this node
+    >
+    > - Connect **Default** node edge of **Case_If_AgentIDEmpty** node created in **Step 5** to this node
+    > 
+    > - Connect **Queue To Agent** Output and Error node edges created in previous step to this **Queue Contact**
+    >
+    > - Select **Static Queue**
+    >
+    > - Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
+    
+    ![profiles](../graphics/Lab2/LAR_QueueContact.gif)
+
+9. Add a **Subflow** node and **DisconnectContact** node
+
+    > - In the Activity Library pane on the left side of the screen, click **Subflows**
+    >
+    > - Find the **Subflow** names **WaitTreatment** and drag it onto the flow canvas like you would any other node.
+    >
+    > - Add a **DisconnectContact** node
+    >
+    > - Connect the output node edge from this node to the **DisconnectContact** node.
+    >
+    > - Connect the **Queue Contact** node edge that we created in previous step to the **WaitTreatment** subflow node
+    >
+    > Click on **WaitTreatment** subflow node and configure the following settings: 
+    >
+    > - Subflow Label: **Latest**
+    >
+    > - Make sure **Enable automatic updates** is turned on
+    
+    ![profiles](../graphics/Lab2/LAR_Wait.gif)
+
+10. Navigate to **Event Flows** and add **GoTo** node to the canvas.
+
+    > - Connect **AgentDisconnect** event node edge to this **GoTo** node
+    > <br/><br/>
+    > Click on the **GoTo** node and configure the following settings: 
+    > 
+    > - Destination Type: **Flow**
+    >
+    > - Static Flow: **CCBU_PostCallSurvey_AutoCSAT**<span class="copy-static" data-copy-text="CCBU_PostCallSurvey_AutoCSAT"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > - Choose Version Label: **Latest**
+    >
+    > <details><summary>Check your Main Flow</summary>![Profiles](../graphics/Lab2/L2M5_LARwCSAT.png)</details>
+
+    ![profiles](../graphics/Lab2/LAR_EventGoTo.gif)
+
+11. Validate and publish the flow:
+
+    > - Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
+    >
+    > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
+    >
+    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**. 
+
+12. Map your flow to your inbound channel
+    
+    > - Navigate to Control Hub > Contact Center > Channels
+    >
+    > - Locate your Inbound Channel (you can use the search): **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+    >
+    > - Select the Routing Flow: **<span class="attendee-id-container">LastAgentRouting_<span class="attendee-id-placeholder" data-prefix="LastAgentRouting_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
+    >
+    > - Select the Version Label: **Latest**
+    >
+    > - Click Save in the lower right corner of the screen
+
+    ![profiles](../graphics/Lab2/LAR_Channel.gif) 
 ---
 
 ## Testing
-1. Your Agent desktop session should be still active but if not, use **Agent Desktop** with agent credentials you have been provided **<span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.
-2. On your Agent Desktop, set your status to available
-      1. Using Webex, place a call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
-      2. You should be offered a call, click on the accept button. (You may want to mute the mic on both Webex and the Agent Desktop)
-      3. In the Agent Desktop you will see a new field in Call Information section where you can edit the Simulated CSAT.  Enter a value of **2.9**<span class="copy-static" data-copy-text="2.9"><span class="copy" title="Click to copy!"></span></span> and click save.
-      4. After a few moments end the call and select a wrap-up code.
-3. Using Webex, place another call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
-      1. You should be offered the call, click on the accept button.
-      2. Enter a value of **3.7**<span class="copy-static" data-copy-text="3.7"><span class="copy" title="Click to copy!"></span></span> in for Simulated CSAT and click save.
-      3. After a few moments end the call and select a wrap-up code.
-4. In your Flow:
-      1. Open the debugger
-      2. Select the first interaction (at the bottom of the list)
-      3. Trace the steps taken in the flow
-      4. Open the last interaction 
-      5. Trace the steps taken in the flow
-5. Answer these questions:
-      1. Did the second call get routed to your agent via the Queue To Agent node?
-         1. Why or why not
-6. On your Agent Desktop, set your status to not be available
-7. Using Webex, place another call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
-8. After you hear the queue treatment start, change your status to available on the agent desktop.
-      1. You should be offered the call, click on the accept button.
-      2. Enter a value of **2.8**<span class="copy-static" data-copy-text="2.8"><span class="copy" title="Click to copy!"></span></span> in for Simulated CSAT and click save.
-      3. After a few moments end the call and select a wrapup code.
-9. In your Flow:
-      1. Open the debugger
-      2. Select the last interaction
-      3. Trace the steps taken in the flow
-10. Answer these questions:
-      1. Was the call routed to the Queue to Agent node?
-      2. What happened next?
-         1. Why?
-         2. What will happen if you call in again starting in the Available status?
-11. Make sure that you are in Available status on the agent desktop.
-12. Using Webex, place another call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
-      1. You should be offered the call, click on the accept button.
-      2. After a few moments end the call and select a wrapup code.
-13. In your Flow:
-      1. Open the debugger
-      2. Select the last interaction
-      3. Trace the steps taken in the flow
-14. Answer the following questions:
-      1. Was the call offered to you from the Queue to Agent node?
-      2. What was the value of the variable queriedCSAT (look in the HTTP node step)
-         1. Why?
-      3. How do you think that you could change the logic/criteria to meet other business needs? 
+1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **<span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen where you may need to enter the email address again and the password provided to you.
+2. On your Agent Desktop, set your status to **Available**.
+      1. Using Webex App, place a call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+      2. You should be offered a call, click on the **Answer** button. (You may want to mute the mic on both Webex App and the Agent Desktop).
+      3. End the call from Agent Desktop and you should hear an invitation to rate your experience with us on a scale of 1 to 5.
+      4. Select **5** on Webex App keypad.
+3. In your flow, open the flow debugger and select the latest call from the list (on top of the list).
+      1. Trace the steps taken in the flow.
+      2. Select **GraphQL_Query** and scroll down the details panel on the right-hand side to **Modified Variables**. They should be empty since there are no CSAT scores at the moment you made the first call.
+      3. **Case_If_AgentIDEmpty** should exit via **true** node edge as the **GraphQL_Query** had no response, hence the call arrived to your agent via **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** and not via **QueueToAgent** node.
+
+  ![profiles](../graphics/Lab2/LAR_Test1.gif) 
+
+4. Make sure your agent status is set to **Available**
+
+5. Using Webex App, place another call to your Inbound Channel number **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+      1. You should be offered the call, click on the **Answer** button.
+      2. If everything set correctly you should see Auto CSAT set to **5.0**
+      3. End the call and select any wrap up reason if asked.
+6. In your flow, open the flow debugger and select the latest call from the list (on top of the list).
+      1. Trace the steps taken in the flow
+      2. Select **GraphQL_Query** and scroll down the details panel on the right-hand side to **Modified Variables**. You should see that now **agentID** and **AutoCSATVar** have assigned values.
+      3. Select **GraphQLResponse**. In details panel on the right-hand side you should see **Modified Variables** has a JSON response.    
+      4. **Case_If_AgentIDEmpty** should exit via **false** node edge as the **GraphQL_Query** is not empty.
+      5. **CheckCSATValue** is now either equals **5** which matches the condition hence the call arrived to your agent via **QueueToAgent** node.
+
+  ![profiles](../graphics/Lab2/LAR_Test2.gif)
 
 ---
-
-<p style="text-align:center"><strong>Congratulations, you have officially completed Last Agent Routing mission! 🎉🎉 </strong></p>
+<p style="text-align:center"><strong>Congratulations, you have succesfully completed Last Agent Routing mission! 🎉🎉 </strong></p>

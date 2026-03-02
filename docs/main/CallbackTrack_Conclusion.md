@@ -4,9 +4,10 @@ We hope you found the CallBack track both challenging and rewarding as you deepe
 
 Key missions included:
 
- - **Adding Basic Callback** – Ensuring customers have the option to request a return call instead of waiting in the queue.</br>
- - **Scheduling a Callback on Errors** – Handling unexpected issues by automatically scheduling a callback when an error occurs.</br>
- - **Preventing Duplicate Callbacks** – Implementing safeguards to avoid redundant callback requests, improving efficiency and customer satisfaction.</br>
+ - **Enabling Basic Callback** – Allowing customers to request a callback instead of remaining in queue.</br>
+ - **Scheduling Automatic Callbacks on Errors** – Triggering a callback when the system detects an unexpected failure to avoid customer frustration.</br>
+ - **Avoiding Duplicate Callback Requests** – Introducing logic to detect and block redundant callback attempts for the same contact.</br>
+ - **Offering Multiple Callback Entry Points** – Supporting callback scheduling through both the IVR flow and the Agent Desktop interface.</br>
 
 By mastering these techniques, you are now equipped to design more efficient and customer-friendly callback workflows within Webex Contact Center.
 

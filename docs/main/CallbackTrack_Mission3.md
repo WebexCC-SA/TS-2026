@@ -25,19 +25,20 @@ Your mission is to:
 
 1. Simulate a global error scenario to trigger a Global Error Event and initiate a workflow to reconnect with a caller whose call was disconnected due to an undefined error. </br>
 2. Configure an API POST request to schedule a callback when global error happens. You cannot rely on the Callback node in Main Flow because the call leg is no longer active after termination. Instead, you must design a custom solution to address this limitation.</br>
-3. You do not need to configure Outdial Channel and Outdial Queue as they have been preconfigured for you: </br>
+3. You do not need to configure Outdial Channel and Ourdial Queue as they have been preconfigured for you: </br>
     - **<span class="attendee-id-container">Outdial_<span class="attendee-id-placeholder" data-prefix="Outdial_" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** </br>
     - Outdial queue **<span class="attendee-id-container">Outdial_<span class="attendee-id-placeholder" data-prefix="Outdial_" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** to which your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Team** has been assigned. </br>
 4. Simulate a real API server. You will use [**MockAPI**](https://mockapi.io/){:target="_blank"} to retrieve the Outdial channel ID and the target callback number. The retrieved Outdial channel ID will then be used in the Callback API POST request.
 
-> **<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
->
-> We are starting to use Webex Contact Center APIs in this mission. More information can be found in the [**Webex Contact Center for Developers**](https://developer.webex-cx.com/){:target="_blank"} portal.
-> 
-> For more information of how you can use MockAPI please watch these Vidcasts: 
-[**[ADVANCED] Use MockAPI to enhance your Demos - PART 1**](https://app.vidcast.io/share/ce058b71-109e-4929-b9ca-46b83d94f7e3){:target="_blank"} and [**[ADVANCED] Use MockAPI to enhance your Demos - PART 2**](https://app.vidcast.io/share/1e259a34-7e9e-44d9-aa5a-5d76e07256a3){:target="_blank"}
-> 
-> </details>
+    **<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
+
+      We are starting to use Webex Contact Center APIs in this mission. More information can be found in the [**Webex Contact Center for Developers**](https://developer.webex.com/){:target="_blank"} portal.
+ 
+      - [**[ADVANCED] Use MockAPI to enhance your Demos - PART 1**](https://app.vidcast.io/share/ce058b71-109e-4929-b9ca-46b83d94f7e3){:target="_blank"}
+
+      - [**[ADVANCED] Use MockAPI to enhance your Demos - PART 2**](https://app.vidcast.io/share/1e259a34-7e9e-44d9-aa5a-5d76e07256a3){:target="_blank"}
+
+    </details>
 
 
 ## Build
@@ -56,7 +57,7 @@ Your mission is to:
       >
       > Type: **String**
       >
-      > Default Value: **empty**
+      > Default Value: leave it empty
     
     - Custom ANI variable:
       
@@ -65,7 +66,7 @@ Your mission is to:
       >
       > Type: **String**
       >
-      > Default Value: **empty**
+      > Default Value: leave it empty
 
     - HTTP GET Result variable:
       
@@ -74,7 +75,7 @@ Your mission is to:
       >
       > Type: **String**
       >
-      > Default Value: **empty**
+      > Default Value: leave it empty
 
     - Simulated Error variable:
       
@@ -83,7 +84,7 @@ Your mission is to:
       >
       > Type: **String**
       >
-      > Default Value: **empty**
+      > Default Value: leave it empty
 
     ![profiles](../graphics/Lab2/AM1_AddFlowVars.gif)
 
@@ -95,18 +96,18 @@ Your mission is to:
     
     ![profiles](../graphics/Lab2/AM2_AddOption3.gif)
 
-4. Add an **HTTP Request** node for our query. We are going to fetch Outbound Channel/Entry Point ID and custom ANI. Remember we used the same Cisco Worldwide Support contact number in Mission 3 of Fundamental labs.
+4. Add an **HTTP Request** node for our query. We are going to fetch Outbound Channel/Entry Point ID and custom ANI. Remember we used the same Cisco Worldwide Technical Support contact number in Mission 2 of a Callback Track - "Adding Callback Functionality".
     
     >
     > Connect **WantCallback** Option 3 to this HTTP node
     >
-    > We will connect **HTTP Request** node in next step
+    > We will connct **HTTP Request** node in next step
     >
     > Activity Name: **GET_CBID**<span class="copy-static" data-copy-text="GET_CBID"><span class="copy" title="Click to copy!"></span></span>
     >
     > Use Authenticated Endpoint: **Off**
     >
-    > Request URL: ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}***<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}"><span class="copy" title="Click to copy!"></span></span>
+    > Requestt URL: ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}***<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}"><span class="copy" title="Click to copy!"></span></span>
     > 
     > Method: **GET**
     > 
@@ -128,28 +129,26 @@ Your mission is to:
 
     ![profiles](../graphics/Lab2/AM2_HTTPRequest1.gif)
 
-    > **<details><summary>**Test your API Source**<span style="color: orange;">[Optional]</span></summary>**
-    > 
-    > 1. Test your API resource. **https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={DNIS}**<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={DNIS}"><span class="copy" title="Click to copy!"></span></span>
-    > 
-    > 2. Replace {DNIS} with the provided DNIS number stripping +1
-    >
-    > <span style="color: orange;">[Example:]</span> If your number **+14694096861**, then your GET Query should be ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=4694096861***
-    >
-    > 3. Open Chrome browser and past your URL. You should get the follwoing result
-    > 
-    > ![Profiles](../graphics/Lab2/BM2-8-Chrometest.gif)
-    > 
-    > 4. Test JSON Path in the following tool [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"}
-    > 
-    > 5. Paste your GET URL into the Browser address line and copy the output in square brackets (including brackets)
-    >
-    > 6. Open [https://jsonpath.com/](https://jsonpath.com/){:target="_blank"} and paste the copied response into **Inputs** window
-    >
-    > 7. In **JSONPath** box copy and paste one of the path expression from **FetchFlowSettings** to verify your results.
-    >
-    > ![Profiles](../graphics/Lab2/BM2-10-JSONPath.gif)
-    > </details>
+    <details><summary>**Test your API Source <span style="color: orange;">[Optional]</span>**</summary>
+    
+    1. Test your API resource. **https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={DNIS}**<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={DNIS}"><span class="copy" title="Click to copy!"></span></span>
+    
+    2. Replace DNIS with the provided DNIS number stripping **+1**.
+        <span style="color: orange;">[For example:]</span> If your number **+14694096861**, then your GET Query should be ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=4694096861***
+    
+    3. Open Chrome browser, paste your Get query URL into the Browser address line and press Enter. You should get the JSON response like this:
+    
+        ![Profiles](../graphics/Lab2/BM2-8-Chrometest.gif)
+    
+    4. Open the new browser tab and navigate to [JSONPath Online Evaluator](https://jsonpath.com/){:target="_blank"}
+    
+    5. Copy the JSON response (including square brackets) you obtained above and paste it into **Document** window of **JSONPath Online Evaluator**.
+    
+    6. In **JSONPath** box copy and paste one of the path expression from **FetchFlowSettings** to verify your results. For example, **$[0].businessHours**
+    
+        ![Profiles](../graphics/Lab2/BM2-10-JSONPath.gif)
+    
+    </details>
 
 
 5. Add **Set Variable** node
@@ -159,11 +158,11 @@ Your mission is to:
     >
     > Connect **GET_CBID** to this node
     >
-    > We will connect **Set Variable** node in next step
+    > We will connct **Set Variable** node in next step
     >
     > Variable: **getresult**<span class="copy-static" data-copy-text="getresult"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Set To Variable: **GET_CBID.httpResponseBody**<span class="copy-static" data-copy-text="GET_CBID.httpResponseBody"><span class="copy" title="Click to copy!"></span></span>
+    > Set Variable: **GET_CBID.httpResponseBody**<span class="copy-static" data-copy-text="GET_CBID.httpResponseBody"><span class="copy" title="Click to copy!"></span></span>
     >
 
     ![profiles](../graphics/Lab2/AM2_SetGetResult.gif)
@@ -175,7 +174,7 @@ Your mission is to:
     >
     > Connect **SetGetResult** to this node
     >
-    > Connect this node to **Disconnect Contact**
+    > Connect this node to **Disconnect Contact** node
     >
     > Variable: **simulatederror**<span class="copy-static" data-copy-text="simulatederror"><span class="copy" title="Click to copy!"></span></span>
     >
@@ -184,13 +183,13 @@ Your mission is to:
     ![profiles](../graphics/Lab2/AM2_SimulateGlobalError.gif)    
 
 7. Navigate to **Event Flows** and delete connection from **OnGlobalError** to **EndFlow**.
-8. Add **HTTP Request** node to the flow. In this step we are going to build a **Create Task** API POST request. See [**Create Task API**](https://developer.webex-cx.com/documentation/tasks/v1/create-task){:target="_blank"} for details.
+8. Add **HTTP Request** node to the flow. In this step we are going to build a **Create Task** API POST request. See [**Create Task API**](https://developer.webex.com/webex-contact-center/docs/api/v1/tasks-call-control/create-task){:target="_blank"} for details.
 
     > Activity Label: **CallBackAPI_HTTPRequest**<span class="copy-static" data-copy-text="CallBackAPI_HTTPRequest"><span class="copy" title="Click to copy!"></span></span>
     >
     > Connect the **OnGlobalError** output edge node to this node
     > 
-    > Use Authenticated Endpoint: **On**
+    > Use Authentication Endpoint: **On**
     >
     > Connector: **WxCC_API**
     >
@@ -227,7 +226,13 @@ Your mission is to:
     >
     > In the Expression section write an expresion ***{{CallBackAPI_HTTPRequest.httpStatusCode == 201}}***<span class="copy-static" data-copy-text="{{CallBackAPI_HTTPRequest.httpStatusCode == 201}}"><span class="copy" title="Click to copy!"></span></span>
     
-10. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow.
+10. Validate and publish the flow:
+
+    > Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
+    >
+    > If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
+    >
+    > In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
 
     ![profiles](../graphics/Lab2/AM2_EventCondition.gif) 
 
@@ -243,23 +248,29 @@ Your mission is to:
 ## Testing
 
 
-1. Make sure you're logged into **Agent Desktop** as Agent and set status to **Not Available**. In this case call will not be assigned to an agent and callback will be proposed to a caller.
+1. Make sure you're logged into Webex CC Desktop application as Agent and set status to **Not Available** (select any Idle state). In this case call will not be assigned to an agent and callback will be proposed to a caller.
+
 2. Make a call to the Support Number and if success you should hear configured messages.
 
-3. Next message will propose you options to request callback, stay in queue or simulate an error. Press 3 on Webex App DialPad to simulate an error. 
+3. Next message will propose you options to request callback, stay in queue or simulate an error. Press **3** on Webex App Keypad to simulate an error. 
 
 4. If everything configured correctly your call should be disconnected.
+
 5. Open Debug tool in your **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and click on first call in the list which should be the last call you made. Look for **WantCallback** in Activity Name column and make sure the call left **WantCallback** out of Option 3 and continue through **GET_CBID**.
 
-6. Click on either **GET_CBID** node of the flow or on Activity Name **GET_CBID** n the Debug tool and scroll to the bottom the right hand side section of Debug tool. Under **Modified Variables** you should see values assigned to **outdialcbid** and **customani** flow variables. Where **outdialcbid** is ID of your **<span class="attendee-id-container">Outdial_<span class="attendee-id-placeholder" data-prefix="Outdial_" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** and **customani** is a well known Cisco Worldwide Support contact number **1 408 526 7209**. The same number we used in previous exercise.  This time we used an external database as well as GET API call to extract that number.
+6. Click on either **GET_CBID** node of the flow or on Activity Name **GET_CBID** in the Debug tool and scroll to the bottom the right-hand side section of Debug tool. Under **Modified Variables** you should see values assigned to **outdialcbid** and **customani** flow variables. Where **outdialcbid** is ID of your **<span class="attendee-id-container">Outdial_<span class="attendee-id-placeholder" data-prefix="Outdial_" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** and **customani** is a well known Cisco Worldwide Support contact number **1 408 526 7209**. The same number we used in previous exercise.  This time we used an external database as well as GET API call to extract that number.
 
 7. While still on Debug tool, click on **SetGetResult** to see full response from HTTP request that we wrote into **getresult** flow variable.
+
 8. Make sure **SimulateGlobalError** activity name has an **Error** next to it in **Outcome** column. That mean you successfully simulated **Global Error** event.
 
-9. Click on next activity name **GlobalErrorHandling** which goes after **SimulateGlobalError** activity name. Flow Designer automaticaly will open **Event Flows** tab.
+9. Click on next activity name **GlobalErrorHandling** which goes after **SimulateGlobalError** activity name. Flow Designer automatically will open **Event Flows** tab.
 
 10. Observe **Condition** node to make sure exit went out via **True** exit. This tells you that HTTP response is **201 Created** and callback has been scheduled successfully. 
 
-11. On Webex Desktop, make your agent **Available**. Contact Center will reserve your agent right away and propose to answer a callback call.
+11. On Webex Desktop, make your agent **Available**. Webex Contact Center will reserve your agent right away and propose to answer a callback call.
 
-**Congratulations on completing another mission.**
+12. Answer the call and wait until you are connected to a Cisco Technical Support IVR and hear a welcome prompt. Then disconnect the call in agent desktop.
+
+---
+<p style="text-align:center"><strong>Congratulations, you have succesfully completed Callback on Global Error mission! 🎉🎉 </strong></p>

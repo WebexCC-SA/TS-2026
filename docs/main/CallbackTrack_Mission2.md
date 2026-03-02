@@ -23,14 +23,14 @@ Imagine a customer calls to upgrade their service but faces a 20-minute wait, th
 Your mission is to: </br>
 
 1. Continue to use same flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** </br>
-2. Add additional callback functionality to your **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**.
+2. Add aditional callback functionality to your **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**.
 
 
 ## Build
 
 1. Switch to the Flow Designer. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**. Make sure **Edit** toggle is **ON**.
-2. Delete  connection from **Queue** node to **Music** 
-3. Drag **Menu** node:
+2. Delete  connection from **Queue** node to **Music**.
+3. Add **Menu** node:
 
     > Rename Activity Label to **WantCallback**<span class="copy-static" title="Click to copy!" data-copy-text="WantCallback"><span class="copy"></span></span>
     >
@@ -38,9 +38,11 @@ Your mission is to: </br>
     >
     > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Click the Add Text-to-Speech Message button and paste text: ***All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue.***<span class="copy-static" title="Click to copy!" data-copy-text="All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue."><span class="copy"></span></span>
+    > Click the **Add Text-to-Speech Message** button and paste text: ***All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue.***<span class="copy-static" title="Click to copy!" data-copy-text="All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue."><span class="copy"></span></span>
     >
-    > Delete the Selection for Audio File
+    > Delete the selection for Audio File
+    >
+    > Set the checkbox **Make Prompt Interruptible**
     >
     > Under Custom Menu Links:
     >>
@@ -58,7 +60,7 @@ Your mission is to: </br>
 
 
 
-4. Drag **Collect Digits** nodes
+4. Add **Collect Digits** node:
     
     > Rename Activity Label to **NewNumber**<span class="copy-static" title="Click to copy!" data-copy-text="NewNumber"><span class="copy"></span></span>
     >
@@ -66,19 +68,19 @@ Your mission is to: </br>
     >
     > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Click the Add Text-to-Speech Message button and paste text: ***Please enter your 11 digits phone number to which we should call you back.***<span class="copy-static" title="Click to copy!" data-copy-text="Please enter your 11 digits phone number to which we should call you back."><span class="copy"></span></span>
+    > Click the **Add Text-to-Speech Message** button and paste text: ***Please enter your 11 digits phone number to which we should call you back.***<span class="copy-static" title="Click to copy!" data-copy-text="Please enter your 11 digits phone number to which we should call you back."><span class="copy"></span></span>
     >
     > Delete the Selection for Audio File
-    > 
-    > Check **Make Prompt Interruptible**
-    >  
+    >
+    > Set the checkbox **Make Prompt Interruptible**
+    >   
     > Advanced Settings:
     >
-    >> No-Input Timeout  **5** 
+    >> No-Input Timeout: **5** 
     >>
-    >> Minimum Digits: **11**
+    >> Minimum Digits: **9**
     >>
-    >> Maximum Digits: **11**
+    >> Maximum Digits: **15**
     >       
     > Connect **No-Input Timeout** to the front of the **NewNumber** node
     >
@@ -92,7 +94,7 @@ Your mission is to: </br>
 
 
 
-5. Drag one more **Menu** node
+5. Add one more **Menu** node:
     
     > Rename Activity Label to **VerifyNumber**<span class="copy-static" title="Click to copy!" data-copy-text="VerifyNumber"><span class="copy"></span></span>
     >
@@ -100,15 +102,25 @@ Your mission is to: </br>
     >
     > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Click the Add Text-to-Speech Message button and paste text: ***You entered*** *{{NewNumber.DigitsEntered}}****. Press 1 if the number is correct. Press 2 if you want to re-enter the number.***<span class="copy-static" data-copy-text="You entered {{NewNumber.DigitsEntered}}. Press 1 if the number is correct. Press 2 if you want to re-enter the number."><span class="copy" title="Click to copy!"></span></span>
+    > Click the **Add Text-to-Speech Message** button and paste the following:
+    >
+    ```JSON
+    <speak>
+    You entered <say-as interpret-as="telephone">{{NewNumber.DigitsEntered}}</say-as>. 
+    Press 1 if the number is correct. 
+    Press 2 if you want to re-enter the number. 
+    </speak>
+    ```
     >
     > Delete the selection for Audio File
+    >
+    > Set the checkbox **Make Prompt Interruptible**
     >    
     > Custom Menu Links:
     >>
     >> Change first Digit Number from **0** to **1**, add Link Description as **Number OK**
     >>
-    >> Add New Digit Number as **2** with  Link Description **Number Not OK**
+    >> Add New Digit Number as **2** with Link Description **Number Not OK**
     >
     > Connect **No-Input Timeout** to the front of the **VerifyNumber** node
     >
@@ -116,12 +128,12 @@ Your mission is to: </br>
     >    
     > Connect **NewNumber** created in step 4 to **VerifyNumber** node
     >
-    > Connect **Number Not OK** from **VerifyNumber** node to **Collect Digits** node created in Step 4.
+    > Connect **Number Not OK** from **VerifyNumber** node to **NewNumber** node (aka, **Collect Digits** node) created in Step 4
     
     ![profiles](../graphics/Lab1/AM1-VerifyNumber.gif)
 
 
-6. Add **Callback** node
+6. Add **Callback** node:
     
     > Callback Dial Number select  ***NewNumber.DigitsEntered***<span class="copy-static" data-copy-text="NewNumber.DigitsEntered"><span class="copy" title="Click to copy!"></span></span> from dropdown list
     >    
@@ -130,7 +142,7 @@ Your mission is to: </br>
     > 
     > Callback ANI: Choose any number from dropdown list.
     > 
-    > Connect **Number OK** from **VerifyNumber** node created in step 5 to **CallBack** node
+    > Connect **Number OK** from **VerifyNumber** node created in step 5 to this **CallBack** node
 
 
 7. Add **Play Message** node as follows:
@@ -139,30 +151,38 @@ Your mission is to: </br>
     >
     > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > Click the Add Text-to-Speech Message button and paste text: **Your call has been successfully scheduled for a callback. Good Bye.**<span class="copy-static" data-copy-text="You call has been successfully scheduled for a callback. Good Bye."><span class="copy" title="Click to copy!"></span></span>
+    > Click the **Add Text-to-Speech Message** button and paste text: **Your call has been successfully scheduled for a callback. Good Bye.**<span class="copy-static" data-copy-text="You call has been successfully scheduled for a callback. Good Bye."><span class="copy" title="Click to copy!"></span></span>
     >
-    > Delete the Selection for Audio File
+    > Delete the selection for Audio File
     >
-    > Connect **CallBack** node created in step 6 to **Play Message** node
+    > Connect **CallBack** node created in step 6 to this **Play Message** node
     >
-    > Connect **Play Message** to **Disconnect Contact** node
-    
+    > Connect the output of this **Play Message** node to **Disconnect Contact** node
+
+
+8. Add **Disconnect Contact** and connect the output of the **Play Message** node you created at step #7 to this **Disconnect Contact** node
+
     ![profiles](../graphics/Lab1/AM1-SetCallBack.gif)
 
 
+9. Validate and publish the flow:
 
-8. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow
+    > Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
+    >
+    > If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
+    >
+    > In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
 
     
 ## Testing
     
-1. Make sure you're logged into the **Agent Desktop** as an Agent and set the status to **Not Available**. In this case, the call will not be assigned to an agent, and a callback will be proposed to the caller.
-2. Make a call to the Support Number and if success you should hear configured messages.
+1. Make sure you're logged into the Webex CC Desktop application as an Agent and set the status to **Not Available**. In this case, the call will not be assigned to an agent, and a callback will be proposed to the caller.
+2. Make a call to the Support Number provided to you. If your flow is set up correctly, you should hear a message that you configured, offering you the option to schedule a callback.
+3. When callback is proposed, press 1 on Webex App Keypad to request a callback. 
+4. When asked, provide a new number for a callback. Because in the current lab we have number limitations, we are going to provide a well-known Cisco Worldwide Technical Support contact number **1 408 526 7209**<span class="copy-static" title="Click to copy!" data-copy-text="+14085267209"><span class="copy"></span></span> as a callback number. Use the Keypad in Webex app to provide the Cisco Technical Support number, then confirm when asked.
+5. Once done, another message about successful scheduling should play.
+6. Make your agent **Available**. Webex Contact Center will reserve you right away and propose to answer a callback call.
+7. Answer the call and wait until you are connected to a Cisco Technical Support IVR and hear a welcome prompt. Then disconnect the call in agent desktop.
 
-3. When callback is proposed, press 1 on Webex App DialPad to request a callback. 
-
-4. When asked, provide a new number for a callback. Because in the current lab we have number limitations, we are going to provide a well-known Cisco Worldwide Support contact number **1 408 526 7209**<span class="copy-static" title="Click to copy!" data-copy-text="+14085267209"><span class="copy"></span></span> as a callback number. Use the DialPad to provide the Cisco TAC number, then confirm when asked.
-3. Once done, another message about successful scheduling should play.
-4. Make your agent **Available**. Contact Center will reserve you right away and propose to answer a callback call.
-
-**Congratulations on completing another mission.**
+---
+<p style="text-align:center"><strong>Congratulations, you have succesfully completed Adding Callback Functionality mission! 🎉🎉 </strong></p>

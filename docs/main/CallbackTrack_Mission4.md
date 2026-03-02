@@ -7,8 +7,8 @@ icon: material/medal
 
 # Mission 4: Preventing Callback duplication
 
-> !!! Note
-      This task relies on completing Mission 3 of Core Track. Ensure that mission is completed to have a fully functional callback feature in your flow.
+!!! Note
+    This task relies on completing Mission 3 of the Callback Track. Ensure that mission is completed to have a fully functional callback feature in your flow.
 
 
 ## Story 
@@ -26,8 +26,9 @@ If a caller who already has a scheduled callback contacts the contact center aga
 
 Your mission is to:
 
-1. Enhance the functionality of the **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** by introducing an advanced feature to check if a callback already exists for a specific tested number. 
-2. Use **Search API** request to fetch the data from Analyzer database. For more details see [**Search API**](https://developer.webex-cx.com/documentation/search/v1/search-tasks){:target="_blank"} for details.
+1. Enhance the functionality of the **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** by introducing an advanced feature to check if a callback already exists for a specific tested number.
+
+2. Use **Search API** request to fetch the data from Analyzer database. For more details see [**Search API**](https://developer.webex.com/webex-contact-center/docs/api/v1/tasks-call-control/create-task){:target="_blank"} for details.
 
 
 ## Build
@@ -43,7 +44,7 @@ Your mission is to:
       >
       > Type: **String**
       >
-      > Default Value: **empty**
+      > Default Value: leave it empty
     
     - Callback Connect Time variable:
       
@@ -52,7 +53,7 @@ Your mission is to:
       >
       > Type: **String**
       >
-      > Default Value: **empty**
+      > Default Value: leave it empty
       
     - Search Result variable:
       
@@ -61,22 +62,22 @@ Your mission is to:
       >
       > Type: **String**
       >
-      > Default Value: **empty**
+      > Default Value: leave it empty
 
       ![profiles](../graphics/Lab2/L2M3-1.gif)
 
-3. Add an **HTTP Request** node for our query as shown in the following video.
+3. Add an **HTTP Request** node for the Search API query by following this order of steps:
     
     >
-    > Remove the existing connection between **VerifyNumber** Option 1 and **Callback** node
+    > Remove the existing connection between **VerifyNumber** Option 1 ("Number OK") and **Callback** node
     >
-    > Connect **VerifyNumber** Option 1 to this HTTP node
+    > Add an **HTTP Request** node and connect **VerifyNumber** Option 1 ("Number OK") to that node
     >
     > We will connect this **HTTP Request** node in next step
     >
     > Activity Label: **HTTPRequest_CallBackSearch**<span class="copy-static" data-copy-text="HTTPRequest_CallBackSearch"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Select Use Authenticated Endpoint
+    > Select **Use Authenticated Endpoint**
     >
     > Connector: **WxCC_API**
     > 
@@ -86,9 +87,8 @@ Your mission is to:
     > 
     > Content Type: **GraphQL**
     >
-    > Copy this GraphQL query into the request body:
-    >
-    > Query:
+    > Copy this GraphQL query into the **Query** field of the **Request Body**:
+    
     ```GraphQL
     query callbackSearch($from: Long!, $to: Long!, $filter: TaskDetailsFilters) {
     taskDetails(from: $from, to: $to, filter: $filter) {
@@ -109,72 +109,33 @@ Your mission is to:
       }
     }
     ```
-
-    > Variables: 
-      ```JSON
-      {
-        "from": "{{now() | epoch(inMillis=true) - 15000000}}",
-        "to": "{{now() | epoch(inMillis=true)}}",
-        "filter": {
-          "and": [
-            {
-              "callbackData": {
-                "equals": {
-                  "callbackNumber": "{{NewNumber.DigitsEntered}}"
-                }
-              }
-            },
-            {
-              "lastEntryPoint": {
-                "id": {
-                  "equals": "{{NewPhoneContact.EntryPointId}}"
-                }
+    > Copy the following variables JSON into the **GraphQL variables** of the **Request Body**:
+        
+    ```JSON
+    {
+      "from": "{{now() | epoch(inMillis=true) - 15000000}}",
+      "to": "{{now() | epoch(inMillis=true)}}",
+      "filter": {
+        "and": [
+          {
+            "callbackData": {
+              "equals": {
+                "callbackNumber": "{{NewNumber.DigitsEntered}}"
               }
             }
-          ]
-        }
-      }
-
-      ```
-
-
-  
-
-    <!-- ```JSON
-    {"query":"query($from: Long!, $to: Long!)\n{\n  taskDetails(\n      from: $from\n      to: $to\n    filter: {\n      and: [\n       { callbackData: { equals: { callbackNumber: \"{{NewNumber.DigitsEntered}}\" } } }\n       { lastEntryPoint: { id: { equals: \"{{NewPhoneContact.EntryPointId}}\" } } }\n      ]\n    }\n  ) {\n    tasks {\n      callbackData {\n        callbackRequestTime\n        callbackConnectTime\n        callbackNumber\n        callbackStatus\n        callbackOrigin\n        callbackType\n      }\n       lastEntryPoint {\n        id\n        name\n      }\n    }\n  }\n}","variables":{"from":"{{now() | epoch(inMillis=true) - 15000000}}","to":"{{now() | epoch(inMillis=true)}}"}}
-    ```
-    > <details><summary>Expanded Query For Understanding (optional)</summary>
-    ```GraphQL
-    query($from: Long!, $to: Long!)
-    {
-      taskDetails(
-          from: $from
-          to: $to
-        filter: {
-          and: [
-           { callbackData: { equals: { callbackNumber: "{{NewNumber.DigitsEntered}}" } } }
-           { lastEntryPoint: { id: { equals: "{{NewPhoneContact.EntryPointId}}" } } }
-          ]
-        }
-      ) {
-        tasks {
-          callbackData {
-            callbackRequestTime
-            callbackConnectTime
-            callbackNumber
-            callbackStatus
-            callbackOrigin
-           callbackType
+          },
+          {
+            "lastEntryPoint": {
+              "id": {
+                "equals": "{{NewPhoneContact.EntryPointId}}"
+              }
+            }
           }
-           lastEntryPoint {
-            id
-            name
-          }
-        }
+        ]
       }
     }
+
     ```
-    </details> -->
 
     > Parse Settings:
     >
@@ -182,7 +143,7 @@ Your mission is to:
     > - Output Variable: `callbackStatus`<span class="copy-static" data-copy-text="callbackStatus"><span class="copy" title="Click to copy!"></span></span>
     > - Path Expression: `$.data.taskDetails.tasks[0].callbackData.callbackStatus`<span class="copy-static" data-copy-text="$.data.taskDetails.tasks[0].callbackData.callbackStatus"><span class="copy" title="Click to copy!"></span></span>
     >
-    > Click **Add New**
+    > Click **+ Add New**
     > 
     > - Output Variable: `callbackConnectTime`<span class="copy-static" data-copy-text="callbackConnectTime"><span class="copy" title="Click to copy!"></span></span>
     >
@@ -227,7 +188,7 @@ Your mission is to:
 
     ![profiles](../graphics/Lab2/L2M3-4.gif)
 
-6. Add **Play Message** and **Disconnect Contact** nodes: 
+6. Add **Play Message** nodes: 
     
       > Enable Text-To-Speech
       >
@@ -235,28 +196,45 @@ Your mission is to:
       >
       > Click the **Add Text-to-Speech Message** button and paste text: **The callback for provided number has been scheduled already. Please await for a callback once next agent becomes available. Thank you for your patience.**<span class="copy-static" data-copy-text="The callback for provided number has been scheduled already. Please await for a callback once next agent becomes available. Thank you for your patience."><span class="copy" title="Click to copy!"></span></span>
       >
-      > Delete the Selection for Audio File
+      > Delete the selection for Audio File
       >
-      > Connect **True** exit path of **Condition** node created in previous step to **Play Message** node
-      > Connect this **Play Message** to **Disconnect Contact** node
+      > Connect **True** exit path of **Condition** node created in previous step to this **Play Message** node
 
-      ![profiles](../graphics/Lab2/L2M3-5.gif)
+7. Add **Disconnect Contact** and connect the exit path of the **Play Message** created in previous step to this node.
 
-7. Validate the flow by clicking **Validate**, **Publish** and select the Latest version of the flow.
+    ![profiles](../graphics/Lab2/L2M3-5.gif)
+
+8. Validate and publish the flow:
+
+    > Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
+    >
+    > If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
+    >
+    > In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
 
 ## Testing
     
-1. Make sure your Agent either **Logged Out** or in **Not Available** state. In this case call will not be assigned to an agent and callback will be proposed to a caller.
-2. Make sure your **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** is assigned to **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**. If not, do that (refer to previous very first Mission where this step was explained in details).
-3. Make a call to your Support Number and if success you should hear configured messages and ask to provide a new number for a callback. Because in current lab we are having number limitations we are going to provide a well known Cisco Worldwide Support contact number **1 408 526 7209**<span class="copy-static" data-copy-text="+14085267209"><span class="copy" title="Click to copy!"></span></span>
-4. While keeping your agent **Not Available**, make another test call to your flow and request for a callback to the same number **1 408 526 7209**<span class="copy-static" data-copy-text="+14085267209"><span class="copy" title="Click to copy!"></span></span>.
+1. Make sure your Agent in **Not Available** state (select any Idle state). In this case call will not be assigned to an agent and callback will be proposed to a caller.
+
+2. Make a call to your Support Number and if success you should hear configured messages and ask to press "1", "2" or "3". Press "1" to schedule a callback and provide a number for a callback. Because in current lab we are having number limitations we are going to provide a well known Cisco Worldwide Technical Support contact number **1 408 526 7209**<span class="copy-static" data-copy-text="+14085267209"><span class="copy" title="Click to copy!"></span></span>.
+
+4. While keeping your agent **Not Available**, make another test call to your flow, press "1" and request for another callback to the same number **1 408 526 7209**<span class="copy-static" data-copy-text="+14085267209"><span class="copy" title="Click to copy!"></span></span>.
+
 5. You should hear a message configured in **Step 6** of the current mission.
+
 6. Click on **Analyze** to visually observe the call flow. Make sure you're viewing latest Published Version.
-7. Review the flow and click on **HTTPRequest_CallBackSearch** where you can cross-launch debugger to that particular call.
-8. Navigate to **HTTPRequest_CallBackSearch** to see **Modified Variables** at the bottom of right hand side of the debugger. 
-9. Click on **Set Variable**, which is the next step after **HTTPRequest_CallBackSearch**, to see full Search API response which we wrote to **searchresult** flow variable on the **Step 6** of the current mission configuration. 
 
-![profiles](../graphics/Lab2/L2M3-6.gif)
+7. Review the flow and click on **HTTPRequest_CallBackSearch**. You will see the list of interactions at the bottom of the **Analyze** window. Find the last interaction (the top in the list) and click on **View interaction in debugger** link at the right-hand side of the interaction line. This will cross-launch Debugger to that particular call. Flow Debugger will be opened in a new browser tab.
 
+8. Navigate to **HTTPRequest_CallBackSearch** Activity Name to see **Modified Variables** at the bottom of right-hand side of the debugger.
 
-**Congratulations on completing another mission.**
+9. Click on **Set Variable**, which is the next step after **HTTPRequest_CallBackSearch**, to see full Search API response which we wrote to **searchresult** flow variable on the **Step 6** of the current mission configuration.
+
+    ![profiles](../graphics/Lab2/L2M3-6.gif)
+
+10. On Webex Desktop, make your agent **Available**. Webex Contact Center will reserve your agent right away and propose to answer a callback call.
+
+11. Answer the call and wait until you are connected to a Cisco Technical Support IVR and hear a welcome prompt. Then disconnect the call in agent desktop to clean up pending callback requests.
+
+---
+<p style="text-align:center"><strong>Congratulations, you have succesfully completed Preventing Callback Duplication mission! 🎉🎉 </strong></p>
