@@ -106,10 +106,13 @@ nav:
   - CORE TRACK:
       - Lab Guide:
             - "Mission 1: Basic Call Routing (Flow Template, TTS, Language)": ./main/CoreTrack_Mission1.md
-            - "Mission 2: Using Business Hours to add flexibility": ./main/CoreTrack_Mission2.md
-            - "Mission 3: Work with Event Flow": ./main/CoreTrack_Mission4.md
-            - "Mission 4: Post Call Survey": ./main/CoreTrack_Mission5.md
-            - "Mission 5: Using Flow Designer Tools": ./main/CoreTrack_Mission6.md
+            - "Mission 2: Skill-Based Routing": ./main/CoreTrack_Mission2.md
+            - "Mission 3: Using Business Hours": ./main/CoreTrack_Mission3.md
+            - "Mission 4: Work with Event Flow": ./main/CoreTrack_Mission4.md
+            - "Mission 5: Adding Real-Time Transcript": ./main/CoreTrack_Mission5.md
+            - "Mission 6: Post Call Survey": ./main/CoreTrack_Mission6.md
+            - "Mission 7: Subflow and Variable Override": ./main/CoreTrack_Mission7.md
+            - "Mission 8: Using Flow Designer Tools": ./main/CoreTrack_Mission8.md
       - Conclusion: ./main/CoreTrack_Conclusion.md
   - API TRACK:
       - Lab Guide:
