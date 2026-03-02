@@ -243,42 +243,42 @@ Your mission is to:
     
     **<details><summary>Example of the full response of *Get scheduled callbacks* API</summary>**
 
-        ``` JSON
-            {
-                "meta": {
+    ``` JSON
+        {
+            "meta": {
+                "orgId": "e56f00d4-98d8-4b62-a165-d05a41243d98",
+                "page": 0,
+                "pageSize": 50,
+                "totalPages": 1,
+                "totalRecords": 1,
+                "links": {
+                    "self": "/v1/callbacks/organization/e56f00d4-98d8-4b62-a165-d05a41243d98/scheduled-callback?callbackNumber=%2B14085267209&page=0&pageSize=50sortBy=scheduledTime&sortOrder=asc"
+                }
+            },
+            "data": [
+                {
+                    "id": "190f7f91-bd48-4247-9e47-f9747559f6f5",
+                    "customerName": "+14085267209",
+                    "callbackNumber": "+14085267209",
+                    "timezone": "Europe/Amsterdam",
+                    "scheduleDate": "2026-02-10",
+                    "startTime": "08:30:00",
+                    "endTime": "09:30:00",
+                    "queueId": "f8007be2-3e53-40e0-a1d0-a58a97ed784b",
+                    "callbackReason": null,
+                    "sourceInteraction": "efd7e86c-c095-4e58-9c75-9354668080e0",
+                    "callbackOrigin": "IVR",
+                    "createdTimestamp": 1770670959758,
+                    "lastUpdatedTimestamp": 1770670959758,
+                    "assigneeAgent": null,
+                    "assignedTime": null,
                     "orgId": "e56f00d4-98d8-4b62-a165-d05a41243d98",
-                    "page": 0,
-                    "pageSize": 50,
-                    "totalPages": 1,
-                    "totalRecords": 1,
-                    "links": {
-                        "self": "/v1/callbacks/organization/e56f00d4-98d8-4b62-a165-d05a41243d98/scheduled-callback?callbackNumber=%2B14085267209&page=0&pageSize=50&sortBy=scheduledTime&sortOrder=asc"
-                    }
-                },
-                "data": [
-                    {
-                        "id": "190f7f91-bd48-4247-9e47-f9747559f6f5",
-                        "customerName": "+14085267209",
-                        "callbackNumber": "+14085267209",
-                        "timezone": "Europe/Amsterdam",
-                        "scheduleDate": "2026-02-10",
-                        "startTime": "08:30:00",
-                        "endTime": "09:30:00",
-                        "queueId": "f8007be2-3e53-40e0-a1d0-a58a97ed784b",
-                        "callbackReason": null,
-                        "sourceInteraction": "efd7e86c-c095-4e58-9c75-9354668080e0",
-                        "callbackOrigin": "IVR",
-                        "createdTimestamp": 1770670959758,
-                        "lastUpdatedTimestamp": 1770670959758,
-                        "assigneeAgent": null,
-                        "assignedTime": null,
-                        "orgId": "e56f00d4-98d8-4b62-a165-d05a41243d98",
-                        "campaignId": null,
-                        "callbackType": "scheduled"
-                    }
-                ]
-            }
-        ```
+                    "campaignId": null,
+                    "callbackType": "scheduled"
+                }
+            ]
+        }
+    ```
 
     </details>
     
