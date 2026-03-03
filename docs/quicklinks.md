@@ -33,9 +33,13 @@ layout: post
     <td><span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Team">Your_Attendee_ID</span>_Team<span class="copy"></span></span></td>
   </tr>
   <tr>
-    <td style="background-color: #d9edf7; font-weight: bold; color: black;">Queue</td>
+    <td style="background-color: #d9edf7; font-weight: bold; color: black;">Standard Queue</td>
     <td><span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy"></span></span></td>
-  </tr>  
+  </tr> 
+  <tr>
+    <td style="background-color: #d9edf7; font-weight: bold; color: black;">Skill-Based Queue</td>
+    <td><span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_SBR_Queue<span class="copy"></span></span></td>
+  </tr>   
   <tr>
     <td style="background-color: #d9edf7; font-weight: bold; color: black;">Bussiness Hours</td>
     <td><span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Bussiness_Hours">Your_Attendee_ID</span>_Bussiness_Hours<span class="copy"></span></span></td>

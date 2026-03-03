@@ -287,4 +287,4 @@ Your mission is to:
 8. Please remember to make your agent available within the callback timeframe to take the callback and clean up the schedule.
 
 ---
-<p style="text-align:center"><strong>Congratulations, you have succesfully completed Preventing Callback Duplication mission! 🎉🎉 </strong></p>
+<p style="text-align:center"><strong>Congratulations, you have succesfully completed Callback Scheduling mission! 🎉🎉 </strong></p>
