@@ -116,29 +116,28 @@ nav:
       - Conclusion: ./main/CoreTrack_Conclusion.md
   - API TRACK:
       - Lab Guide:
-            ##- "Advacned Call Routing and Flow Simplification by using API Integration Overview": ./main/Lab2.md
             - "Introduction to Developer Portal": ./main/APITrack_DeveloperPortal.md
             - "Mission 1: Emergency config change": ./main/APITrack_Mission1.md
             - "Mission 2: Routing facilitation": ./main/APITrack_Mission2.md 
-            - "Mission 3: Last Agent Routing": ./main/APITrack_Mission3_AutoCSAT.md
+            - "Mission 3: Last Agent Routing": ./main/APITrack_Mission3.md
             - "Mission 4: Routing Returning Callers": ./main/APITrack_Mission4.md
-            - "Mission 5: Personalized Customer Notification with Functions": ./main/APITrack_Mission5_Function.md
+            - "Mission 5: Personalized Customer Notification with Functions": ./main/APITrack_Mission5.md
       - Conclusion: ./main/APITrack_Conclusion.md
   - CALLBACK TRACK:
       - Lab Guide:
             - "Mission 1: Basic Call Routing (Flow Template, TTS, Language)": ./main/CallbackTrack_Mission1.md ## Same as CoreTrack Mission1
-            - "Mission 2: Adding Call-back functionality to your flow": ./main/CallbackTrack_Mission2.md ## Same as CoreTrack Mission3
+            - "Mission 2: Adding Callback Functionality": ./main/CallbackTrack_Mission2.md ## Same as CoreTrack Mission3
             - "Mission 3: CallBack on Global Error": ./main/CallbackTrack_Mission3.md
-            - "Mission 4: Preventing Callback duplication": ./main/CallbackTrack_Mission4.md
+            - "Mission 4: Preventing Callback Duplication": ./main/CallbackTrack_Mission4.md
+            - "Mission 5: Adding Scheduled IVR Callback": ./main/CallbackTrack_Mission5.md
+            - "Mission 6: Adding Personalized Callback": ./main/CallbackTrack_Mission6.md  
       - Conclusion: ./main/CallbackTrack_Conclusion.md
-  - AI TRACK:
+  - AI AGENT TRACK:
       - Lab Guide:
             - "Mission 1: AI in Action (Autonomous Agent)": ./main/AIAgentTrack_Mission1.md
-            - "Mission 2: AI in Action (Scripted Agent)": ./main/AIAgentTrack_NewUI_Mission2.md
+            - "Mission 2: AI in Action (Scripted Agent)": ./main/AIAgentTrack_Mission2.md
             - "Mission 3: Seamless AI to Human Agent Handoffs": ./main/AIAgentTrack_Mission3.md
-            - "Mission 4: Call Drop Summary": ./main/AI_Assistant_CallDropSummary.md
-###            - "Mission 5: AI in Action (Scripted Agent) - Old UI Interface": ./main/AIAgentTrack_Mission5.md
-      - Conclusion: ./main/AIAgentTrack_Conclusion.md
+##      - Conclusion: ./main/AIAgentTrack_Conclusion.md
   - FINAL CHALLENGE:
       - Troubleshooting Mission:
             - "Final Challenge: Production flow is failing!": ./main/FinalBossFight_Mission.md
