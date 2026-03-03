@@ -132,6 +132,23 @@ nav:
             - "Mission 5: Adding Scheduled IVR Callback": ./main/CallbackTrack_Mission5.md
             - "Mission 6: Adding Personalized Callback": ./main/CallbackTrack_Mission6.md  
       - Conclusion: ./main/CallbackTrack_Conclusion.md
+  - AI ASSISTANT:
+      - Topic Analytics:
+            - "Lab overview": ./main/AI_Lab_Topic_Overview.md
+            - "Mission 1: Explore Topic Analytics": ./main/AI_Lab_Topic_Mission1.md
+            - "(Read Only) Mission 2: Explore Real-Time Topic Analytics": ./main/AI_Lab_Real_Time_Topic_Mission1.md 
+      - AI Assistant Features:  
+            - "Lab overview": ./main/AI_Lab_Features_Overview.md
+            - "Mission 1: AI Agent Transfer Summary": ./main/AI_Lab_Assist_Mission1.md
+            - "Mission 2: Real Time Transcript": ./main/AI_Lab_Assist_Mission3.md
+            - "Mission 3: Wrap Up Summary": ./main/AI_Lab_Assist_Mission4.md
+            - "(Optional) Mission 4: Call Drop Summary": ./main/AI_Lab_Assist_Mission_2.md
+            - "(Read Only) Mission 5: AutoCSAT": ./main/AI_Lab_Assist_AutoCSAT.md
+      - Real-Time Assist (Suggested Responses):
+            - "Lab overview": ./main/AI_Lab_Suggested_Responses_Overview.md
+            - "Mission 1": ./main/AI_Lab_Suggested_Responseds_Mission1.md
+            - "(Optional) Mission2 ": ./main/AI_Lab_Suggested_Responseds_Mission2.md
+      - Conclusion: ./main/AI_Lab_Suggested_Responseds_Conclusion.md
   - AI AGENT TRACK:
       - Lab Guide:
             - "Mission 1: AI in Action (Autonomous Agent)": ./main/AIAgentTrack_Mission1.md
