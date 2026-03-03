@@ -148,7 +148,7 @@ nav:
             - "Lab overview": ./main/AI_Lab_Suggested_Responses_Overview.md
             - "Mission 1": ./main/AI_Lab_Suggested_Responseds_Mission1.md
             - "(Optional) Mission2 ": ./main/AI_Lab_Suggested_Responseds_Mission2.md
-      - Conclusion: ./main/AI_Lab_Suggested_Responseds_Conclusion.md
+      - Conclusion: ./main/AI_Lab_Assistant_Conclusion.md
   - AI AGENT TRACK:
       - Lab Guide:
             - "Mission 1: AI in Action (Autonomous Agent)": ./main/AIAgentTrack_Mission1.md
