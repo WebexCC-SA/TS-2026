@@ -3,26 +3,9 @@
 icon: material/medal
 ---
 
-
-
 # Mission 1: Create AI Autonomous Agent
 
-## <span style="color: blue;">**Recommendation**</span></summary>
-**If the AI Agent feature is already enabled on your Gold Tenant, we recommend using it there instead of the shared environment. This helps avoid tenant limitations, such as the maximum of 100 configurable AI Agents.**
-
-**<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
-
-### AI Autonomous Agent Overview
-
-The Autonomous AI Agent for performing actions can handle various tasks, including:
-
-  - Natural Language Processing (NLP) - Understand and respond to human language in a natural and conversational manner.
-  - Decision making - Make informed choices based on available information and predefined rules.
-  - Automation - Automate repetitive or time-consuming tasks.
-</details>
-
-
-# Mission overview
+## Mission overview
 
 Your mission is to:
 

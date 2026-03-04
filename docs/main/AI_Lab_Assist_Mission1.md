@@ -3,6 +3,8 @@
 icon: material/medal
 ---
 
+<span style="color: red;">This lab has dependency of having AI Agent. Need to mention that and also make this lab the last one in AI Assistant.</span>
+
 ## Feature Description
 
 AI Agent Transfer Summary enhances agent efficiency and elevate customer experiences.
@@ -23,7 +25,7 @@ Your mission is to:
 
 ### (Read Only) Task 1. Order Provisioning & Control Hub Settings
 
-1. You should have the new AI Assistant SKU **A-FLEX-AI-ASST** from CCW provisioned in the tenant.
+1. On production Webex CC tenant you should have the new AI Assistant SKU **A-FLEX-AI-ASST** from CCW provisioned to make AI Assistant features work.
 
 2. Once you have provisioned it, admins with the appropriate profile and access controls will be able to see the AI Assistant menu in Control Hub. From there, the customer can enable/disable the **Virtual Agent Transfer Summary** feature from the Control Hub.
    ![Profiles](../graphics/Lab1_AI_Agent/3.1.png)
@@ -36,8 +38,7 @@ Your mission is to:
    ![Profiles](../graphics/Lab1_AI_Agent/3.43.png)
    <br/><br/>Desktop Layout file: Make sure **ai-assistant** is configured under the **advancedHeader** in case you are using a custom Layout file.
    ![Profiles](../graphics/Lab1_AI_Agent/3.5.png)
-   <br/>You can download a preconfigured desktop layout from here. <br/>
-   [Desktop Layout](https://drive.google.com/file/d/1EnM-2r9XOVm2EcE6ND4fL3L62qZesm5_/view?usp=sharing){:target="\_blank"}
+   <br/>You can download default desktop layout from the **Desktop Layout** configuration page by clicking on **Download default desktop layout** button. <br/>
 
 ### Task 2. Test Agent Transfer Summary Feature
 

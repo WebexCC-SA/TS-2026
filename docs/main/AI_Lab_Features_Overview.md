@@ -4,13 +4,13 @@
 
 This lab demonstrates how to pass contextual intelligence from AI agents to Webex Contact Center agents.
 
-### Key Objectives:
+### Key Objectives
 
 - Capture AI-generated summaries of virtual agent conversations
 - Enable real-time call transcription for human agents
 - Provide agents with full context before and during live interactions
 
-### Benefits:
+### Benefits
 
 - Reduce customer repetition
 - Improve agent efficiency and accuracy
