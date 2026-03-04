@@ -21,23 +21,24 @@ Your mission is to:
 
 3. Make sure the **Edit** mode at the top is set to **ON**. Then, drag and drop the **Virtual Agent V2** and **Disconnect Contact** activities from the left panel onto the Design field.
 
-!!! Note
-    Please make sure to use **VirtualAgentV2** activity and <span style="color: red;">**NOT**</span> **VirtualAgent** also present on the Activity Library for Backward Compatibility.
+    !!! Note
+        Please make sure to use **VirtualAgentV2** activity and <span style="color: red;">**NOT**</span> **VirtualAgent** also present on the Activity Library for Backward Compatibility.
 
-   >
-   > Connect the **New Phone Contact** output node edge to this **VirtualAgentV2** node.
-   >
-   > Connect the **Handled outputs** to **DisconnectContact**.
-   >    
-   > Connect the **Errored** outputs to **DisconnectContact**.
-   >
-   > Click on **VirtulaAgentV2** block and select **Static Contact Center AI Config**.
-   >
-   > Select Contact Center AI Config as **Webex AI Agent (Autonomous)**.
-   >
-   > Virtual Agent: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_2000_AutoAI_Lab">Your_Attendee_ID</span>_2000_AutoAI_Lab<span class="copy" title="Click to copy!"></span></span>**
 
-   ![Profiles](../graphics/Lab1_AI_Agent/2.49.gif)
+    >
+    > Connect the **New Phone Contact** output node edge to this **VirtualAgentV2** node.
+    >
+    > Connect the **Handled outputs** to **DisconnectContact**.
+    >    
+    > Connect the **Errored** outputs to **DisconnectContact**.
+    >
+    > Click on **VirtulaAgentV2** block and select **Static Contact Center AI Config**.
+    >
+    > Select Contact Center AI Config as **Webex AI Agent (Autonomous)**.
+    >
+    > Virtual Agent: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_2000_AutoAI_Lab">Your_Attendee_ID</span>_2000_AutoAI_Lab<span class="copy" title="Click to copy!"></span></span>**
+
+    ![Profiles](../graphics/Lab1_AI_Agent/2.49.gif)
 
 4. Drag and drop **Queue Contact** and **Play Music** nodes. Configure them as the following:
     - **Queue Contact**
@@ -65,14 +66,19 @@ Your mission is to:
 5. **Validate** and **Publish** Flow. In the popped up window, click on dropdown menu to select **Latest** label (**DO NOT** Select any other tag but only **Latest**), then click **Publish**.
    ![Profiles](../graphics/Lab1_AI_Agent/2.51.gif)
 
-6. Assign the Flow to your **Channel (Entry Point)**. Do this by first going to **Channels** and search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**.<br>
+6.  Switch to **Control Hub**. Navigate to **Channels** under **Customer Experience Section**, locate your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**.
 
-7. Click on **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**.
+12. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
+
    ![Profiles](../graphics/Lab1_AI_Agent/2.52.png)
 
-8. In **Channel** settings section, change the following and then **Save** the changes.<br/>
-Routing Flow: **<span class="attendee-id-container">AutonomousAIFlow_2000_<span class="attendee-id-placeholder" data-prefix="AutonomousAIFlow_2000_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and click on **Create Flow**<br/>
-Version Label: **Latest**<br/>
+13. In **Entry Point** settings section change the following, then click **Save** button:
+    
+    >
+    > Routing Flow: ***<span class="attendee-id-container">AutonomousAIFlow_2000_<span class="attendee-id-placeholder" data-prefix="AutonomousAIFlow_2000_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
+    >
+    > Version Label: **Latest**
+
    ![Profiles](../graphics/Lab1_AI_Agent/2.53.gif)
 
 9. Dial the support number assigned to your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** to test the Autonomous AI Agent over a voice call.
