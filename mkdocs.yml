@@ -135,15 +135,15 @@ nav:
   - AI AGENT TRACK:
       - Autonomous AI Agent:
             - "Lab overview": ./main/AI_Lab_Overview.md
-            - "Mission 1: Create AI Autonomous Agent": ./main/AIAgentTrack_Mission1.md
-            - "Mission 2: Integrating the AI Agent with Flow for Voice Calls": ./main/AI_Lab_Aut_MissionX.md
-            - "Mission 3: Send Custom data to Autonomous AI Agent": ./main/AI_Lab_Aut_CustomData.md
-            - "Mission 4: Configure Fulfilment Action to create an order": ./main/AI_Lab_Aut_Mission2.md
-            - "Mission 5: Configure Transfer Action for a Specific Queue": ./main/AI_Lab_Aut_Mission_Transfer.md
-            - "Mission 6: Configure Transfer Action for Webex AI Agent": ./main/AI_Lab_Aut_Mission_Transfer2.md
-            - "(Optional) Mission 7: Configure Action with MCP": ./main/AI_Lab_Aut_Mission_MCP.md
-            - "(Optional) Mission 8: Configure Action with A2A": ./main/AI_Lab_Aut_Mission_A2A.md
-            - "Mission 9: Customize AI Agent Language": ./main/AI_Lab_Aut_Mission.Language.md
+            - "Mission 1: Create AI Autonomous Agent": ./main/AI_Lab_Aut_Mission1.md
+            - "Mission 2: Integrating the AI Agent with Flow for Voice Calls": ./main/AI_Lab_Aut_Mission2.md
+            - "Mission 3: Send Custom data to Autonomous AI Agent": ./main/AI_Lab_Aut_Mission3_CustomData.md
+            - "Mission 4: Configure Fulfilment Action to create an order": ./main/AI_Lab_Aut_Mission4.md
+            - "Mission 5: Configure Transfer Action for a Specific Queue": ./main/AI_Lab_Aut_Mission5_Transfer.md
+            - "Mission 6: Configure Transfer Action for Webex AI Agent": ./main/AI_Lab_Aut_Mission6_Transfer2.md
+            - "(Optional) Mission 7: Configure Action with MCP": ./main/AI_Lab_Aut_Mission7_MCP.md
+            - "(Optional) Mission 8: Configure Action with A2A": ./main/AI_Lab_Aut_Mission8_A2A.md
+            - "Mission 9: Customize AI Agent Language": ./main/AI_Lab_Aut_Mission9_Language.md
       - Scripted AI Agent [BONUS]:
             - "Lab overview": ./main/AI_Lab_Scripted_Overview_New.md
             - "Mission 1: Configure Scripted Agent to answer basic questions": ./main/AI_Lab_Scripted_Mission1.md
