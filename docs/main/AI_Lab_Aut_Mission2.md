@@ -14,10 +14,10 @@ Your mission is to:
 ### Task 1. Build WxCC voice flow with AI Agent.
 
 1. In Control Hub navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**. Select **Start Fresh**.
-   ![Profiles](../graphics/Lab1_AI_Agent/2.47.gif)
+   ![Profiles](../graphics/Lab1_AI_Agent/2.47.gif)<br>
 
 2. Name the new flow **<span class="attendee-id-container">AutonomousAIFlow_2000_<span class="attendee-id-placeholder" data-prefix="AutonomousAIFlow_2000_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and click on **Create Flow**.
-   ![Profiles](../graphics/Lab1_AI_Agent/2.48.png)
+   ![Profiles](../graphics/Lab1_AI_Agent/2.48.png)<br>
 
 3. Make sure the **Edit** mode at the top is set to **ON**. Then, drag and drop the **Virtual Agent V2** and **Disconnect Contact** activities from the left panel onto the Design field.
 
@@ -38,7 +38,7 @@ Your mission is to:
     >
     > Virtual Agent: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_2000_AutoAI_Lab">Your_Attendee_ID</span>_2000_AutoAI_Lab<span class="copy" title="Click to copy!"></span></span>**
 
-    ![Profiles](../graphics/Lab1_AI_Agent/2.49.gif)
+    ![Profiles](../graphics/Lab1_AI_Agent/2.49.gif)<br>
 
 4. Drag and drop **Queue Contact** and **Play Music** nodes. Configure them as the following:
     - **Queue Contact**
@@ -61,44 +61,51 @@ Your mission is to:
       >
       > Click on the **Play Music** node and select Music File: **defaultmusic_on_hold_cisco_opus_no_1.wav**.
        
-    ![Profiles](../graphics/Lab1_AI_Agent/2.50.gif)
+    ![Profiles](../graphics/Lab1_AI_Agent/2.50.gif)<br>
 
-5. **Validate** and **Publish** Flow. In the popped up window, click on dropdown menu to select **Latest** label (**DO NOT** Select any other tag but only **Latest**), then click **Publish**.
-   ![Profiles](../graphics/Lab1_AI_Agent/2.51.gif)
+5. Validate and publish the flow:
 
-6.  Switch to **Control Hub**. Navigate to **Channels** under **Customer Experience Section**, locate your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**.
+    > - Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
+    >
+    > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
+    >
+    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
 
-12. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
+    ![Profiles](../graphics/Lab1_AI_Agent/2.51.gif)<br>
 
-   ![Profiles](../graphics/Lab1_AI_Agent/2.52.png)
-
-13. In **Entry Point** settings section change the following, then click **Save** button:
+6. Switch to Control Hub and navigate to **Channels** under Customer Experience Section
     
-    >
-    > Routing Flow: ***<span class="attendee-id-container">AutonomousAIFlow_2000_<span class="attendee-id-placeholder" data-prefix="AutonomousAIFlow_2000_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
-    >
-    > Version Label: **Latest**
+    > - Locate your Inbound Channel (you can use the search):  **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+    > 
+    > - Select the Routing Flow: **<span class="attendee-id-container">AutonomousAIFlow_2000_<span class="attendee-id-placeholder" data-prefix="AutonomousAIFlow_2000_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
+    > 
+    > - Select the Version Label: **Latest**
+    > 
+    > - Click **Save** in the lower right corner of the screen
 
-   ![Profiles](../graphics/Lab1_AI_Agent/2.53.gif)
+    ![Profiles](../graphics/Lab1_AI_Agent/2.53.gif)<br>
 
-9. Dial the support number assigned to your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** to test the Autonomous AI Agent over a voice call.
-   ![Profiles](../graphics/Lab1_AI_Agent/2.84.png)
+
+7. Dial the support number assigned to your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** to test the Autonomous AI Agent over a voice call.
+    ![Profiles](../graphics/Lab1_AI_Agent/2.84.png)
+<br>
+<br>
 
 ### Task 2. Test Agent Handoff Configurations
 
 1. Go to **Control Hub** and from **Overview > Quick Links**, select **Desktop** option.
-   ![Profiles](../graphics/Lab1_AI_Agent/2.83.gif)
+    ![Profiles](../graphics/Lab1_AI_Agent/2.83.gif)<br>
 2. Select **Desktop** endpoint option and choose the team **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Team">Your_Attendee_ID</span>_Team<span class="copy" title="Click to copy!"></span></span>**. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on every visit.
 
 3. Make your agent ***Available*** and you're ready to make a call.
-   ![profiles](../graphics/Lab1_AI_Agent/5-Agent_Login.gif)
+    ![profiles](../graphics/Lab1_AI_Agent/5-Agent_Login.gif)<br>
 
 4. Dial the support number assigned to your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** channel, and during the conversation with the AI agent, ask to **talk to a representative or live agent**.
 
 5. By default, the **Conversation Transcripts** setting is enabled in **VirtualAgentV2** node.
-   ![Profiles](../graphics/Lab1_AI_Agent/2.54.png)
+    ![Profiles](../graphics/Lab1_AI_Agent/2.54.png)<br>
 
 6. With this setting enabled, the live agent can see the conversation details between the caller and the AI agent. Please check if you can view the IVR transcripts during your test calls with Agent Handoff.
-   ![Profiles](../graphics/Lab1_AI_Agent/2.55.png)
+    ![Profiles](../graphics/Lab1_AI_Agent/2.55.png)
 
 <p style="text-align:center"><strong>Congratulations, you have officially completed the Autonomous AI Agent lab! 🎉🎉 </strong></p>
