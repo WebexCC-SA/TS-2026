@@ -69,7 +69,7 @@ Your mission is to:
 
     ![Profiles](../graphics/Lab1_AI_Agent/2.16.png)
 
-14. In the instructions, add additional specific guidelines that you would like the AI Agent to follow. Just copy the text below and paste it to the **Instructions section**, then press **Save Changes** <br>
+14. In the instructions, add additional specific guidelines that you would like the AI Agent to follow. Just copy the text below and paste it to the **Instructions section**, then press **Save changes**. <br>
 
    ```JSON
     Always first check what is the event for the flowers so you can provide the best option.
@@ -111,7 +111,7 @@ Your mission is to:
     Always ask if the customer needs to confirmation SMS before completing the order.
    ```
    
-    > ![Profiles](../graphics/Lab1_AI_Agent/2.4.png)
+    ![Profiles](../graphics/Lab1_AI_Agent/2.4.png)
 
 15. <span style="color: red;">[Read Only]</span> Here you can find the best practices on how to write the  Instructions: [Prompt engineering tips when writing instructions](https://help.webex.com/en-us/article/nelkmxk/Guidelines-and-best-practices-for-automating-with-AI-agent#concept-template_96114022-037a-46be-80ce-bf8c6b0d67c0){:target="_blank"}
 
@@ -123,13 +123,15 @@ Your mission is to:
 
 ### Task 2. Test your AI Agent
 
-1. Click on **Preview** and test the AI Agent to understand how it behaves using the **chat channel** by clicking on **Start a chat**. You can start the conversation with: <copy>I need flower for my friend>**<span class="copy-static" data-copy-text="I need flower for my friend."><span class="copy" title="Click to copy!"></span></span>. And try to ask what is the flower availability and prices and what would be the total for some flower that you select.
+1. Click on **Preview** and test the AI Agent to understand how it behaves using the **chat channel** by clicking on **Start a chat**. You can start the conversation with: **I need flower for my friend**<span class="copy-static" data-copy-text="I need flower for my friend."><span class="copy" title="Click to copy!"></span></span>. And try to ask what is the flower availability and prices and what would be the total for some flower that you select.
    ![Profiles](../graphics/Lab1_AI_Agent/2.59.gif)
 
 2. Click on **Preview** and test the AI Agent to understand how it behaves using the **voice channel** by clicking on **Start a call**. You can start the conversation with: **"I need flower for my friend"**<span class="copy-static" title="Click to copy!" data-copy-text="I need flowers for my friend"><span class="copy"></span></span> and try to customize your order.
-   > **Note:** This Lab is being conducted in a classroom with approximately 20 attendees.  
-   > Environmental factors, such as background noise and other attendees speaking next to you, may affect the response accuracy.  
-   > For best results, it is **strongly recommended to use computer headphones**, if available.
+   
+!!! Note
+    This Lab is being conducted in a classroom with approximately 20 attendees. <br> 
+    Environmental factors, such as background noise and other attendees speaking next to you, may affect the response accuracy.<br>  
+    For best results, it is **strongly recommended to use computer headphones**, if available.<br>
 
 ![Profiles](../graphics/Lab1_AI_Agent/2.60.gif)
 
