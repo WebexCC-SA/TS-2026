@@ -129,7 +129,7 @@ Your mission is to:
 2. Click on **Preview** and test the AI Agent to understand how it behaves using the **voice channel** by clicking on **Start a call**. You can start the conversation with: **"I need flower for my friend"**<span class="copy-static" title="Click to copy!" data-copy-text="I need flowers for my friend"><span class="copy"></span></span> and try to customize your order.
    
 !!! Note
-    This Lab is being conducted in a classroom with approximately 20 attendees. <br> 
+    This Lab is being conducted in a classroom with approximately 100 attendees. <br> 
     Environmental factors, such as background noise and other attendees speaking next to you, may affect the response accuracy.<br>  
     For best results, it is **strongly recommended to use computer headphones**, if available.<br>
 
