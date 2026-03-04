@@ -31,7 +31,7 @@ Your mission is to:
       {"customer_name": "dear customer"}
      ```
     !!! Note
-      You are free to replace ***"dear customer"** with your name. Ex. *{"customer_name": "John Connor"}*
+        You are free to replace ***"dear customer"** with your name. (Ex. *{"customer_name": "John Connor"}*)
 
     ![Profiles](../graphics/Lab1_AI_Agent/13.2.gif)<br>
 
@@ -47,7 +47,7 @@ Your mission is to:
 
     ![Profiles](../graphics/Lab1_AI_Agent/13.4.gif)<br>
 
-2. In the **Welcome message** text replace the word ***there*** with ***{{customer_name}}***<span class="copy-static" data-copy-text="{{customer_name}}"><span class="copy" title="Click to copy!"></span></span>. In this case we expect that the caller will hear:<br> ***Hi<span style="color: orange;">dear customer</span></summary>, my name is Blossom, the AI Agent. How can I assist you?***
+2. In the **Welcome message** text replace the word ***there*** with ***{{customer_name}}***<span class="copy-static" data-copy-text="{{customer_name}}"><span class="copy" title="Click to copy!"></span></span>. In this case we expect that the caller will hear:<br> ***Hi <span style="color: orange;">dear customer</span></summary>, my name is Blossom, the AI Agent. How can I assist you?***
 
      ![Profiles](../graphics/Lab1_AI_Agent/13.5.gif)<br>
 
