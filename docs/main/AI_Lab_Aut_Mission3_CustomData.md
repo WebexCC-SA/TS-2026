@@ -31,7 +31,7 @@ Your mission is to:
       {"customer_name": "dear customer"}
      ```
     !!! Note
-        You are free to replace ***"dear customer"** with your name. (Ex. *{"customer_name": "John Connor"}*)
+        You are free to replace ***"dear customer"** with your name. (Ex. {"customer_name": "John Connor"})
 
     ![Profiles](../graphics/Lab1_AI_Agent/13.2.gif)<br>
 
