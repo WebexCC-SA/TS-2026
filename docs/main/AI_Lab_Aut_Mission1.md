@@ -16,7 +16,7 @@ Your mission is to:
 
 ## Build
 
-### Task 1. Create a new AI Agent with Knowladge Base
+### Task 1. Create a new AI Agent with Knowledge Base
 
 1. Download the .xlsx file [Flowrs_Catalog](https://docs.google.com/spreadsheets/d/1A5d1ZEPWmPE_38Bi8bVULKLhCH0wyGX4/edit?usp=sharing&ouid=100862210011127627593&rtpof=true&sd=true){:target="\_blank"}.
    > **Flower_Catalog.xlsx** - file contains information on the available single flowers and bouquets, including the price of the flowers or bouquets and occasions that suit the flowers.
