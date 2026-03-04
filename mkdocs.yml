@@ -132,6 +132,26 @@ nav:
             - "Mission 5: Adding Scheduled IVR Callback": ./main/CallbackTrack_Mission5.md
             - "Mission 6: Adding Personalized Callback": ./main/CallbackTrack_Mission6.md  
       - Conclusion: ./main/CallbackTrack_Conclusion.md
+  - AI AGENT TRACK:
+      - Autonomous AI Agent:
+            - "Lab overview": ./main/AI_Lab_Overview.md
+            - "Mission 1: Create AI Autonomous Agent": ./main/AIAgentTrack_Mission1.md
+            - "Mission 2: Integrating the AI Agent with Flow for Voice Calls": ./main/AI_Lab_Aut_MissionX.md
+            - "Mission 3: Send Custom data to Autonomous AI Agent": ./main/AI_Lab_Aut_CustomData.md
+            - "Mission 4: Configure Fulfilment Action to create an order": ./main/AI_Lab_Aut_Mission2.md
+            - "Mission 5: Configure Transfer Action for a Specific Queue": ./main/AI_Lab_Aut_Mission_Transfer.md
+            - "Mission 6: Configure Transfer Action for Webex AI Agent": ./main/AI_Lab_Aut_Mission_Transfer2.md
+            - "(Optional) Mission 7: Configure Action with MCP": ./main/AI_Lab_Aut_Mission_MCP.md
+            - "(Optional) Mission 8: Configure Action with A2A": ./main/AI_Lab_Aut_Mission_A2A.md
+            - "Mission 9: Customize AI Agent Language": ./main/AI_Lab_Aut_Mission.Language.md
+      - Scripted AI Agent [BONUS]:
+            - "Lab overview": ./main/AI_Lab_Scripted_Overview_New.md
+            - "Mission 1: Configure Scripted Agent to answer basic questions": ./main/AI_Lab_Scripted_Mission1.md
+            - "Mission 2 : Integrate Scripted Agent with Voice Flow.": ./main/AI_Lab_Scripted_Mission3.md
+            - "Mission 3 : Configure flow to track an order": ./main/AI_Lab_Scripted_Mission4.md
+            - "Mission 4 : Configure the fulfillment": ./main/AI_Lab_Scripted_Mission5.md
+            - "Mission 5 : Deliver fulfillment results to the caller": ./main/AI_Lab_Scripted_Mission6.md
+      - Conclusion: ./main/AI_Lab_Agent_Conclusion.md
   - AI ASSISTANT:
       - Topic Analytics:
             - "Lab overview": ./main/AI_Lab_Topic_Overview.md
@@ -149,12 +169,6 @@ nav:
             - "Mission 1": ./main/AI_Lab_Suggested_Responseds_Mission1.md
             - "(Optional) Mission2 ": ./main/AI_Lab_Suggested_Responseds_Mission2.md
       - Conclusion: ./main/AI_Lab_Assistant_Conclusion.md
-  - AI AGENT TRACK:
-      - Lab Guide:
-            - "Mission 1: AI in Action (Autonomous Agent)": ./main/AIAgentTrack_Mission1.md
-            - "Mission 2: AI in Action (Scripted Agent)": ./main/AIAgentTrack_Mission2.md
-            - "Mission 3: Seamless AI to Human Agent Handoffs": ./main/AIAgentTrack_Mission3.md
-##      - Conclusion: ./main/AIAgentTrack_Conclusion.md
   - FINAL CHALLENGE:
       - Troubleshooting Mission:
             - "Final Challenge: Production flow is failing!": ./main/FinalBossFight_Mission.md
