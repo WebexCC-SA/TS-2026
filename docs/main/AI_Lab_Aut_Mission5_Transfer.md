@@ -34,8 +34,6 @@ Your mission is to:
 3. Select **New action** option. Then click on **Create new** and choose **Transfer** action.
    ![Profiles](../graphics/Lab1_AI_Agent/11.3.png)<br>
 
-4. Name the action as **<copy>Transfer_to_different_department</copy>**.<br/> In the **Transfer condition** field, paste **<copy>When the customer wants to transfer the call to HR or Billing department use this Action</copy>**.
-
 4. Configure new action as follows:
 
     > - Action name: **Transfer_to_different_department**<span class="copy-static" data-copy-text="Transfer_to_different_department"><span class="copy" title="Click to copy!"></span></span><br>
@@ -44,16 +42,18 @@ Your mission is to:
     ![Profiles](../graphics/Lab1_AI_Agent/11.4.png)<br>
 
 5. Click on add **New input entity**. Configure it with the following: <br>
+
     > Entity name: **department**<span class="copy-static" data-copy-text="department"><span class="copy" title="Click to copy!"></span></span><br>
     > Entity description: **Collect if the customer wants to transfer the call to HR or Billing Department**<span class="copy-static" data-copy-text="Collect if the customer wants to transfer the call to HR or Billing Department"><span class="copy" title="Click to copy!"></span></span><br>
     > Entity example: **HR**<span class="copy-static" data-copy-text="HR"><span class="copy" title="Click to copy!"></span></span><br>
     > Entity example: **Billing**<span class="copy-static" data-copy-text="Billing"><span class="copy" title="Click to copy!"></span></span><br>
+    
     ![Profiles](../graphics/Lab1_AI_Agent/11.5.png)<br>
 
 6. Finally, click on **Add** to add the new action.
     ![Profiles](../graphics/Lab1_AI_Agent/11.6.png)<br>
 
-7. **Publish** the AI Agent.
+7. **Publish** the AI Agent. Provide any version name in popped up window (e.g. "1.2").<br>
     ![Profiles](../graphics/Lab1_AI_Agent/11.14.png)<br>
 
 ### Task 2. Configure voice flow to transfer customers to the HR or Billing queue
@@ -70,8 +70,8 @@ Your mission is to:
 
 4. Create new flow variable 
     
-    > **Name**: **MetaData_AI**<span class="copy-static" data-copy-text="MetaData_AI"><span class="copy" title="Click to copy!"></span></span><br>
-    > **Variable type**: **string** <br>
+    > Name: **MetaData_AI**<span class="copy-static" data-copy-text="MetaData_AI"><span class="copy" title="Click to copy!"></span></span><br>
+    > Variable type: **string** <br>
     > Click **Save**<br>
 
     ![Profiles](../graphics/Lab1_AI_Agent/11.9.gif)<br>
@@ -81,8 +81,6 @@ Your mission is to:
     > - Remove connection from **Escalated** output of the **VirtualAgentV2** node to the **QueueCOntact** node
     >
     > - Connect **Escalated** output of the **VirtualAgentV2** node to the **Set Variable** node
-    >
-    > - Connect **Set Variable** to **WelcomePrompt**.
 
     ![Profiles](../graphics/Lab1_AI_Agent/11.10.gif)<br>
 
@@ -114,7 +112,7 @@ Your mission is to:
 
 13. Click on empty canvas space then click on **Add Flow Variable**
     
-    > Name: **department**<span class="copy-static" data-copy-text="department"><span class="copy" title="Click to copy!"></span></span>.<br>
+    > Name: **department**<span class="copy-static" data-copy-text="department"><span class="copy" title="Click to copy!"></span></span><br>
     >
     > Variable Type: **string**<br>
     >
@@ -122,23 +120,25 @@ Your mission is to:
 
     ![Profiles](../graphics/Lab1_AI_Agent/11.17.gif)<br>
 
-13. Add **Parse** node to the flow and connect **Set Variable** node to the **Parse** node.
+13. Remove connection between **Set Variable** and **Queue Contact** nodes.
+
+14. Add **Parse** node to the flow and connect **Set Variable** node to the **Parse** node.
     ![Profiles](../graphics/Lab1_AI_Agent/11.18.gif)<br>
 
-14. Configure the **Parse** node with the following settings:<br>
+15. Configure the **Parse** node with the following settings:<br>
 
-    > Input Variable: **MetaData_AI**<br>
+    > Input Variable: **MetaData_AI**<span class="copy-static" data-copy-text="MetaData_AI"><span class="copy" title="Click to copy!"></span></span><br>
     > Content Type: **JSON**<br>
     > Output Variable: **department**<br>
-    > Path Expression: **$.actions.Transfer_to_different_department[0].input.department**<span class="copy-static" data-copy-text="BlaBlaBla"><span class="copy" title="Click to copy!"></span></span><br>
+    > Path Expression: **$.actions.Transfer_to_different_department[0].input.department**<span class="copy-static" data-copy-text="$.actions.Transfer_to_different_department[0].input.department"><span class="copy" title="Click to copy!"></span></span><br>
     > ![Profiles](../graphics/Lab1_AI_Agent/11.19.png)<br>
 
-15. Add **Case** node to the flow and connect the **Parse** node to the **Case** node.
+16. Add **Case** node to the flow and connect the **Parse** node to the **Case** node.
     ![Profiles](../graphics/Lab1_AI_Agent/11.20.gif)<br>
 
-16. Configure the **Case** node with the following settings:<br>
+17. Configure the **Case** node with the following settings:<br>
 
-    > Variable: **department**<br>
+    > Variable: **department**<span class="copy-static" data-copy-text="department"><span class="copy" title="Click to copy!"></span></span><br>
     > LINK Description: **HR**<span class="copy-static" data-copy-text="HR"><span class="copy" title="Click to copy!"></span></span><br>
     > LINK Description: **Billing<span class="copy-static" data-copy-text="Billing"><span class="copy" title="Click to copy!"></span></span>**<br>
     > 
@@ -146,16 +146,15 @@ Your mission is to:
     > 
     ![Profiles](../graphics/Lab1_AI_Agent/11.21.png)<br>
 
-17. Connect the **HR**, **Billing** and **Default** cases to the **Queue Contact** node, which should still be present among the flow nodes.
-    ![Profiles](../graphics/Lab1_AI_Agent/11.21.gi)<br>
+18. Connect the **HR**, **Billing** and **Default** cases to the **Queue Contact** node, which should still be present among the flow nodes.<br>
 
     !!! Note
         You will use your queue **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** during testing and verify the selected case using the **Debug** tool.
 
-22. **Validate** and **Publish** the flow.
-    ![Profiles](../graphics/Lab1_AI_Agent/11.26.gi)<br>
+19. **Validate** and **Publish** the flow.
+    ![Profiles](../graphics/Lab1_AI_Agent/11.26n.gif)<br>
 
-23. Dial the support number assigned to your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** channel. During the conversation with AI Agent **ask to transfer you to the HR department**. The call should park to a queue. After the call is completed. Go to **Debug**, find the call to make sure it went to your queue **HR** case.
-    ![Profiles](../graphics/Lab1_AI_Agent/11.27.gi)<br>
+20. Dial the support number assigned to your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** channel. During the conversation with AI Agent **ask to transfer you to the HR department**. The call should park to your queue. After the call is completed. Go to **Debug**, find the call to make sure it went to your queue via **HR** case.
+    ![Profiles](../graphics/Lab1_AI_Agent/11.27.gif)<br>
 
 <p style="text-align:center"><strong>Congratulations, you have officially completed this mission! 🎉🎉 </strong></p>
