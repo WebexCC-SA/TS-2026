@@ -216,13 +216,13 @@ Your mission is to:
    ![Profiles](../graphics/Lab1_AI_Agent/2.68.gif)<br>
 
 2. Double click on the SMS node and configure the following:
-   > Destination: **$(n2.aiAgent.phoneNumber)**
-   > From Number: **447507201958**<br>
+   > Destination: **$(n2.aiAgent.phoneNumber)**<span class="copy-static" data-copy-text="$(n2.aiAgent.phoneNumber)"><span class="copy" title="Click to copy!"></span></span><br>
+   > From Number: **447507201958**<span class="copy-static" data-copy-text="447507201958"><span class="copy" title="Click to copy!"></span></span><br>
    > Message Type: **Text**<br><br>
-   > Message as below:<br><br>
-   > **Here is your order details:**<br>
+   > Message as below:<br>
 
     ``` JSON
+    Here is your order details:
     orderNumber: "$(n3.orderNumber)"
     orderDetails: "$(n2.aiAgent.orderDetails)"
     orderTotal: "$(n2.aiAgent.orderTotal)"
