@@ -246,9 +246,9 @@ Your mission is to:
 3. Check if the confirmation SMS was received on your phone. </br>
    ![Profiles](../graphics/Lab1_AI_Agent/2.73.png)<br>
 
-4. Optionally, you can check your order by accessing the database and replacing ***<<YOUR_PHONE_NUMBER>>*** with the phone number you provided while ordering:
-    ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/flowers?phoneNumber=<<YOUR_PHONE_NUMBER>>***<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/flowers?phoneNumber=<<YOUR_PHONE_NUMBER>>"><span class="copy" title="Click to copy!"></span></span>
-
+4. Optionally, you can check your order by accessing the database and replacing ***'YOUR_PHONE_NUMBER'*** with the phone number you provided while ordering:
+    ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/flowers?phoneNumber='YOUR_PHONE_NUMBER'***<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/flowers?phoneNumber='YOUR_PHONE_NUMBER'"><span class="copy" title="Click to copy!"></span></span><br>
+   ![Profiles](../graphics/Lab1_AI_Agent/2.73_1.png)<br>
 
 
 <p style="text-align:center"><strong>Congratulations, you have officially completed this mission! 🎉🎉 </strong></p>
