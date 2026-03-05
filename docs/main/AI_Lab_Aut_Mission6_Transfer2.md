@@ -79,6 +79,6 @@ Or you can review the full configuration of the **Flower_Wholesale** AI Agent in
 For your reference, please see the chat discussion with the **Flower_WholeSale** AI Agent. This will help you have a similar dialogue during your test call.
 ![Profiles](../graphics/Lab1_AI_Agent/14.13.gif)<br>
 
-In addition, similar to previous mission, you can check **Debug** tool and observe you test call.
+Finally, similar to previous mission, you can check **Debug** tool and observe you test call.
 
 <p style="text-align:center"><strong>Congratulations, you have officially completed this mission! 🎉🎉 </strong></p>
