@@ -7,7 +7,7 @@ icon: material/medal
 
 ## Mission overview
 
-In this mission, you will change the language of your AI agent for the voice channel. This feature allows flexibility for supporting customers in different languages.
+ - In this mission, you will change the language of your AI agent for the voice channel. This feature allows flexibility for supporting customers in different languages.
 
 ---
 
@@ -15,17 +15,29 @@ In this mission, you will change the language of your AI agent for the voice cha
 
 ### Task 1. Configure language related Global Variables in voice flow
 
-1. Go to Flows and open up your voice flow **<copy>AutonomousAI*Flow_2000*<w class="attendee"></w></copy>** and click **Edit Flow**.
-   ![Profiles](../graphics/Lab1_AI_Agent/17.1.gif)
+1. Go to Flows and open up your voice flow **<span class="attendee-id-container">AutonomousAIFlow_2000_<span class="attendee-id-placeholder" data-prefix="AutonomousAIFlow_2000_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and click **Edit Flow**.
 
-2. Click anywhere on the grey field area and then, on the right side, select **Add Global Variables**.
-   ![Profiles](../graphics/Lab1_AI_Agent/17.2.gif)
+2. Click anywhere on the grey field area and navigate to the **Global Flow Properties** panel on the right-hand side.
+    
+    > - Scroll down and Locate the **Predefined Variables** section.
+    >
+    > - Click on the **Add Global Variables** button.
+    >
+    > - Search for **Global_Language**<span class="copy-static" data-copy-text="Global_Language"><span class="copy" title="Click to copy!"></span></span> variable and click on **Add** button.
+    >
+    > - Click on the **Add Global Variables** button one more time.
+    >
+    > - Search for **Global_VoiceName**<span class="copy-static" data-copy-text="Global_VoiceName"><span class="copy" title="Click to copy!"></span></span> variable and click on **Add** button.
+
+
+    ![Profiles](../graphics/Lab1_AI_Agent/17.2.gif)
 
 3. Add Global Variables with name: **Global_VoiceName** and **Global_Language**.
-   ![Profiles](../graphics/Lab1_AI_Agent/2.79.gif)
+    ![Profiles](../graphics/Lab1_AI_Agent/2.79.gif)
 
-4. Review documentation with available languages and voices. <br/>
-   [Supported-languages-and-voices-for-AI-agents](https://help.webex.com/en-us/article/pdef2d/Supported-languages-and-voices-for-AI-agents){:target="\_blank"}
+    !!! Note
+        Review documentation with available languages and voices. <br/>
+        [Supported-languages-and-voices-for-AI-agents](https://help.webex.com/en-us/article/pdef2d/Supported-languages-and-voices-for-AI-agents){:target="\_blank"}
 
 5. Add **SetVariable** node in front of the **NewPhoneContact node**. Select Variable as **Global_Language** and put the value of the language that you want to test. For example, to set up the AI agent to speak Spanish, you can enter **<copy>es-US</copy>**.
    ![Profiles](../graphics/Lab1_AI_Agent/17.3.gif)

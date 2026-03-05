@@ -5,7 +5,7 @@ icon: material/medal
 
 # (Optional) Mission 8: Configure Action with A2A
 
-**<details><summary>What is A2A? <span style="color: orange;"></span></summary>**
+**<details><summary>Good to Know: <span style="color: blue;">What is A2A?</span></summary>**
 
 A2A, or Agent-to-Agent protocol, refers to a standardized method that enables direct communication and collaboration between different AI agents or systems. This protocol allows multiple agents—potentially developed by different organizations or for various functions—to exchange information, coordinate actions, and work together efficiently. In the context of AI, A2A protocols help create more integrated, flexible, and scalable ecosystems by ensuring that agents can share context, delegate tasks, and leverage each other's capabilities to deliver more intelligent and effective solutions.
 
@@ -27,24 +27,25 @@ Imagine an unfortunate situation where a customer is ordering flowers over the p
 
 ### Task 1. Create A2A Action
 
-1. Open up your AI Agent **<copy><w class="attendee"></w>\_2000_AutoAI_Lab</copy>** and start creating the new **Action**.
-   ![Profiles](../graphics/Lab1_AI_Agent/16.1.gif)
+1. Open up your AI Agent **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_2000_AutoAI_Lab">Your_Attendee_ID</span>_2000_AutoAI_Lab<span class="copy" title="Click to copy!"></span></span>** and start creating the new **Action**.
+    ![Profiles](../graphics/Lab1_AI_Agent/16.1.gif)
 
 2. From the list, select **medical-triage-agent** A2A option.
-   ![Profiles](../graphics/Lab1_AI_Agent/16.2.png)
+    ![Profiles](../graphics/Lab1_AI_Agent/16.2.png)
 
 3. You can see that another Action was created, and some of the configurations, such as Description and Entity, were transferred from the A2A integration. This new Action essentially adds functionality to the AI Agent, enabling it to provide customers with health symptom analysis and suggest appropriate actions.
-   ![Profiles](../graphics/Lab1_AI_Agent/16.3.png)
+    ![Profiles](../graphics/Lab1_AI_Agent/16.3.png)
 
-4. **Publish** the changes.
-   ![Profiles](../graphics/Lab1_AI_Agent/16.4.png)
+4. **Publish** the changes. Provide any version name in popped up window (e.g. "1.5").<br>
+    ![Profiles](../graphics/Lab1_AI_Agent/16.4.png)
 
 ### Task 2. Test A2A Action
 
-1. You can test the functionality using the chat **Preview** option. Type to the AI Agent for example this: **<copy>Oh my God, I just got into a car crash and my head is bleeding. What should I do?</copy>**
-   ![Profiles](../graphics/Lab1_AI_Agent/16.5.png)
+1. You can test the functionality using the chat **Preview** option. Type to the AI Agent for example this: **Oh my God, I just got into a car crash and my head is bleeding. What should I do?**<span class="copy-static" data-copy-text="Oh my God, I just got into a car crash and my head is bleeding. What should I do?"><span class="copy" title="Click to copy!"></span></span>
+**
+    ![Profiles](../graphics/Lab1_AI_Agent/16.5.png)
 
 2. Open up the interaction transcripts in the **Session** to confirm that result came from the A2A integration.
-   ![Profiles](../graphics/Lab1_AI_Agent/16.6.gif)
+    ![Profiles](../graphics/Lab1_AI_Agent/16.6.gif)
 
 <p style="text-align:center"><strong>Congratulations, you have officially completed this mission! 🎉🎉 </strong></p>

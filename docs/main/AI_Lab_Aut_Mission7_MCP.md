@@ -5,7 +5,8 @@ icon: material/medal
 
 # (Optional) Mission 7: Configure Action with MCP
 
-**<details><summary>What is MCP? <span style="color: orange;"></span></summary>**
+
+**<details><summary>Good to Know: <span style="color: blue;">What is MCP?</span></summary>**
 
 MCP, or Model Context Protocol, is a standardized framework designed to facilitate the exchange of contextual information between AI models and external systems, enabling more dynamic and context-aware interactions. By using MCP, AI agents can be easily integrated with other external tools, allowing for different types of fulfillment.
 
