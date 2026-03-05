@@ -120,12 +120,12 @@ Your mission is to:
 
     ![Profiles](../graphics/Lab1_AI_Agent/11.17.gif)<br>
 
-13. Remove connection between **Set Variable** and **Queue Contact** nodes.
+14. Remove connection between **Set Variable** and **Queue Contact** nodes.
 
-14. Add **Parse** node to the flow and connect **Set Variable** node to the **Parse** node.
+15. Add **Parse** node to the flow and connect **Set Variable** node to the **Parse** node.
     ![Profiles](../graphics/Lab1_AI_Agent/11.18.gif)<br>
 
-15. Configure the **Parse** node with the following settings:<br>
+16. Configure the **Parse** node with the following settings:<br>
 
     > Input Variable: **MetaData_AI**<span class="copy-static" data-copy-text="MetaData_AI"><span class="copy" title="Click to copy!"></span></span><br>
     > Content Type: **JSON**<br>
@@ -133,10 +133,10 @@ Your mission is to:
     > Path Expression: **$.actions.Transfer_to_different_department[0].input.department**<span class="copy-static" data-copy-text="$.actions.Transfer_to_different_department[0].input.department"><span class="copy" title="Click to copy!"></span></span><br>
     > ![Profiles](../graphics/Lab1_AI_Agent/11.19.png)<br>
 
-16. Add **Case** node to the flow and connect the **Parse** node to the **Case** node.
+17. Add **Case** node to the flow and connect the **Parse** node to the **Case** node.
     ![Profiles](../graphics/Lab1_AI_Agent/11.20.gif)<br>
 
-17. Configure the **Case** node with the following settings:<br>
+18. Configure the **Case** node with the following settings:<br>
 
     > Variable: **department**<span class="copy-static" data-copy-text="department"><span class="copy" title="Click to copy!"></span></span><br>
     > LINK Description: **HR**<span class="copy-static" data-copy-text="HR"><span class="copy" title="Click to copy!"></span></span><br>
@@ -146,15 +146,15 @@ Your mission is to:
     > 
     ![Profiles](../graphics/Lab1_AI_Agent/11.21.png)<br>
 
-18. Connect the **HR**, **Billing** and **Default** cases to the **Queue Contact** node, which should still be present among the flow nodes.<br>
+19. Connect the **HR**, **Billing** and **Default** cases to the **Queue Contact** node, which should still be present among the flow nodes.<br>
 
     !!! Note
         You will use your queue **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** during testing and verify the selected case using the **Debug** tool.
 
-19. **Validate** and **Publish** the flow.
+20. **Validate** and **Publish** the flow.
     ![Profiles](../graphics/Lab1_AI_Agent/11.26n.gif)<br>
 
-20. Dial the support number assigned to your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** channel. During the conversation with AI Agent **ask to transfer you to the HR department**. The call should park to your queue. After the call is completed. Go to **Debug**, find the call to make sure it went to your queue via **HR** case.
+21. Dial the support number assigned to your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** channel. During the conversation with AI Agent **ask to transfer you to the HR department**. The call should park to your queue. After the call is completed. Go to **Debug**, find the call to make sure it went to your queue via **HR** case.
     ![Profiles](../graphics/Lab1_AI_Agent/11.27n.gif)<br>
 
 <p style="text-align:center"><strong>Congratulations, you have officially completed this mission! 🎉🎉 </strong></p>
