@@ -6,7 +6,7 @@ icon: material/medal
 # Mission 4: Configure Fulfilment Action and create an order
 
 
-**<details><summary>Good to Know <span style="color: orange;">[What is fulfilment Action?]</span></summary>**
+**<details><summary>Good to Know: <span style="color: blue;">What is fulfilment Action?</span></summary>**
 
 Fulfilment Action is a task that an AI agent performs by understanding user intents and completes by connecting to external systems over API.
 
@@ -56,8 +56,8 @@ Your mission is to:
 
 4. Configure as follows **_<copy>Create_New_Order</copy>_** and the Action description **_<copy>Collect order details, delivery address, total and response with the orderNumber once the order is completed.</copy>_**. In the Action score select <b>Slot filling and fulfillment</b>.
     
-    > - Action name: <span class="copy-static" data-copy-text="Create_New_Order"><span class="copy" title="Click to copy!"></span></span><br>
-    > - Action description: <span class="copy-static" data-copy-text="Collect order details, delivery address, total and response with the orderNumber once the order is completed."><span class="copy" title="Click to copy!"></span></span><br>
+    > - Action name: **Create_New_Order**<span class="copy-static" data-copy-text="Create_New_Order"><span class="copy" title="Click to copy!"></span></span><br>
+    > - Action description: **Collect order details, delivery address, total and response with the orderNumber once the order is completed.**<span class="copy-static" data-copy-text="Collect order details, delivery address, total and response with the orderNumber once the order is completed."><span class="copy" title="Click to copy!"></span></span><br>
     > - Action score: select **Slot filling and fulfillment** from the drop-down list.<br>
     
     ![Profiles](../graphics/Lab1_AI_Agent/2.18a.gif)<br>
