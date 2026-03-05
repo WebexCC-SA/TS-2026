@@ -155,6 +155,6 @@ Your mission is to:
     ![Profiles](../graphics/Lab1_AI_Agent/11.26n.gif)<br>
 
 20. Dial the support number assigned to your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** channel. During the conversation with AI Agent **ask to transfer you to the HR department**. The call should park to your queue. After the call is completed. Go to **Debug**, find the call to make sure it went to your queue via **HR** case.
-    ![Profiles](../graphics/Lab1_AI_Agent/11.27.gif)<br>
+    ![Profiles](../graphics/Lab1_AI_Agent/11.27n.gif)<br>
 
 <p style="text-align:center"><strong>Congratulations, you have officially completed this mission! 🎉🎉 </strong></p>
