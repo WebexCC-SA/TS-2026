@@ -24,7 +24,7 @@ For this mission, the MCP server was created to search external database for Flo
 
 ### Task 1. Create MCP Action
 
-1. Open up your AI Agent **<copy><w class="attendee"></w>\_2000_AutoAI_Lab</copy>** and start creating the new **Action**.
+1. Open up your AI Agent **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_2000_AutoAI_Lab">Your_Attendee_ID</span>_2000_AutoAI_Lab<span class="copy" title="Click to copy!"></span></span>** and start creating the new **Action**.
    ![Profiles](../graphics/Lab1_AI_Agent/15.1.gif)
 
 2. From the list, select **get_store_locations** MCP option.
@@ -33,7 +33,7 @@ For this mission, the MCP server was created to search external database for Flo
 3. You can see that another Action was created, and some of the configurations, such as Description and Entity, were transferred from the MCP server. This new Action essentially adds functionality to the AI Agent, enabling it to provide customers with store locations. These location details are stored in a third-party database and are accessed through the MCP integration.
    ![Profiles](../graphics/Lab1_AI_Agent/15.3.png)
 
-4. **Publish** the changes.
+4. **Publish** the changes. Provide any version name in popped up window (e.g. "1.4").<br>
    ![Profiles](../graphics/Lab1_AI_Agent/15.4.png)
 
 ### Task 2. Test MCP Action
