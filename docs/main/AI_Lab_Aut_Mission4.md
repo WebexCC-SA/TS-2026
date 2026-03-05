@@ -241,7 +241,14 @@ Your mission is to:
 1. In the **Webex AI Agent Studio**, click on preview and order flowers for your friend. Try to order flowers with or without delivery. When asking for your number, **provide your cellphone number without +**. Complete the order.<br>
    ![Profiles](../graphics/Lab1_AI_Agent/2.72.gif)<br>
 
-2. Check if the confirmation SMS was received on your phone. </br>
+2. Another way to test the order creation is to dial the support number assigned to your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** channel, and create an order during the conversation with the AI agent.
+
+3. Check if the confirmation SMS was received on your phone. </br>
    ![Profiles](../graphics/Lab1_AI_Agent/2.73.png)<br>
+
+4. Optionally, you can check your order by accessing the database and replacing ***<<YOUR_PHONE_NUMBER>>*** with the phone number you provided while ordering:
+    ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/flowers?phoneNumber=<<YOUR_PHONE_NUMBER>>***<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/flowers?phoneNumber=<<YOUR_PHONE_NUMBER>>"><span class="copy" title="Click to copy!"></span></span>
+
+
 
 <p style="text-align:center"><strong>Congratulations, you have officially completed this mission! 🎉🎉 </strong></p>
