@@ -129,7 +129,7 @@ Your mission is to:
 
     > Input Variable: **MetaData_AI**<span class="copy-static" data-copy-text="MetaData_AI"><span class="copy" title="Click to copy!"></span></span><br>
     > Content Type: **JSON**<br>
-    > Output Variable: **department**<br>
+    > Output Variable: **department**<span class="copy-static" data-copy-text="department"><span class="copy" title="Click to copy!"></span></span><br>
     > Path Expression: **$.actions.Transfer_to_different_department[0].input.department**<span class="copy-static" data-copy-text="$.actions.Transfer_to_different_department[0].input.department"><span class="copy" title="Click to copy!"></span></span><br>
     > ![Profiles](../graphics/Lab1_AI_Agent/11.19.png)<br>
 
