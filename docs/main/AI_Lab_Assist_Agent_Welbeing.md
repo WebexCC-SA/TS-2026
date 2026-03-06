@@ -20,7 +20,7 @@ If this mission was not completed, some steps in current mission will not functi
 
 Your mission is to:
 
- - Manually trigger Agent Welbieng scenario for you agent
+ - Manually trigger Agent Wellbieng scenario for your agent
 
 
 ## Verify feature configuration
@@ -56,28 +56,28 @@ Your mission is to:
     > 
     > - Select **Use Authenticated Endpoint**
     >
-    > - Connector: **WxCC_API**
+    > - Connector: **WxCC_API**<span class="copy-static" data-copy-text="WxCC_API"><span class="copy" title="Click to copy!"></span></span>
     > 
-    > - Path: **/agentburnout/mock/event**
+    > - Path: **/agentburnout/mock/event**<span class="copy-static" data-copy-text="/agentburnout/mock/event"><span class="copy" title="Click to copy!"></span></span>
     > 
-    > - Method: **POST**
+    > - Method: **POST**<span class="copy-static" data-copy-text="POST"><span class="copy" title="Click to copy!"></span></span>
     >
-    > - Content Type: **Application/JSON**
+    > - Content Type: **Application/JSON**<span class="copy-static" data-copy-text="Application/JSON"><span class="copy" title="Click to copy!"></span></span>
     >
     > Request Body:  
     ```JSON
-	{
-	"agentId": "You Agent ID will be here",
-   "orgId": "e56f00d4-98d8-4b62-a165-d05a41243d98",
-   "burnoutIndex": 0.9234
-   }
+    {
+        "agentId": "You Agent ID will be here",
+        "orgId": "e56f00d4-98d8-4b62-a165-d05a41243d98",
+        "burnoutIndex": 0.9234
+    }
     ```
 
     ![Profiles](../graphics/Lab1_AI_Agent/AI_ABurn2.gif) 
 
 5. Switch to **Control Hub**, navigate to **Contact Center Users** and search for your admin user (who is also you agent) **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>** and open it. 
 
-6. Copy the **Contact Center User Id** to the buffer, then return to your flow and change **agentid** value from ***"You Agent ID will be here"*** to id from the buffer. The id **MUST** be inside double quotes. Ex. *"agentId": "4333936f-dab9-4cdf-a142-dad826673eec"*
+6. Copy the **Contact Center User Id** to the buffer, then return to your flow and change **agentid** value from <span style="color: blue;">***"You Agent ID will be here"***</span> to id from the buffer. The id <span style="color: red;">**MUST**</span> be inside double quotes. Ex. *"agentId": "4333936f-dab9-4cdf-a142-dad826673eec"*
 
   ![Profiles](../graphics/Lab1_AI_Agent/AI_ABurn2-1.gif) 
 
