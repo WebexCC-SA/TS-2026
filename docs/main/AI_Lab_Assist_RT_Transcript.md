@@ -4,13 +4,13 @@ icon: material/medal
 ---
 
 
-> 🚨 **Important Lab Dependency**
->
-> This mission requires configuration created in the following missions:
->
-> - **[Core Track: Mission 1: Basic Call Routing (Flow Template, TTS, Language)](../CoreTrack_Mission1/)**<br>
->
-> If this mission was not completed, some steps in current mission will not function correctly.
+🚨 **Important Lab Dependency**
+
+This mission requires configuration created in the following missions:
+
+- **[Core Track: Mission 1: Basic Call Routing (Flow Template, TTS, Language)](../CoreTrack_Mission1/)**<br>
+
+If this mission was not completed, some steps in current mission will not function correctly.
 
 ## Feature Description
 
@@ -74,7 +74,15 @@ Your mission is to:
 
 ## Test Real-Time Transcript feature
 
-1. Make your agent **Available**.
+0. Your Agent Desktop session should still be active. If it is not, launch **Desktop** using the cross-launch link in **Control Hub**.
+
+    **<details><summary>See how to run Agent Desktop from the Control Hub</summary>**
+
+    ![Profiles](../graphics/Lab1/RunAgentDesktop.gif)
+
+    </details>
+
+1. Make your agent **Available** and you're ready to make a call.
    ![Profiles](../graphics/Lab1_AI_Agent/3.15.png)
 
 2. Place the test call to the number that is associated with your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**, and ask to talk to an agent. 
