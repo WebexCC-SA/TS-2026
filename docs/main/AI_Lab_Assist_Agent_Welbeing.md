@@ -67,7 +67,7 @@ Your mission is to:
     > Request Body:  
     ```JSON
     {
-        "agentId": "You Agent ID will be here",
+        "agentId": "Your Agent ID will be here",
         "orgId": "e56f00d4-98d8-4b62-a165-d05a41243d98",
         "burnoutIndex": 0.9234
     }
@@ -77,7 +77,7 @@ Your mission is to:
 
 5. Switch to **Control Hub**, navigate to **Contact Center Users** and search for your admin user (who is also you agent) **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>** and open it. 
 
-6. Copy the **Contact Center User Id** to the buffer, then return to your flow and change **agentid** value from <span style="color: green;">***"You Agent ID will be here"***</span> to id from the buffer. The id <span style="color: red;">**MUST**</span> be inside double quotes <span style="color: red;">**" "**</span>. Ex. *"agentId": "4333936f-dab9-4cdf-a142-dad826673eec"*
+6. Copy the **Contact Center User Id** to the buffer, then return to your flow and change **agentid** value from <span style="color: green;">***"Your Agent ID will be here"***</span> to id from the buffer. The id <span style="color: red;">**MUST**</span> be inside double quotes <span style="color: red;">**" "**</span>. Ex. *"agentId": "4333936f-dab9-4cdf-a142-dad826673eec"*
 
   ![Profiles](../graphics/Lab1_AI_Agent/AI_ABurn2-1.gif) 
 
