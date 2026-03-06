@@ -7,130 +7,116 @@ icon: material/medal
 
 ## Story
 
-In this lab, you will complete a mission to enhance customer feedback collection by integrating a survey into the Webex Contact Center call flow. The lab is designed to be simple yet practical, focusing on minimal configuration within the Flow Designer, while leveraging a preconfigured survey template.
-
-> **<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
-> 
-> Supported Survey Question Types in Webex Contact Center
-> 
-> 1. **Customer Satisfaction (CSAT)**:
->     - Purpose: Measure satisfaction with a specific interaction or service.
->     - Example Question: "On a scale of 1 to 5, how satisfied are you with the service you received today?"
->     - Use Case: Assess overall satisfaction at the end of a call or interaction.
-> 2. **Customer Effort Score (CES)**:
->     - Purpose: Evaluate the ease of resolving a customer's issue or completing a task.
->     - Example Question: "On a scale of 1 to 5, how easy was it to complete your task today?"
->     - Use Case: Identify pain points in the customer journey or process efficiency.
-> 3. **Net Promoter Score (NPS)**:
->     - Purpose: Measure customer loyalty and the likelihood of recommending the service.
->     - Example Question: "On a scale of 0 to 10, how likely are you to recommend our service to a friend or colleague?"
->   - Use Case: Gauge long-term customer loyalty and brand advocacy.
-> </details>
+In Webex Contact Center, subflows modularize complex workflows by packaging reusable, independent functions (like business hour checks, queue treatment callback collection, error handling, etc.) into separate mini-flows, which are then called from main flows. Their purpose is to simplify development, reduce main flow size, improve organization, and ensure consistency by promoting code reuse for common tasks, making flows cleaner and easier to manage.
+In the scope of this mission you will use a subflow template to automate queue treatment in the Webex Contact Center environment. You will configure and test two ways of how to define parameters necessary to call the sublow - define them at the main flow level and override at the channel level.
+The main goal is to improve the customer experience while waiting in a queue by playing music, delivering messages, and looping until a predefined condition is met.
 
 ## Call Flow Overview
 
 1. A new call enters the flow. </br>
-2. The flow executes the logic to enable survey functionality.</br>
-3. Agent answers the call.</br>
-4. The flow triggers an event when the agent disconnects from the call.</br>
-5. The caller remains on the line and hears the survey menu.</br>
+2. The flow executes the logic and places the call into a queue.</br>
+3. Once the call is placed in the queue, the main flow calls the Subflow sending few parameters to it.
+4. The Subflow executes the following logic **two times** based on the received parameters:
+    - Plays a music in queue. The duration is defined by the parameter.</br>
+    - Plays a Text-To-Speech message. The text is fetched from the parameter.</br>
+    - Plays a music in queue of the same duration again.</br>
 
 ## Mission Details
 
 Your mission is to:
 
-1. Integrate a preconfigured survey into the call flow using the Flow Designer.
-2. Configure basic logic to determine when to route customers to the survey (e.g., after a call ends).
-3. Understand how Webex Contact Center supports various survey question types, including CSAT, CES, and NPS.
+1. Create a Subflow from the template.
+2. Call the Subflow from the main flow with proper parameters.
+3. Override the Subflow calling parameters at the Channel level.
+3. Make test calls and verify queue treatment done by the Subflow.
 
-!!! Note
-    The survey is prebuilt and includes key questions designed to gather actionable insights from customers. Your task is to focus on configuring the flow and ensuring the survey is triggered seamlessly during the customer journey.
+---
 
-### Preconfigured entities      
-     
-- Survey: **Webex CC 2025**
-- System defined GlobalVariable: **Global_FeedbackSurveyOptIn**
+## Part 1 - Integrate a Subflow with your Main Flow
 
-<span style="color: orange;">[Optional]</span>
-    In case you don't want to use preconfigured Survey you can configure your own. Expand below section to create your own Survey otherwise proceed to **Build** section below
+### Build
 
-**<details><summary>Create your own Survey <span style="color: orange;">[Optional]</span></summary>**
+1. Switch to [Webex Control Hub](https://admin.webex.com){:target="_blank"}. Look for the contact center option in the left pane under **SERVICES – Contact Center** and click on it.
+2. Navigate to **Flows** in the left pane and click on **Subflows** tab at the top of the main window. Then click on **Manage Subflows** dropdown list at the top-right part of the main window and select **Create Subflows**.
+3. **Create a new subflow** tab will be opened. Navigate to **Subflow Templates**.
+4. Choose **Queue Treatment Subflow** template and click **Next**.
 
-- Download audio prompts from the [shared folder](https://drive.google.com/drive/folders/1vS2aXgaCzorGAmGdQ7bP2NJMHNQx2ais?usp=sharing){:target="_blank"}.
+    !!! Note
+        You can press **View Details** link under the template name to observe flow structure and read flow description before proceeding with the template.
 
-- In **Control Hub -> Contact Center** open a **Survey** configuration page under **Customer Experience**. Then click **Create new survey**.
+5. Name your subflow as <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** Then click on **Create Subflow**.
 
-- Enter survey name as **PCS_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** in **Survey name** field. Make sure **IVR survey** is selected. Then click next.
+    !!! Note
+        **Edit** should be set to **On** when you create new flow, but if not switch it from **Edit: Off** mode to **Edit: On** at the top of the page.
 
-    ![profiles](../graphics/Lab1/PCS1.gif)
+    ![profiles](../graphics/Lab1/L1M8_Create_Subflow_Template.gif)
 
-- Edit **Welcome note** and **Thank you note** by uploading respective audio prompts to the survey.
+6. In the bottom right corner toggle **Validation** from **Off** to **On** to check for any potential flow errors and recommendations. 
 
-    ![profiles](../graphics/Lab1/PCS_Welcome.gif)
+    !!! Note
+        You can ignore recommendations but cannot skip errors.
 
-- Click on **Add a question** which is in the middle between **Welcome note** and **Thank you note**. Choose either NPS, CSAT or CES type of question and upload respective audio prompt to the survey.
+7. Click **Publish Subflow**. In popped-up window, make sure the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Subflow**.
+  
+    ![profiles](../graphics/Lab1/L1M8_Publish_Subflow.gif)
 
-- Add more questions if you want.
+8. Switch to the Flow Designer tab with your **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span></span>** opened and make sure **Edit** toggle is **ON**.
 
-- Click **Next**. You can ignore **Error Handling** configuration page. Click **Save**.
+    !!! Note
+        If you closed browser tab with Flow Designer before, switch to [Webex Control Hub](https://admin.webex.com){:target="_blank"}. Look for the contact center option in the left pane under **SERVICES – Contact Center** and click on it. Then navigate to **Flows**, search for your flow <span class="attendee-id-container">**Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and click on it to open it in the flow designer.
 
-    ![profiles](../graphics/Lab1/PCS_questions.gif) 
-</details>
+9. Click on any empty place at flow canvas and make sure you see **General Settings** appeared on the right pane. The scroll down to the **Variable Definition** section and add the following two **Flow Variables** by pressing **Add Flow Variable** button:
 
-## Build
-1. Switch to the Control Hub then go to **Contact Center**. Navigate to the **Surveys** under the **Customer Experience** section. Locate **Webex CC PCS** survey and click on it to familiarise yourself with its configuration.
+    > - Name: **subflowDuration**
+    > - Variable Type: **Integer**
+    > - Default Value: **5**
+    > - Turn on the toggle **Enable External Override**. Make sure **Resource Type** is set as **None (default)**
+    > <br/><br>
+    > - Name: **subflowMessage**
+    > - Variable Type: **String**
+    > - Default Value: **Thanks for your patience. Please hold on while we find an expert for you.**
+    > - Turn on the toggle **Enable External Override**. Make sure **Resource Type** is set as **None (default)**
 
-  ![profiles](../graphics/Lab1/L1M4_PCS_Explore.gif)
+    ![profiles](../graphics/Lab1/L1M8_Create_Flow_Vars.gif)
 
-2. Switch to the Flow Designer. Open your **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**, make sure **Edit** toggle is **ON**.
+10. Delete the **Music** node connected to the **Queue** node. The **EndFlow** node which was connected to the **Music** node becomes unconnected at this step.
+11. Go to the activity library pane on the left, scroll up to the top and click on the **Subflow** tab.
+12. Find your subflow <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>**, drag it to flow canvas and place right after your **Queue** node. Connect it to the other nodes in the following way:
 
-3. Add Global Variable **Global_FeedbackSurveyOptIn** to your flow.
+    > - The output of the **Queue** node to the input of the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>**.
+    > - The main (aka, top) output of the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** node to the input of **PlayMessage** node.
+    > - The **Undefined Error** (aka, bottom) output of the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** node to the input of unconnected **EndFlow** node.
+    > - The output of the **PlayMessage** node to the input of the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** node.
 
-  ![profiles](../graphics/Lab1/L1M4_PCS_Add_GV.gif)
+    ![profiles](../graphics/Lab1/L1M8_Add_Subflow.gif)
 
-4. Delete the connection between the **NewPhoneContact** node and the first **Set Variable** node we used to set language preference. Then drag new **Set Variable** node from the activity library on the left to flow canvas, put it between **NewPhoneContact** and existing **Set Variable** nodes and connect all three nodes into a chain.
-
-  ![profiles](../graphics/Lab1/L1M4_PCS_Add_SetVariable.gif)
-
-5. Click on the new **Set Variable** node you have just added and configure the following fields:
-
-    > - Variable: **Global_FeedbackSurveyOptIn**<span class="copy-static" title="Click to copy!" data-copy-text="Global_FeedbackSurveyOptIn"><span class="copy"></span></span>
-    >
-    > - Set Value: **true**
-
-    ![profiles](../graphics/Lab1/L1M4_PCS_Set_GV.gif)
-
-6. Add a Post Call Survey functionality to the flow:
-
-    > - Open **Event Flows** tab and locate predefined **AgentDisconected** event node marked with light green crossed-out headset icon. If you completed previous mission you should have **HTTP Request** node connected to it.
-    >
-    > - Delete the connection between **HTTP Request** and **DisconnectContact** nodes.
-    >
-    > - Drag **Feedback V2** from the activity library on the left, place it between **HTTP Request** and **DisconnectContact** nodes and connect all three nodes into a chain.
-    >
-    > - Click on **Feedback V2** node and configure Survey Method as **Voice Based** and select **Webex CC PCS**<span class="copy-static" title="Click to copy!" data-copy-text="Webex CC PCS"><span class="copy"></span></span> from the dropdown list.
-
-    ![profiles](../graphics/Lab1/L1M4_PCS_FeedbackV2.gif)
-            
-7. Let's configure the voice message that will be played to the caller if something goes wrong with **Webex CC PCS** survey:
-
-    > - Drag **Play Message** node from the activity library and place it below **Feedback V2** node you have just added.
-    >
-    > - Connect **Undefined Error** output of the **Feedback V2** node to the input of the **Play Message** node
-    >
-    > - Connect the output of the **Play Message** node to the **DisconnectContact** node.
+13. Click on the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** node. Go to the node settings pane on the right and set the following parameters:
     
-    Then click on the **Play Message** node and configure the following fields:
-    
-    > - Enable Text-To-Speech
+    > - Subflow Label: **Latest**
     >
-    > - Connector: Cisco Cloud Text-to-Speech
-    >
-    > - Click the Add Text-to-Speech Message button and paste text: ***Something went wrong on Feedback node. Please call later.***<span class="copy-static" title="Click to copy!" data-copy-text="Something went wrong on Feedback node. Please call later."><span class="copy"></span></span>
-    >
-    > - Delete the selection for Audio File
 
-8. Validate and publish the flow:
+    Scroll down to the **Subflow Input Variables** section and configure the following mapping:
+    
+    >
+    > - Current flow variable: **subflowDuration**
+    >
+    > - Subflow Input Variable: **musicDuration**
+    >
+    
+    Press **Add New** button to configure the mapping for the second variable:
+
+    >
+    > - Current flow variable: **subflowMessage**
+    >
+    > - Subflow Input Variable: **queueMessage**
+
+    ![profiles](../graphics/Lab1/L1M8_Map_Subflow_Vars.gif)
+
+14. Click on the **PlayMessage** node. Go to the node settings pane on the right and paste the following message into the **Text-to-Speech Message** field:
+    
+    > - ***We apologize, but all our agents are currently busy. Your waiting time may be longer than expected.***<span class="copy-static" title="Click to copy!"data-copy-text="We apologize, but all our agents are currently busy. Your waiting time may be longer than expected."><span class="copy"></span></span>
+
+15. Validate and publish the flow:
 
     > - Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
     >
@@ -138,17 +124,76 @@ Your mission is to:
     >
     > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
 
-    ![profiles](../graphics/Lab1/L1M4_PCS_PlayMessage.gif) 
+    ![profiles](../graphics/Lab1/L1M8_Update_Last_Prompt.gif)
 
-## Testing
-1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com** and become **Available** 
-2. Make a test call to the Support Number and accept the call by Agent.
-3. Finish the call by Agent, so the caller could stay on the line. 
-4. Now the caller should hear prompts configured in **Webex CC PCS**. Complete the survey.
-5. To check survey responses, switch to the **Control Hub** and navigate to the **Surveys** under **Customer Experience** section. Locate the **Webex CC PCS** survey and click on the **Download** button on the right-hand side to download a CSV file with the provided Survey responses.
-    
-    !!! Note
-        If you create your own survey, as described in the Optional section of this mission, you might not see the survey responses immediately, as there is a delay in edited surveys.
+### Checkpoint Test
+
+!!! Note
+    Since we called the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** with our custom parameters the caller should hear the following:
+
+    - Repeated two times: 5 seconds of music in queue + our custom message for the subflow ***Thanks for your patience. Please hold on while we find an expert for you.*** + 5 more seconds of music in queue.
+
+    - The message in the main flow: ***We apologize, but all our agents are currently busy. Your waiting time may be longer than expected.***
+
+    - Then the subflow should be called again and start playing 5 seconds of music in queue again.
+
+    Let's test this.
+
+1. <span style="color: red;">[IMPORTANT]</span> Please keep in mind that the agent **does not** need to take call during this mission. Thus, if you logged in to Webex CC Desktop application, please select any Idle state there before making test calls. For example, **Busy**.
+2. Make a test call to the Support Number, ensure that the caller hears all voice prompts described in the note above.
+3. Finish the call.
 
 ---
-<p style="text-align:center"><strong>Congratulations, you have succesfully completed Post Call Survey mission! 🎉🎉 </strong></p>
+
+## Part 2 - Override flow variables at the Channel level
+
+### Build
+
+1. Switch back to **Contact Center** settings on [Webex Control Hub](https://admin.webex.com){:target="_blank"}.
+2. Navigate to **Channels** in the left pane. Search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** and click on it.
+3. Scroll down to the **Entry point settings** section and look at **Override flow settings** part of it. You should see two variables there:
+
+    > - **subDuration**
+    >
+    > - **subMessage**
+
+4. Modify these variables in the following way and save changes.
+
+    Variable **subflowDuration**:<br/>
+
+    > - Turn on **Override value** toggle in the **Value** column.
+    >
+    > - Set new value as **10**.
+    >
+
+    Variable **subflowMessage**:<br/>
+    
+    >
+    > - Turn on **Override value** toggle in the **Value** column.
+    >
+    > - Set new value as ***Thanks for staying with us. Your call will be answered by the next available agent.***.
+
+    !!! Note
+        Please keep in mind that there is **no need to validate and publish your flow** one more time after you have overridden flow variables at the channel level.
+
+    ![profiles](../graphics/Lab1/L1M8_Override_Vars_Channel.gif)
+
+### Checkpoint Test
+
+!!! Note
+    Since we have overridden **subDuration** and **subMessage** variables at the channel level the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** is now being called with these new values. Thus, the caller should hear updated music duration and new message:
+    
+    - Repeated two times: 10 seconds of music in queue + our overrided custom message for the subflow ***Thanks for staying with us. Your call will be answered by the next available agent.*** + 10 more seconds of music in queue.
+    
+    - The same message in the main flow: ***We apologize, but all our agents are currently busy. Your waiting time may be longer than expected.***
+
+    - Then the subflow should be called again and start playing 15 seconds of music in queue again.
+    
+    Let's test this.
+
+1. <span style="color: red;">[IMPORTANT]</span> Please keep in mind that the agent **does not** need to take call during this mission. Thus if you logged in to Webex CC Desktop application, please select any Idle state there before making test calls. For example, **Busy**.
+2. Make a test call to the Support Number, ensure that the caller hears all voice prompts described in the note above.
+3. Finish the call.
+
+---
+<p style="text-align:center"><strong>Congratulations, you have succesfully completed Subflow and Variable Override mission! 🎉🎉 </strong></p>

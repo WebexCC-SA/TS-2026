@@ -3,7 +3,14 @@
 icon: material/medal
 ---
 
-<span style="color: red;">This lab has dependency of having AI Agent. Need to mention that and also make this lab the last one in AI Assistant.</span>
+> 🚨 **Important Lab Dependency**
+>
+> This mission requires configuration created in the following missions:
+>
+> - **AI Agent Track: Mission 1 – Create AI Autonomous Agent**<br>
+> - **AI Agent Track: Mission 2 – Integrating the AI Agent with Flow for Voice Calls**
+>
+> If these missions were not completed, some steps in current mission will not function correctly.
 
 ## Feature Description
 

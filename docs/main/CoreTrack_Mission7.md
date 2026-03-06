@@ -4,196 +4,104 @@ icon: material/medal
 ---
 
 
-
-## Story
-
-In Webex Contact Center, subflows modularize complex workflows by packaging reusable, independent functions (like business hour checks, queue treatment callback collection, error handling, etc.) into separate mini-flows, which are then called from main flows. Their purpose is to simplify development, reduce main flow size, improve organization, and ensure consistency by promoting code reuse for common tasks, making flows cleaner and easier to manage.
-In the scope of this mission you will use a subflow template to automate queue treatment in the Webex Contact Center environment. You will configure and test two ways of how to define parameters necessary to call the sublow - define them at the main flow level and override at the channel level.
-The main goal is to improve the customer experience while waiting in a queue by playing music, delivering messages, and looping until a predefined condition is met.
-
-## Call Flow Overview
-
-1. A new call enters the flow. </br>
-2. The flow executes the logic and places the call into a queue.</br>
-3. Once the call is placed in the queue, the main flow calls the Subflow sending few parameters to it.
-4. The Subflow executes the following logic **two times** based on the received parameters:
-    - Plays a music in queue. The duration is defined by the parameter.</br>
-    - Plays a Text-To-Speech message. The text is fetched from the parameter.</br>
-    - Plays a music in queue of the same duration again.</br>
-
-## Mission Details
-
-Your mission is to:
-
-1. Create a Subflow from the template.
-2. Call the Subflow from the main flow with proper parameters.
-3. Override the Subflow calling parameters at the Channel level.
-3. Make test calls and verify queue treatment done by the Subflow.
-
----
-
-## Part 1 - Integrate a Subflow with your Main Flow
-
-### Build
-
-1. Switch to [Webex Control Hub](https://admin.webex.com){:target="_blank"}. Look for the contact center option in the left pane under **SERVICES – Contact Center** and click on it.
-2. Navigate to **Flows** in the left pane and click on **Subflows** tab at the top of the main window. Then click on **Manage Subflows** dropdown list at the top-right part of the main window and select **Create Subflows**.
-3. **Create a new subflow** tab will be opened. Navigate to **Subflow Templates**.
-4. Choose **Queue Treatment Subflow** template and click **Next**.
-
-    !!! Note
-        You can press **View Details** link under the template name to observe flow structure and read flow description before proceeding with the template.
-
-5. Name your subflow as <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** Then click on **Create Subflow**.
-
-    !!! Note
-        **Edit** should be set to **On** when you create new flow, but if not switch it from **Edit: Off** mode to **Edit: On** at the top of the page.
-
-    ![profiles](../graphics/Lab1/L1M8_Create_Subflow_Template.gif)
-
-6. In the bottom right corner toggle **Validation** from **Off** to **On** to check for any potential flow errors and recommendations. 
-
-    !!! Note
-        You can ignore recommendations but cannot skip errors.
-
-7. Click **Publish Subflow**. In popped-up window, make sure the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Subflow**.
-  
-    ![profiles](../graphics/Lab1/L1M8_Publish_Subflow.gif)
-
-8. Switch to the Flow Designer tab with your **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span></span>** opened and make sure **Edit** toggle is **ON**.
-
-    !!! Note
-        If you closed browser tab with Flow Designer before, switch to [Webex Control Hub](https://admin.webex.com){:target="_blank"}. Look for the contact center option in the left pane under **SERVICES – Contact Center** and click on it. Then navigate to **Flows**, search for your flow <span class="attendee-id-container">**Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and click on it to open it in the flow designer.
-
-9. Click on any empty place at flow canvas and make sure you see **General Settings** appeared on the right pane. The scroll down to the **Variable Definition** section and add the following two **Flow Variables** by pressing **Add Flow Variable** button:
-
-    > - Name: **subflowDuration**
-    > - Variable Type: **Integer**
-    > - Default Value: **5**
-    > - Turn on the toggle **Enable External Override**. Make sure **Resource Type** is set as **None (default)**
-    > <br/><br>
-    > - Name: **subflowMessage**
-    > - Variable Type: **String**
-    > - Default Value: **Thanks for your patience. Please hold on while we find an expert for you.**
-    > - Turn on the toggle **Enable External Override**. Make sure **Resource Type** is set as **None (default)**
-
-    ![profiles](../graphics/Lab1/L1M8_Create_Flow_Vars.gif)
-
-10. Delete the **Music** node connected to the **Queue** node. The **EndFlow** node which was connected to the **Music** node becomes unconnected at this step.
-11. Go to the activity library pane on the left, scroll up to the top and click on the **Subflow** tab.
-12. Find your subflow <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>**, drag it to flow canvas and place right after your **Queue** node. Connect it to the other nodes in the following way:
-
-    > - The output of the **Queue** node to the input of the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>**.
-    > - The main (aka, top) output of the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** node to the input of **PlayMessage** node.
-    > - The **Undefined Error** (aka, bottom) output of the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** node to the input of unconnected **EndFlow** node.
-    > - The output of the **PlayMessage** node to the input of the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** node.
-
-    ![profiles](../graphics/Lab1/L1M8_Add_Subflow.gif)
-
-13. Click on the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** node. Go to the node settings pane on the right and set the following parameters:
-    
-    > - Subflow Label: **Latest**
-    >
-
-    Scroll down to the **Subflow Input Variables** section and configure the following mapping:
-    
-    >
-    > - Current flow variable: **subflowDuration**
-    >
-    > - Subflow Input Variable: **musicDuration**
-    >
-    
-    Press **Add New** button to configure the mapping for the second variable:
-
-    >
-    > - Current flow variable: **subflowMessage**
-    >
-    > - Subflow Input Variable: **queueMessage**
-
-    ![profiles](../graphics/Lab1/L1M8_Map_Subflow_Vars.gif)
-
-14. Click on the **PlayMessage** node. Go to the node settings pane on the right and paste the following message into the **Text-to-Speech Message** field:
-    
-    > - ***We apologize, but all our agents are currently busy. Your waiting time may be longer than expected.***<span class="copy-static" title="Click to copy!"data-copy-text="We apologize, but all our agents are currently busy. Your waiting time may be longer than expected."><span class="copy"></span></span>
-
-15. Validate and publish the flow:
-
-    > - Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
-    >
-    > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
-    >
-    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
-
-    ![profiles](../graphics/Lab1/L1M8_Update_Last_Prompt.gif)
-
-### Checkpoint Test
-
 !!! Note
-    Since we called the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** with our custom parameters the caller should hear the following:
-
-    - Repeated two times: 5 seconds of music in queue + our custom message for the subflow ***Thanks for your patience. Please hold on while we find an expert for you.*** + 5 more seconds of music in queue.
-
-    - The message in the main flow: ***We apologize, but all our agents are currently busy. Your waiting time may be longer than expected.***
-
-    - Then the subflow should be called again and start playing 5 seconds of music in queue again.
-
-    Let's test this.
-
-1. <span style="color: red;">[IMPORTANT]</span> Please keep in mind that the agent **does not** need to take call during this mission. Thus, if you logged in to Webex CC Desktop application, please select any Idle state there before making test calls. For example, **Busy**.
-2. Make a test call to the Support Number, ensure that the caller hears all voice prompts described in the note above.
-3. Finish the call.
-
+    The current mission does not include any configuration steps, but it focuses on additional Flow Designer tools that facilitate flow troubleshooting and might provide you with ideas on how to optimize your flow logic.
 ---
+## Debug Overview
 
-## Part 2 - Override flow variables at the Channel level
+The Debug Tool is an essential feature in the Webex Contact Center Flow Designer, designed to simplify troubleshooting and enhance visibility into the call flow behavior. Its importance lies in its ability to provide real-time insights, enabling administrators and developers to quickly identify and resolve issues that could impact customer experience.
 
-### Build
+**<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
 
-1. Switch back to **Contact Center** settings on [Webex Control Hub](https://admin.webex.com){:target="_blank"}.
-2. Navigate to **Channels** in the left pane. Search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** and click on it.
-3. Scroll down to the **Entry point settings** section and look at **Override flow settings** part of it. You should see two variables there:
+#### Why Debug is Important?
 
-    > - **subDuration**
-    >
-    > - **subMessage**
+1. **Real-Time Analysis**: Tracks the call flow execution step by step, showing which nodes are executed and the data passed between them.
 
-4. Modify these variables in the following way and save changes.
+2. **Error Identification**: Quickly pinpoint errors, such as misconfigured nodes, incorrect variable usage, or unexpected call routing.
 
-    Variable **subflowDuration**:<br/>
+3. **Optimization**: Provides insights into flow performance, allowing you to optimize for efficiency and accuracy.
+</details>
 
-    > - Turn on **Override value** toggle in the **Value** column.
-    >
-    > - Set new value as **10**.
-    >
 
-    Variable **subflowMessage**:<br/>
+### How to Use the Debug Tool
+
+1. Switch to the Flow Designer and open your flow, **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Then, click the **Debug** button at the bottom of the Flow Designer.
+
+2. You can view the calls you've made today during the previous exercises. Please click on the one at the top.
     
-    >
-    > - Turn on **Override value** toggle in the **Value** column.
-    >
-    > - Set new value as ***Thanks for staying with us. Your call will be answered by the next available agent.***.
+    > 
+    > 1. You can search your call by **Interaction ID**
+    > 
+    > 2. Filter by **Date Range** and by **Label**
 
     !!! Note
-        Please keep in mind that there is **no need to validate and publish your flow** one more time after you have overridden flow variables at the channel level.
+        You might see an alert as on the following screenshot. Click refresh button to reload the diagram. 
+        ![profiles](../graphics/Lab1/DebugRefresh.jpg)       
 
-    ![profiles](../graphics/Lab1/L1M8_Override_Vars_Channel.gif)
+3. Observe the execution path, with visual indicators highlighting the flow nodes being executed. You can switch between Event Flows and Main Flows to see all nodes executed.
+4. By clicking on each activity name you will see it's details. ***Examples: Entry point ID, Flow Label, DNIS, selected Business Hours, also TTS value and what events were triggered.***
 
-### Checkpoint Test
+    ![profiles](../graphics/Lab1/FlowDebug1.gif)
 
-!!! Note
-    Since we have overridden **subDuration** and **subMessage** variables at the channel level the <span class="attendee-id-container">**Subflow_<span class="attendee-id-placeholder" data-prefix="Subflow_">Your_Attendee_ID</span></span>** is now being called with these new values. Thus, the caller should hear updated music duration and new message:
-    
-    - Repeated two times: 10 seconds of music in queue + our overrided custom message for the subflow ***Thanks for staying with us. Your call will be answered by the next available agent.*** + 10 more seconds of music in queue.
-    
-    - The same message in the main flow: ***We apologize, but all our agents are currently busy. Your waiting time may be longer than expected.***
+5. Spend some time to explore the tool. Identify bottlenecks, loops, or errors if any. 
+6. As an option, you can break something in your flow and see how Debug tool shows that error.
 
-    - Then the subflow should be called again and start playing 15 seconds of music in queue again.
-    
-    Let's test this.
-
-1. <span style="color: red;">[IMPORTANT]</span> Please keep in mind that the agent **does not** need to take call during this mission. Thus if you logged in to Webex CC Desktop application, please select any Idle state there before making test calls. For example, **Busy**.
-2. Make a test call to the Support Number, ensure that the caller hears all voice prompts described in the note above.
-3. Finish the call.
+By leveraging the **Debug Tool** effectively, you can ensure your call flows function as intended, providing a seamless experience for both customers and agents.
 
 ---
-<p style="text-align:center"><strong>Congratulations, you have succesfully completed Subflow and Variable Override mission! 🎉🎉 </strong></p>
+
+## Flow Analytics Overview
+
+Flow Analytics feature is designed to provide flow developer, administrators and supervisors with a comprehensive, graphical view of how Flow paths are being utilized across all customer interactions. This feature enables better analysis of IVR flow operations, helping to identify areas for improvement and increase self-service containment. The feature provides an aggregated view that allows users to:
+
+  - Analyze traces aggregated over a period of time.
+  - Visualize the aggregated data in a flow diagram, with various metrics like, average call duration, error percentage, along with some activities level metrics. 
+  - Show interaction traces for a selected activity.
+  - Switch between multiple versions of analytics views.
+  - Color-coded links between activities based on the number of activity executions, and status.
+
+**<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
+
+#### Why Flow Analytics is Important?
+
+1. **Performance Monitoring**: Tracks key metrics, such as flow usage, execution frequency, and processing times, helping you assess flow efficiency.
+
+2. **Behavior Analysis**: Identifies patterns in customer interactions and highlights potential issues, such as abandoned calls or potential loops.
+
+3. **Proactive Optimization**: Offers data-driven insights to fine-tune flow configurations, ensuring optimal performance and alignment with business objectives.
+</details>
+
+### How to Use the Flow Analytics Tool
+
+1. On the Flow Designer, click on the **Analyze** tab at the bottom of the Flow Designer to open the Flow Analytics Tool
+
+2. Specify a DateTime range for the report. All calls we made happened today hence select **Today** option.
+
+3. Review visualizations and reports showing flow metrics, such as:
+    
+    - Total flow Executions
+    
+    - Execution paths and their frequency
+    
+    - Average flow duration
+    
+    - Average activities per contact
+    
+    - Activity errors | Activity error %
+
+    ![profiles](../graphics/Lab1/FlowAnalytics1.gif)
+
+4. Drill down into specific interactions by clicking on desired node.
+
+5. If you spot any errors, click on that node. In the popped-up Activity Usage Details window, you can find call details, including Interaction ID, Start and End time, Duration, and a cross-launch link to the Debugger.
+
+    ![profiles](../graphics/Lab1/FlowAnalytics2.gif)
+
+6. Observe older flow versions by selecting **Version History**. Then expand **Other Versions**. Choose anyone you like and click **View**. You might need to specify DateTime range again if the selected flow version was never executed within the chosen range in **Step 2**.
+
+    ![profiles](../graphics/Lab1/FlowAnalytics3.gif)
+
+By leveraging the Flow Analytics Tool, you gain a comprehensive understanding of how your flows perform and interact with customers, enabling you to make data-backed decisions to improve both efficiency and user satisfaction.
+
+---
+<p style="text-align:center"><strong>Congratulations, you have succesfully completed Using Flow Designer Tools mission! 🎉🎉 </strong></p>

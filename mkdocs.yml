@@ -109,10 +109,9 @@ nav:
             - "Mission 2: Skill-Based Routing": ./main/CoreTrack_Mission2.md
             - "Mission 3: Using Business Hours": ./main/CoreTrack_Mission3.md
             - "Mission 4: Work with Event Flow": ./main/CoreTrack_Mission4.md
-            - "Mission 5: Adding Real-Time Transcript": ./main/CoreTrack_Mission5.md
-            - "Mission 6: Post Call Survey": ./main/CoreTrack_Mission6.md
-            - "Mission 7: Subflow and Variable Override": ./main/CoreTrack_Mission7.md
-            - "Mission 8: Using Flow Designer Tools": ./main/CoreTrack_Mission8.md
+            - "Mission 5: Post Call Survey": ./main/CoreTrack_Mission5.md
+            - "Mission 6: Subflow and Variable Override": ./main/CoreTrack_Mission6.md
+            - "Mission 7: Using Flow Designer Tools": ./main/CoreTrack_Mission7.md
       - Conclusion: ./main/CoreTrack_Conclusion.md
   - API TRACK:
       - Lab Guide:
@@ -153,21 +152,23 @@ nav:
             - "Mission 5 : Deliver fulfillment results to the caller": ./main/AI_Lab_Scripted_Mission6.md
       - Conclusion: ./main/AI_Lab_Agent_Conclusion.md
   - AI ASSISTANT:
-      - Topic Analytics:
-            - "Lab overview": ./main/AI_Lab_Topic_Overview.md
-            - "Mission 1: Explore Topic Analytics": ./main/AI_Lab_Topic_Mission1.md
-            - "(Read Only) Mission 2: Explore Real-Time Topic Analytics": ./main/AI_Lab_Real_Time_Topic_Mission1.md 
       - AI Assistant Features:  
             - "Lab overview": ./main/AI_Lab_Features_Overview.md
-            - "Mission 1: AI Agent Transfer Summary": ./main/AI_Lab_Assist_Mission1.md
-            - "Mission 2: Real Time Transcript": ./main/AI_Lab_Assist_Mission3.md
-            - "Mission 3: Wrap Up Summary": ./main/AI_Lab_Assist_Mission4.md
-            - "(Optional) Mission 4: Call Drop Summary": ./main/AI_Lab_Assist_Mission_2.md
+            - "Mission 1: Real Time Transcript": ./main/AI_Lab_Assist_RT_Transcript.md
+            - "Mission 2: Wrap Up Summary": ./main/AI_Lab_Assist_WrapUp_Summary.md
+            - "Mission 3: Call Drop Summary": ./main/AI_Lab_CallDrop_Summary.md
+            - "Mission 4: Agent Welbeing": ./main/AI_Lab_Assist_Agent_Welbeing.md
+            - "Mission 5: AI Agent Transfer Summary": ./main/AI_Lab_Assist_AI_Agent_Transfer_Summary.md
             - "(Read Only) Mission 5: AutoCSAT": ./main/AI_Lab_Assist_AutoCSAT.md
+
       - Real-Time Assist (Suggested Responses):
             - "Lab overview": ./main/AI_Lab_Suggested_Responses_Overview.md
             - "Mission 1": ./main/AI_Lab_Suggested_Responseds_Mission1.md
             - "(Optional) Mission2 ": ./main/AI_Lab_Suggested_Responseds_Mission2.md
+      - Topic Analytics:
+            - "Lab overview": ./main/AI_Lab_Topic_Overview.md
+            - "Mission 1: Explore Topic Analytics": ./main/AI_Lab_Topic_Mission1.md
+            - "(Read Only) Mission 2: Explore Real-Time Topic Analytics": ./main/AI_Lab_Real_Time_Topic_Mission1.md 
       - Conclusion: ./main/AI_Lab_Assistant_Conclusion.md
   - FINAL CHALLENGE:
       - Troubleshooting Mission:
