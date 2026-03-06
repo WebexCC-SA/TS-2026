@@ -4,7 +4,7 @@ icon: material/medal
 ---
 
 
-🚨 **Important Lab Dependency**
+🚨 **<span style="color: blue;">Important Lab Dependency</span>**
 
 This mission requires configuration created in the following missions:
 
@@ -72,9 +72,21 @@ Your mission is to:
    
    ![Profiles](../graphics/Lab1_AI_Agent/3.13.gif)
 
-## Test Real-Time Transcript feature
+6. Return to Control Hub to assign the Flow to your **Channel (Entry Point)**. Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+7. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
+8. In **Entry Point** settings section change the following, then click **Save** button:
 
-0. Your Agent Desktop session should still be active. If it is not, launch **Desktop** using the cross-launch link in **Control Hub**.
+    > - Routing flow: **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
+    >
+    > - Music on hold: **defaultmusic_on_hold.wav**
+    >
+    > - Version label: **Latest**
+
+    ![profiles](../graphics/Lab1/4-ChannelCreation.gif.gif)
+
+## Testing
+
+1. Your Agent Desktop session should still be active. If it is not, launch **Desktop** using the cross-launch link in **Control Hub**.
 
     **<details><summary>See how to run Agent Desktop from the Control Hub</summary>**
 
@@ -82,12 +94,12 @@ Your mission is to:
 
     </details>
 
-1. Make your agent **Available** and you're ready to make a call.
+2. Make your agent **Available** and you're ready to make a call.
    ![Profiles](../graphics/Lab1_AI_Agent/3.15.png)
 
-2. Place the test call to the number that is associated with your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**, and ask to talk to an agent. 
+3. Place the test call to the number that is associated with your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**, and ask to talk to an agent. 
 
-3. Answer the call and begin speaking. The Live Transcripts panel will display the most recent real-time transcript of the conversation between the caller and the agent.
+4. Answer the call and begin speaking. The Live Transcripts panel will display the most recent real-time transcript of the conversation between the caller and the agent.
    ![Profiles](../graphics/Lab1_AI_Agent/3.16.png)
 
 ---

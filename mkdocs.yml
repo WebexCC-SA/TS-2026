@@ -156,7 +156,7 @@ nav:
             - "Lab overview": ./main/AI_Lab_Features_Overview.md
             - "Mission 1: Real Time Transcript": ./main/AI_Lab_Assist_RT_Transcript.md
             - "Mission 2: Wrap Up Summary": ./main/AI_Lab_Assist_WrapUp_Summary.md
-            - "Mission 3: Call Drop Summary": ./main/AI_Lab_CallDrop_Summary.md
+            - "Mission 3: Call Drop Summary": ./main/AI_Lab_Assist_CallDrop_Summary.md
             - "Mission 4: Agent Welbeing": ./main/AI_Lab_Assist_Agent_Welbeing.md
             - "Mission 5: AI Agent Transfer Summary": ./main/AI_Lab_Assist_AI_Agent_Transfer_Summary.md
             - "(Read Only) Mission 5: AutoCSAT": ./main/AI_Lab_Assist_AutoCSAT.md

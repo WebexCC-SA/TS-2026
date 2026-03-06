@@ -3,6 +3,14 @@
 icon: material/medal
 ---
 
+🚨 **<span style="color: blue;">Important Lab Dependency</span>**
+
+This mission requires configuration created in the following missions:
+
+- **[Core Track: Mission 1: Basic Call Routing (Flow Template, TTS, Language)](../CoreTrack_Mission1/)**<br>
+
+If this mission was not completed, some steps in current mission will not function correctly.
+
 ## Feature Description
 
 The Webex Contact Center **Wrap-up Summary AI** feature is part of the AI Assistant capabilities designed to enhance agent productivity and customer experience. This feature automatically generates the conversations summaries based on the interactions between the agent and the customer during a contact center session. It helps agents by summarizing the conversation and recommending next actions, reducing manual effort and improving accuracy in post-call documentation.
@@ -37,17 +45,25 @@ Your mission is to:
    <br/>Agents Team:
    ![Profiles](../graphics/Lab1_AI_Agent/3.41.png)  
     <br/>Desktop Layout:
-   ![Profiles](../graphics/Lab1_AI_Agent/3.43.png)
+   ![Profiles](../graphics/Lab1_AI_Agent/3.43.png) 
 
 ### Task 2. Test Wrap-up Summary feature
 
-1. Make sure the agent is in the **Available** status.
-   ![Profiles](../graphics/Lab1_AI_Agent/3.47.png)
+1. Your Agent Desktop session should still be active. If it is not, launch **Desktop** using the cross-launch link in **Control Hub**.
 
-2. Place a call to your channel. Answer the call with the agent and put the agent on mute if you are using a Webex phone to place the call, as we use one microphone for both the caller and agent. As the customer say that you ordered flowers but didn't receive a delivery.
+    **<details><summary>See how to run Agent Desktop from the Control Hub</summary>**
+
+    ![Profiles](../graphics/Lab1/RunAgentDesktop.gif)
+
+    </details>
+
+2. Make your agent **Available** and you're ready to make a call.
+   ![Profiles](../graphics/Lab1_AI_Agent/3.15.png)
+
+3. Place a call to your channel. Answer the call with the agent and put the agent on mute if you are using a Webex phone to place the call, as we use one microphone for both the caller and agent. As the customer say that you ordered flowers but didn't receive a delivery.
    ![Profiles](../graphics/Lab1_AI_Agent/3.49.png)
 
-3. Disconnect the call. You should see the wrap up summery of the call.
+4. Disconnect the call. You should see the wrap up summary of the call.
    ![Profiles](../graphics/Lab1_AI_Agent/3.50.png)
 
 <p style="text-align:center"><strong>Congratulations, you have officially completed this mission! 🎉🎉 </strong></p>
