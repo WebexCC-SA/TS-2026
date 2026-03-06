@@ -124,8 +124,6 @@ Flow Templates are designed to empower developers, speed up the development life
 
         - If you are logged out for any reason (for example, due to a network issue, manual logout, or closing the browser tab), launch **Desktop** using the cross-launch link from **Control Hub**, as described above.<br>
 
-    ![profiles](../graphics/Lab1/L1M1_Agent_Login.gif)
-
 5. Open your Webex App and dial the Support Number provided to you, which is configured in your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** configuration.
 
     ![profiles](../graphics/Lab1/WxApp_Test.gif)

@@ -95,9 +95,9 @@ Your mission is to:
 
 1. Go to **Control Hub** and from **Overview > Quick Links**, select **Desktop** option.
     ![Profiles](../graphics/Lab1_AI_Agent/2.83.gif)<br>
-2. Select **Desktop** endpoint option and choose the team **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Team">Your_Attendee_ID</span>_Team<span class="copy" title="Click to copy!"></span></span>**. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on every visit.
+2. Choose the team **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Team">Your_Attendee_ID</span>_Team<span class="copy" title="Click to copy!"></span></span>**. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on every visit.
 
-3. Make your agent ***Available*** and you're ready to make a call.
+3. Make your agent **Available** and you're ready to make a call.
     ![profiles](../graphics/Lab1_AI_Agent/5-Agent_Login.gif)<br>
 
 4. Dial the support number assigned to your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** channel, and during the conversation with the AI agent, ask to **talk to a representative or live agent**.
