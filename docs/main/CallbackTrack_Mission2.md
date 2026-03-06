@@ -176,7 +176,7 @@ Your mission is to: </br>
     
 ## Testing
     
-1. Make sure you're logged into the Webex CC Desktop application as an Agent and set the status to **Not Available**. In this case, the call will not be assigned to an agent, and a callback will be proposed to the caller.
+1. Make sure you're logged into the Webex CC Desktop as an Agent and set the status to **Not Available**. In this case, the call will not be assigned to an agent, and a callback will be proposed to the caller.
 2. Make a call to the Support Number provided to you. If your flow is set up correctly, you should hear a message that you configured, offering you the option to schedule a callback.
 3. When callback is proposed, press 1 on Webex App Keypad to request a callback. 
 4. When asked, provide a new number for a callback. Because in the current lab we have number limitations, we are going to provide a well-known Cisco Worldwide Technical Support contact number **1 408 526 7209**<span class="copy-static" title="Click to copy!" data-copy-text="+14085267209"><span class="copy"></span></span> as a callback number. Use the Keypad in Webex app to provide the Cisco Technical Support number, then confirm when asked.

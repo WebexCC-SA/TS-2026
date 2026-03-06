@@ -39,9 +39,15 @@ Your mission is to:
 
 ## Testing
     
-Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **<span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen where you may need to enter the email address again and the password provided to you. 
+1. Your Agent Desktop session should still be active. If it is not, launch **Desktop** using the cross-launch link in **Control Hub**.
 
-1. With your agent remaining in **Not Available** place a test call to your Support Number.
+    **<details><summary>See how to run Agent Desktop from the Control Hub</summary>**
+
+    ![Profiles](../graphics/Lab1/RunAgentDesktop.gif)
+
+    </details>
+
+1. While your agent remaining in **Not Available** place a test call to your Support Number.
 
 2. Click on the little plus sign next to **My Workstation** on top left corner, choose **Schedule a callback** from drop down menu. 
 

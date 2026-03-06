@@ -78,9 +78,19 @@ Your mission is to:
 
     Let's test this.
 
-1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com** and become **Available** 
-2. Make a test call to the Support Number, ensure the call is assigned to your Agent and answer it.
-3. Finish the call.
+1. Your Agent Desktop session should still be active. If it is not, launch **Desktop** using the cross-launch link in **Control Hub**.
+
+    **<details><summary>See how to run Agent Desktop from the Control Hub</summary>**
+
+    ![Profiles](../graphics/Lab1/RunAgentDesktop.gif)
+
+    </details>
+
+2. On your Agent Desktop, make your agent **Available** and you're ready to make a call.
+   ![Profiles](../graphics/Lab1_AI_Agent/3.15.png)
+
+3. Make a test call to the Support Number, ensure the call is assigned to your Agent and answer it.
+4. Finish the call.
 
 ---
 
@@ -114,10 +124,20 @@ Your mission is to:
 
     Let's test this.
 
-1. Open your Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and make sure your agent is in the **Available** state. 
-2. Make a test call to the Support Number. Ensure the caller hears the welcome prompt, then the call is placed in a queue and the caller hears music in queue.
-3. Make sure the call stays in the queue and not assigned to your agent even though the agent is available.
-4. Finish the call.
+1. Your Agent Desktop session should still be active. If it is not, launch **Desktop** using the cross-launch link in **Control Hub**.
+
+    **<details><summary>See how to run Agent Desktop from the Control Hub</summary>**
+
+    ![Profiles](../graphics/Lab1/RunAgentDesktop.gif)
+
+    </details>
+
+2. On your Agent Desktop, make your agent **Available** and you're ready to make a call.
+   ![Profiles](../graphics/Lab1_AI_Agent/3.15.png)
+
+3. Make a test call to the Support Number. Ensure the caller hears the welcome prompt, then the call is placed in a queue and the caller hears music in queue.
+4. Make sure the call stays in the queue and not assigned to your agent even though the agent is available.
+5. Finish the call.
 
 ## Part 3 - Add Skill Relaxation Rule
 
@@ -166,7 +186,7 @@ Your mission is to:
 
     Let's test this.
 
-1. Open your Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and make sure your agent is in the **Available** state. 
+1. Open your Webex CC Desktop and make sure your agent is in the **Available** state. 
 2. Make a test call to the Support Number. Ensure that the caller hears the welcome prompt, then the call is placed in a queue and caller hears music in queue.
 3. Make sure the call stays in the queue for 15 seconds before being assigned to your agent.
 4. Answer the call and verify that it works.
@@ -194,7 +214,7 @@ Your mission is to:
     >
     > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
 
-3. Open your Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and make sure your agent is in the **Available** state.
+3. Open your Webex CC Desktop and make sure your agent is in the **Available** state.
 4. Make another test call to the Support Number and confirm that the caller hears the welcome message, and then the call is instantly assigned to your agent after entering the queue.
 
 ---

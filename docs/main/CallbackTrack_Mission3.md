@@ -248,7 +248,7 @@ Your mission is to:
 ## Testing
 
 
-1. Make sure you're logged into Webex CC Desktop application as Agent and set status to **Not Available** (select any Idle state). In this case call will not be assigned to an agent and callback will be proposed to a caller.
+1. Make sure you're logged into Webex CC Desktop as Agent and set status to **Not Available** (select any Idle state). In this case call will not be assigned to an agent and callback will be proposed to a caller.
 
 2. Make a call to the Support Number and if success you should hear configured messages.
 

@@ -139,7 +139,7 @@ Your mission is to:
 
     Let's test this.
 
-1. <span style="color: red;">[IMPORTANT]</span> Please keep in mind that the agent **does not** need to take call during this mission. Thus, if you logged in to Webex CC Desktop application, please select any Idle state there before making test calls. For example, **Busy**.
+1. <span style="color: red;">[IMPORTANT]</span> Please keep in mind that the agent **does not** need to take call during this mission. Thus, if you logged in to Webex CC Desktop, please select any Idle state there before making test calls. For example, **Busy**.
 2. Make a test call to the Support Number, ensure that the caller hears all voice prompts described in the note above.
 3. Finish the call.
 
@@ -191,7 +191,7 @@ Your mission is to:
     
     Let's test this.
 
-1. <span style="color: red;">[IMPORTANT]</span> Please keep in mind that the agent **does not** need to take call during this mission. Thus if you logged in to Webex CC Desktop application, please select any Idle state there before making test calls. For example, **Busy**.
+1. <span style="color: red;">[IMPORTANT]</span> Please keep in mind that the agent **does not** need to take call during this mission. Thus if you logged in to Webex CC Desktop, please select any Idle state there before making test calls. For example, **Busy**.
 2. Make a test call to the Support Number, ensure that the caller hears all voice prompts described in the note above.
 3. Finish the call.
 

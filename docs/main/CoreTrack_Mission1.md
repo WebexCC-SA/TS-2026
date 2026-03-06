@@ -108,20 +108,29 @@ Flow Templates are designed to empower developers, speed up the development life
 
 ### Checkpoint Test
 
-1. Launch Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **<span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>** You will see another login screen with Webex icon on it where you may need to enter the email address again and the password provided to you.
-2. Allow notifications and browser to access Microphone by clicking **Allow** in the relevant pop-up prompts.
-3. Make your agent **Available** and you're ready to make a call.
+1. Launch **Webex CC Desktop** by clicking on **Desktop** cross-launch link in **Control Hub**.
+
+    ![Profiles](../graphics/Lab1/RunAgentDesktop.gif)
+
+2. Select Team **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Team**. Click **Submit**. 
+
+3. Allow notifications and browser to access Microphone by clicking **Allow** in the relevant pop-up prompts.<br>
+4. Make your agent **Available** and you're ready to make a call.
 
     !!! Note
-        This is the only time during the lab when you need to log in to the Webex CC Desktop application. It has been configured to keep your agent logged into the application for the entire duration of the lab. If, for any reason, you are logged out manually or due to a network error, please log in again as explained above.
+        - Remember that your **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>** admin user has a Premium Agent license assigned, hence can play 2 roles in your lab.<br>
+
+        - This is the only time during the lab when you need to log in to **Webex Contact Center Desktop**. The system is configured to keep your agent session active for the entire duration of the lab.<br>
+
+        - If you are logged out for any reason (for example, due to a network issue, manual logout, or closing the browser tab), launch **Desktop** using the cross-launch link from **Control Hub**, as described above.<br>
 
     ![profiles](../graphics/Lab1/L1M1_Agent_Login.gif)
 
-4. Open your Webex App and dial the Support Number provided to you, which is configured in your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** configuration.
+5. Open your Webex App and dial the Support Number provided to you, which is configured in your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** configuration.
 
     ![profiles](../graphics/Lab1/WxApp_Test.gif)
 
-5. Ensure that you hear a welcome prompt configured in your flow and receive an incoming call in your agent desktop. Answer the call in the agent desktop and confirm that it has been successfully established. Then end the call, select any value from the **Wrap Up Reasons** dropdown list on the agent desktop, and press the **Submit Wrap Up** button.
+6. Ensure that you hear a welcome prompt configured in your flow and receive an incoming call in your agent desktop. Answer the call in the agent desktop and confirm that it has been successfully established. Then end the call, select any value from the **Wrap Up Reasons** dropdown list on the agent desktop, and press the **Submit Wrap Up** button.
 
     ![profiles](../graphics/Lab1/L1M1_Agent_Answer.gif)
 

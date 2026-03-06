@@ -140,13 +140,19 @@ For more information of how you can use MockAPI please watch these Vidcasts:
 
 ## Testing
 
-1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **<span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with Webex icon on it where you may need to enter the email address again and the password provided to you.
+1. Your Agent Desktop session should still be active. If it is not, launch **Desktop** using the cross-launch link in **Control Hub**.
 
-2. Select Team **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Team**. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on ever visit.
+    **<details><summary>See how to run Agent Desktop from the Control Hub</summary>**
 
-3. Make your agent **Available** and you're ready to make a call.
+    ![Profiles](../graphics/Lab1/RunAgentDesktop.gif)
 
-    ![profiles](../graphics/Lab1/L1M1_Agent_Login.gif)
+    - Select Team **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Team**. Click **Submit**. Allow browser to access Microphone by clicking **Allow** on ever visit.
+
+    </details>
+
+2. On your Agent Desktop, make your agent **Available** and you're ready to make a call.
+   ![Profiles](../graphics/Lab1_AI_Agent/3.15.png)
+
 
 4. Make a call to test you flow. If everything configured as per instructions you should hear a **welcome1** message that is a value of ***$[0].welcomePrompt1*** and then ***$[0].welcomePrompt2***. Finally, the call should land on the ***$[0].queue***
 

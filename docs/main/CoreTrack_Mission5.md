@@ -141,11 +141,21 @@ Your mission is to:
     ![profiles](../graphics/Lab1/L1M4_PCS_PlayMessage.gif) 
 
 ## Testing
-1. Your Agent desktop session should be still active but if not, use Webex CC Desktop application ![profiles](../graphics/overview/Desktop_Icon40x40.png) and login with agent credentials you have been provided **wxcclabs+agent_ID<span class="attendee-id-placeholder">Your_Attendee_ID</span>@gmail.com** and become **Available** 
-2. Make a test call to the Support Number and accept the call by Agent.
-3. Finish the call by Agent, so the caller could stay on the line. 
-4. Now the caller should hear prompts configured in **Webex CC PCS**. Complete the survey.
-5. To check survey responses, switch to the **Control Hub** and navigate to the **Surveys** under **Customer Experience** section. Locate the **Webex CC PCS** survey and click on the **Download** button on the right-hand side to download a CSV file with the provided Survey responses.
+1. Your Agent Desktop session should still be active. If it is not, launch **Desktop** using the cross-launch link in **Control Hub**.
+
+    **<details><summary>See how to run Agent Desktop from the Control Hub</summary>**
+
+    ![Profiles](../graphics/Lab1/RunAgentDesktop.gif)
+
+    </details>
+
+2. On your Agent Desktop, make your agent **Available** and you're ready to make a call.
+   ![Profiles](../graphics/Lab1_AI_Agent/3.15.png)
+
+3. Make a test call to the Support Number and accept the call by Agent.
+4. Finish the call by Agent, so the caller could stay on the line. 
+5. Now the caller should hear prompts configured in **Webex CC PCS**. Complete the survey.
+6. To check survey responses, switch to the **Control Hub** and navigate to the **Surveys** under **Customer Experience** section. Locate the **Webex CC PCS** survey and click on the **Download** button on the right-hand side to download a CSV file with the provided Survey responses.
     
     !!! Note
         If you create your own survey, as described in the Optional section of this mission, you might not see the survey responses immediately, as there is a delay in edited surveys.
