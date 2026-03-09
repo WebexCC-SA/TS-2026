@@ -5,12 +5,12 @@ icon: material/medal
 
 🚨 **<span style="color: red;">Important Lab Dependency</span>**
 
- This mission requires configuration created in the following missions:
+This mission requires configuration created in the following missions:
 
- - **[AI Agent Track: Mission 1 – Create AI Autonomous Agent](../AI_Lab_Aut_Mission1/)**<br>
- - **[AI Agent Track: Mission 2 – Integrating the AI Agent with Flow for Voice Calls](../AI_Lab_Aut_Mission1/)**
+1. **[AI Agent Track: Mission 1 – Create AI Autonomous Agent](../AI_Lab_Aut_Mission1/)**<br>
+2. **[AI Agent Track: Mission 2 – Integrating the AI Agent with Flow for Voice Calls](../AI_Lab_Aut_Mission1/)**
 
- If these missions were not completed, some steps in current mission will not function correctly.
+If these missions were not completed, some steps in current mission will not function correctly.
 
 ---
 

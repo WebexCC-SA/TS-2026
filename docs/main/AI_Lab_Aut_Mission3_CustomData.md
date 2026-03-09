@@ -3,7 +3,16 @@
 icon: material/medal
 ---
 
-# Mission 3: Send Custom data to Autonomous AI Agent
+🚨 **<span style="color: red;">Important Lab Dependency</span>**
+
+This mission requires configuration created in the following missions:
+
+1. **[AI Agent Track: Mission 1: Create AI Autonomous Agent](../AI_Lab_Aut_Mission1/)**<br>
+2. **[AI Agent Track: Mission 2: Integrating the AI Agent with Flow for Voice Calls](../AI_Lab_Aut_Mission2/)**<br>
+
+If this mission was not completed, some steps in current mission will not function correctly.
+
+---
 
 Passing custom data feature is now available for autonomous AI agents. This feature enhances the end-user experience and provides you with greater control over voice conversations. With this feature, developers can send a JSON payload from the WXCC flow directly to the autonomous AI agent at the start of each session. You can use this payload to customize agent behavior for each customer or to pass information from the flow that the AI agent needs.
 

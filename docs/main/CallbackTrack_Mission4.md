@@ -8,10 +8,10 @@ icon: material/medal
 
 This mission requires configuration created in the following missions:
 
-- **[Core Track: Mission 1: Basic Call Routing (Flow Template, TTS, Language)](../CoreTrack_Mission1/)**<br>
-- **[Callback Track: Mission 1: Adding Callback Functionality](../CallbackTrack_Mission1/)**<br>
-- **[Callback Track: Mission 2: Callback on Global Error](../CallbackTrack_Mission2/)**<br>
-- **[Callback Track: Mission 3: Preventing Callback duplication](../CallbackTrack_Mission3/)**<br>
+1. **[Core Track: Mission 1: Basic Call Routing (Flow Template, TTS, Language)](../CoreTrack_Mission1/)**<br>
+2. **[Callback Track: Mission 1: Adding Callback Functionality](../CallbackTrack_Mission1/)**<br>
+3. **[Callback Track: Mission 2: Callback on Global Error](../CallbackTrack_Mission2/)**<br>
+4. **[Callback Track: Mission 3: Preventing Callback duplication](../CallbackTrack_Mission3/)**<br>
 
 If this mission was not completed, some steps in current mission will not function correctly.
 

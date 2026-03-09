@@ -7,7 +7,7 @@ icon: material/medal
 
  This mission requires configuration created in the following missions:
 
- - **<span style="color: green;">NO DEPENDENCY</span>**
+1. **<span style="color: green;">NO DEPENDENCY</span>**
 
 ---
 

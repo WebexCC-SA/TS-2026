@@ -7,7 +7,7 @@ icon: material/medal
 
  This mission requires configuration created in the following missions:
 
- - **<span style="color: green;">NO DEPENDENCY</span>**
+**<span style="color: green;">NO DEPENDENCY</span>**
 
 !!! Note
     The input in the images that follow are only examples. They do not reflect the input you need to use in the lab exercises. In some cases, the input in the images may not follow the same attendee or pod ID from previous images. They are for representation only

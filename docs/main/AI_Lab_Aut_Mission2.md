@@ -7,7 +7,7 @@ icon: material/medal
 
 This mission requires configuration created in the following missions:
 
-- **[AI Agent Track: Mission 1: Create AI Autonomous Agent](../AI_Lab_Aut_Mission1/)**<br>
+1. **[AI Agent Track: Mission 1: Create AI Autonomous Agent](../AI_Lab_Aut_Mission1/)**<br>
 
 If this mission was not completed, some steps in current mission will not function correctly.
 

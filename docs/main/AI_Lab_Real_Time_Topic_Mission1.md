@@ -3,6 +3,14 @@
 icon: material/medal
 ---
 
+🚨 **<span style="color: red;">Important Lab Dependency</span>**
+
+This mission requires configuration created in the following missions:
+
+1. **<span style="color: green;">NO DEPENDENCY</span>**
+
+---
+
 ## Feature Description
 
 The all-new topic analytics empowers you to discover emerging topics as customer interactions occur, providing instant visibility into evolving trends and concerns. By automatically labeling each interaction, you gain immediate, actionable insights that enable faster, data-driven decisions. This dynamic approach ensures your team can quickly adapt to changing customer needs, optimize operations, and stay ahead of potential issues.

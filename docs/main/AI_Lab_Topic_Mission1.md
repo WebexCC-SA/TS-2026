@@ -3,6 +3,14 @@
 icon: material/medal
 ---
 
+🚨 **<span style="color: red;">Important Lab Dependency</span>**
+
+This mission requires configuration created in the following missions:
+
+1. **<span style="color: green;">NO DEPENDENCY</span>**
+
+---
+
 ### Task 1. Review Flower Delivery Topic Collection
 
 1. Go to <b>Contact centre overview</b>. Under Quick Links , click on **Topic Analytics**.
