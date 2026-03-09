@@ -36,7 +36,7 @@ Your mission is to:
 3. Test Real-Time Transcript feature
 
 
-## Verify feature configuration
+## <span style="color: red;">[READ ONLY]</span> Verify feature configuration
 
 1. Switch to Control Hub and navigate to **AI Assistant** under Desktop Experience section. Make sure **Real-time Transcriptions** feature is turned on. 
 
@@ -84,7 +84,7 @@ Your mission is to:
 
     ![profiles](../graphics/Lab1/4-ChannelCreation.gif.gif)
 
-## Testing
+## Test Real-Time Transcription feature
 
 1. Your Agent Desktop session should still be active. If it is not, launch **Desktop** using the cross-launch link in **Control Hub**.
 

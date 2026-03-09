@@ -3,14 +3,14 @@
 icon: material/medal
 ---
 
-> 🚨 **Important Lab Dependency**
->
-> This mission requires configuration created in the following missions:
->
-> - **AI Agent Track: Mission 1 – Create AI Autonomous Agent**<br>
-> - **AI Agent Track: Mission 2 – Integrating the AI Agent with Flow for Voice Calls**
->
-> If these missions were not completed, some steps in current mission will not function correctly.
+🚨 **<span style="color: red;">Important Lab Dependency</span>**
+
+ This mission requires configuration created in the following missions:
+
+ - **AI Agent Track: Mission 1 – Create AI Autonomous Agent**<br>
+ - **AI Agent Track: Mission 2 – Integrating the AI Agent with Flow for Voice Calls**
+
+ If these missions were not completed, some steps in current mission will not function correctly.
 
 ## Feature Description
 
@@ -22,15 +22,11 @@ When a customer calls the contact center and interacts with an AI Agent, they ma
 
 Your mission is to:
 
-1. Configure a smooth handoff to live human agent from AI Agent.
+1. Configure a smooth handoff to live human agent from AI Agent. [*this was completed in **AI Agent Track: Mission 1***]
 2. Create a summary of Virtual Agent transcript to be provided during handoff.
-3. Use AI Assistant widget as an Agent.
 
-## Build
 
-<span style="color: red;">[READ ONLY]</span>
-
-### (Read Only) Task 1. Order Provisioning & Control Hub Settings
+## <span style="color: red;">[READ ONLY]</span> Verify feature configuration
 
 1. On production Webex CC tenant you should have the new AI Assistant SKU **A-FLEX-AI-ASST** from CCW provisioned to make AI Assistant features work.
 
@@ -47,20 +43,34 @@ Your mission is to:
    ![Profiles](../graphics/Lab1_AI_Agent/3.5.png)
    <br/>You can download default desktop layout from the **Desktop Layout** configuration page by clicking on **Download default desktop layout** button. <br/>
 
-### Task 2. Test Agent Transfer Summary Feature
+## Testing Agent Transfer Summary Feature
 
-1. Login to the **Agent Desktop** with your Admin user.
-   ![Profiles](../graphics/Lab1_AI_Agent/3.39.png)
+1. Switch to Control Hub and navigate to **Channels** under Customer Experience Section
+    
+    > - Locate your Inbound Channel (you can use the search):  **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+    > 
+    > - Select the Routing Flow: **<span class="attendee-id-container">AutonomousAIFlow_2000_<span class="attendee-id-placeholder" data-prefix="AutonomousAIFlow_2000_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
+    > 
+    > - Select the Version Label: **Latest**
+    > 
+    > - Click **Save** in the lower right corner of the screen
 
-2. Select **Desktop** as telephony option.
-   ![Profiles](../graphics/Lab1_AI_Agent/3.44.png)
+    ![Profiles](../graphics/Lab1_AI_Agent/2.53.gif)<br>
 
-3. Make sure you can see the **Agent Assistant** widget.
-   ![Profiles](../graphics/Lab1_AI_Agent/3.6.png)
+2. Your Agent Desktop session should still be active. If it is not, launch **Desktop** using the cross-launch link in **Control Hub**.
 
-4. Place a test call to the number that is associated with you Channel **<w class="attendee"></w>\_2000_Channel**, and, for example, mention that you need some flowers for a wedding party. **Allow the AI Agent to complete its response before requesting to transfer the call to a live human agent**. Then ask the AI Agent to transfer you to the human agent.
+    **<details><summary>See how to run Agent Desktop from the Control Hub</summary>**
 
-5. Become **Available** on the Agent Desktop and answer the call. You will see a window with the message **"AI agent transfer summary is ready"** pop up. You can click on **View Summary** from the window.
+    ![Profiles](../graphics/Lab1/RunAgentDesktop.gif)
+
+    </details>
+
+3. Make your agent **Available** and you're ready to make a call.
+   ![Profiles](../graphics/Lab1_AI_Agent/3.15.png)
+
+4. Place a test call to the number that is associated with you Channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**, and, for example, mention that you need some flowers for a wedding party. **Allow the AI Agent to complete its response before requesting to transfer the call to a live human agent**. Then ask the AI Agent to transfer you to the human agent.
+
+5. You will see a window with the message **"AI agent transfer summary is ready"** pop up. You can click on **View Summary** from the window.
    ![Profiles](../graphics/Lab1_AI_Agent/3.8.png)
 
 6. The **AI agent transfer summary is ready** notification will disappear after a few seconds. However, you can always reopen it by clicking on the AI Assistant widget.

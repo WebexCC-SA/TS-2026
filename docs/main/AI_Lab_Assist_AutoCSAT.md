@@ -3,6 +3,13 @@
 icon: material/medal
 ---
 
+🚨 **<span style="color: red;">Important Lab Dependency</span>**
+
+ This mission requires configuration created in the following missions:
+
+ - **<span style="color: green;">NO DEPENDENCY</span>**
+
+
 ## Feature Description
 
 The **survey** feature in Webex Contact Center is a valuable tool for gathering customer feedback. However, experience shows that only a small percentage of customers take the time to complete surveys. Typically, surveys are filled out by customers who are either extremely satisfied or dissatisfied, which may not represent the full spectrum of customer experiences.
@@ -17,13 +24,10 @@ The Auto CSAT scores generated for every interaction are stored in the contact r
 
 ## Mission Details
 
-Your mission is to learn how to view the AutoCSAT score for customer interactions using the Analyzer report and the Supervisor Dashboard.
-
-## Build
+ - Your mission is to learn how to view the AutoCSAT score for customer interactions using the Analyzer report and the Supervisor Dashboard.
 
 
-
-### <span style="color: red;">[READ ONLY]</span> Task 1. Order Provisioning & Control Hub Settings
+## <span style="color: red;">[READ ONLY]</span> Verify feature configuration
 
 1. You should have the new AI Assistant SKU **A-FLEX-AI-ASST** from CCW provisioned in the tenant.
 
@@ -39,7 +43,7 @@ Your mission is to learn how to view the AutoCSAT score for customer interaction
 - In our lab, we are using **Global Variable** AutoCSAT_GV as the variable to train our Auto CSAT model.
   ![Profiles](../graphics/Lab1_AI_Agent/3.21.png)
 
-### <span style="color: red;">[READ ONLY]</span> Task 2. Explore AutoCSAT using Analyzer report and Supervisor Dashboard
+## Exploring AutoCSAT using Analyzer report and Supervisor Dashboard
 
 1. Under Contact Center in Control Hub, click **Overview** and from **Quick Links** open up **Analyzer**.
    ![Profiles](../graphics/Lab1_AI_Agent/3.22.gif)
@@ -50,7 +54,11 @@ Your mission is to learn how to view the AutoCSAT score for customer interaction
 3. In the report you can see AutoCSAT that were generated for the calls, based on the Queue. You can see AutoCSAT information related to specific calls by drill-down into the AutoCSAT fields. You can increase the Duration in the report from **Last 7 days** to **Last Month**.
    ![Profiles](../graphics/Lab1_AI_Agent/3.24.gif)
 
-4. When you log in to the Supervisor Dashboard, you can view the AutoCSAT score for specific calls and listen to the call recordings directly from the supervisor desktop. (The Supervisor user account is not configured for this lab. Please refer to the screenshot below to understand the experience of viewing the AutoCSAT from the Supervisor desktop.)
+4. When you log in to the Supervisor Dashboard, you can view the AutoCSAT score for specific calls and listen to the call recordings directly from the supervisor desktop. 
+
+!!! Note
+    The Supervisor user account is not configured for this lab. Please refer to the screenshot below to understand the experience of viewing the AutoCSAT from the Supervisor desktop.
    ![Profiles](../graphics/Lab1_AI_Agent/3.25.png)
+
 
 <p style="text-align:center"><strong>Congratulations, you have officially completed this mission! 🎉🎉 </strong></p>

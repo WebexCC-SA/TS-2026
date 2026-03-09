@@ -159,12 +159,11 @@ nav:
             - "Mission 3: Call Drop Summary": ./main/AI_Lab_Assist_CallDrop_Summary.md
             - "Mission 4: Agent Welbeing": ./main/AI_Lab_Assist_Agent_Welbeing.md
             - "Mission 5: AI Agent Transfer Summary": ./main/AI_Lab_Assist_AI_Agent_Transfer_Summary.md
-            - "(Read Only) Mission 5: AutoCSAT": ./main/AI_Lab_Assist_AutoCSAT.md
-
+            - "Mission 5: AutoCSAT": ./main/AI_Lab_Assist_AutoCSAT.md
       - Real-Time Assist (Suggested Responses):
             - "Lab overview": ./main/AI_Lab_Suggested_Responses_Overview.md
-            - "Mission 1": ./main/AI_Lab_Suggested_Responseds_Mission1.md
-            - "(Optional) Mission2 ": ./main/AI_Lab_Suggested_Responseds_Mission2.md
+            - "Mission 1: Configure Real-Time Assist in Knowledge Base": ./main/AI_Lab_Suggested_Responseds_Mission1.md
+            - "Mission 2: Configure Fulfillment Flow ": ./main/AI_Lab_Suggested_Responseds_Mission2.md
       - Topic Analytics:
             - "Lab overview": ./main/AI_Lab_Topic_Overview.md
             - "Mission 1: Explore Topic Analytics": ./main/AI_Lab_Topic_Mission1.md

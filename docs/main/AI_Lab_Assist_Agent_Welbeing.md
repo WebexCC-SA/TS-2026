@@ -23,7 +23,7 @@ Your mission is to:
  - Manually trigger Agent Wellbieng scenario for your agent
 
 
-## Verify feature configuration
+## <span style="color: red;">[READ ONLY]</span> Verify feature configuration
 
 1. Switch to Control Hub and navigate to **AI Assistant** under Desktop Experience section. Make sure **Agent Wellbeing** feature is turned on and set to ***All Agents***. 
 
@@ -103,7 +103,7 @@ Your mission is to:
 
     ![profiles](../graphics/Lab1/4-ChannelCreation.gif.gif)
 
-## Testing (Simulation of Burnout Event)
+## Testing Agent Burnout feature (Simulation of Burnout Event)
 
 !!! Note
     This simulation will demonstrate what the agent experiences when the AI model detects a threshold that initiates a wellness intervention.

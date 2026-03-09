@@ -32,9 +32,8 @@ Your mission is to:
 
 ## Build
 
-<span style="color: red;">[READ ONLY]</span>
 
-### (Read Only) Task 1. Order Provisioning & Control Hub Settings
+## <span style="color: red;">[READ ONLY]</span> Verify feature configuration
 
 1. You should have the new AI Assistant SKU **A-FLEX-AI-ASST** from CCW provisioned in the tenant.
 
@@ -47,7 +46,7 @@ Your mission is to:
     <br/>Desktop Layout:
    ![Profiles](../graphics/Lab1_AI_Agent/3.43.png) 
 
-### Task 2. Test Wrap-up Summary feature
+### Testing Wrap-up Summary feature
 
 1. Your Agent Desktop session should still be active. If it is not, launch **Desktop** using the cross-launch link in **Control Hub**.
 

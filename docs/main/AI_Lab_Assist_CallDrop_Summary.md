@@ -3,6 +3,14 @@
 icon: material/medal
 ---
 
+🚨 **<span style="color: red;">Important Lab Dependency</span>**
+
+This mission requires configuration created in the following missions:
+
+- **[Core Track: Mission 1: Basic Call Routing (Flow Template, TTS, Language)](../CoreTrack_Mission1/)**<br>
+
+If this mission was not completed, some steps in current mission will not function correctly.
+
 ## Feature Description
 
 Customers find it frustrating to repeat themselves, especially after a call drop. Now, agents can pick up where the call left off, reducing frustration and handling time, while empowering agents to work more efficiently.
@@ -16,11 +24,8 @@ Your mission is to:
 1. Understand how **Call Drop Summary** feature is enabled.
 2. Test **Call Drop Summary** feature.
 
-## Build
 
-<span style="color: red;">[READ ONLY]</span>
-
-### (Read Only) Task 1. Order Provisioning & Control Hub Settings
+## <span style="color: red;">[READ ONLY]</span> Verify feature configuration
 
 1. You should have the new AI Assistant SKU **A-FLEX-AI-ASST** from CCW provisioned in the tenant.
 
@@ -37,19 +42,19 @@ Your mission is to:
    <br/>You can download a preconfigured desktop layout here.<br/>
    [Desktop Layout](https://drive.google.com/file/d/1EnM-2r9XOVm2EcE6ND4fL3L62qZesm5_/view?usp=sharing){:target="\_blank"}
 
-### Task 2. Test Call Drop Summary Feature
+### Testing Call Drop Summary Feature
 
-1. Switch to Control Hub and navigate to **Channels** under Customer Experience Section
-    
-    > - Locate your Inbound Channel (you can use the search):  **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
-    > 
-    > - Select the Routing Flow: **<span class="attendee-id-container">AutonomousAIFlow_2000_<span class="attendee-id-placeholder" data-prefix="AutonomousAIFlow_2000_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
-    > 
-    > - Select the Version Label: **Latest**
-    > 
-    > - Click **Save** in the lower right corner of the screen
+1. Switch to Control Hub to assign the Flow to your **Channel (Entry Point)**. Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+7. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
+8. In **Entry Point** settings section change the following, then click **Save** button:
 
-    ![Profiles](../graphics/Lab1_AI_Agent/2.53.gif)<br>
+    > - Routing flow: **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
+    >
+    > - Music on hold: **defaultmusic_on_hold.wav**
+    >
+    > - Version label: **Latest**
+
+    ![profiles](../graphics/Lab1/4-ChannelCreation.gif.gif)
 
 2. Your Agent Desktop session should still be active. If it is not, launch **Desktop** using the cross-launch link in **Control Hub**.
 
