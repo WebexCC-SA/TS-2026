@@ -3,13 +3,22 @@
 icon: material/medal
 ---
 
-# Mission 2: Configure Fulfillment
+
+🚨 **<span style="color: red;">Important Lab Dependency</span>**
+
+ This mission requires configuration created in the following missions:
+
+ 1. **[AI Agent Track ⮕ Mission 1 – Create AI Autonomous Agent](../AI_Lab_Aut_Mission1/)**<br>
+ 2. **[AI Agent Track ⮕ Mission 2 – Integrating the AI Agent with Flow for Voice Calls](../AI_Lab_Aut_Mission1/)**<br>
+ 3. **[AI Assistant Track ⮕ Real-Time Assist (Suggested Responses) ⮕ Mission 1: Configure Real-Time Assist in Knowledge Base](../AI_Lab_Suggested_Responseds_Mission1/)**
+
+ If these missions were not completed, some steps in current mission will not function correctly.
 
 ## Mission overview
 
 Your mission is to:
 
-Configure the fulfillment flow to track the status of existing orders. This functionality will allow the system to track the status of an order after the customer provides the order number, so the agent does not have to do any manual work and can simply deliver the order status to the customer.
+ - Configure the fulfillment flow to track the status of existing orders. This functionality will allow the system to track the status of an order after the customer provides the order number, so the agent does not have to do any manual work and can simply deliver the order status to the customer.
 
 ---
 

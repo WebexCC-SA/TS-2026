@@ -7,8 +7,8 @@ icon: material/medal
 
  This mission requires configuration created in the following missions:
 
- - **AI Agent Track: Mission 1 – Create AI Autonomous Agent**<br>
- - **AI Agent Track: Mission 2 – Integrating the AI Agent with Flow for Voice Calls**
+ - **[AI Agent Track: Mission 1 – Create AI Autonomous Agent**](../AI_Lab_Aut_Mission1/)<br>
+ - **[AI Agent Track: Mission 2 – Integrating the AI Agent with Flow for Voice Calls](../AI_Lab_Aut_Mission1/)**
 
  If these missions were not completed, some steps in current mission will not function correctly.
 
