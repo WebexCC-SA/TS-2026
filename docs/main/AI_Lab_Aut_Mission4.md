@@ -194,7 +194,7 @@ Your mission is to:
 3. While on your Webex Connect flow, click on **Edit** the flow, then click on the **Settings** and on the top select **Flow Outcomes** and expand **Last Execution Status**. In the **Define key-value pairs to be sent to the AI Agent** select **Enter JSON**.<br>
    ![Profiles](../graphics/Lab1_AI_Agent/2.66.gif)<br>
 
-4. We need to add the key-value pair to the existing JSON body. Add the comma after the last pair and insert **_<copy>"orderNumber": "$(n3.orderNumber)"</copy>_**. Make sure there is no comma after the pair that you inserted. Then click on **Save**.<br>
+4. We need to add the key-value pair to the existing JSON body. Add the comma after the last pair and insert **"orderNumber": "$(n3.orderNumber)"**. Make sure there is no comma after the pair that you inserted. Then click on **Save**.<br>
     ``` JSON
     "orderNumber": "$(n3.orderNumber)"
     ```    
