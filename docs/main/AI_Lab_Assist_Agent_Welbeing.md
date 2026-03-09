@@ -4,7 +4,7 @@ icon: material/medal
 ---
 
 
-🚨 **<span style="color: blue;">Important Lab Dependency</span>**
+🚨 **<span style="color: red;">Important Lab Dependency</span>**
 
 This mission requires configuration created in the following missions:
 
@@ -75,7 +75,7 @@ Your mission is to:
 
     ![Profiles](../graphics/Lab1_AI_Agent/AI_ABurn2.gif) 
 
-5. Switch to **Control Hub**, navigate to **Contact Center Users** and search for your admin user (who is also you agent) **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>** and open it. 
+5. Switch to **Control Hub**, navigate to **Contact Center Users** and search for your admin user (who is also your agent) **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>** and open it. 
 
 6. Copy the **Contact Center User Id** to the buffer, then return to your flow and change **agentid** value from <span style="color: green;">***"Your Agent ID will be here"***</span> to id from the buffer. The id <span style="color: red;">**MUST**</span> be inside double quotes <span style="color: red;">**" "**</span>. Ex. *"agentId": "4333936f-dab9-4cdf-a142-dad826673eec"*
 
@@ -93,8 +93,7 @@ Your mission is to:
     ![Profiles](../graphics/Lab1_AI_Agent/AI_ABurn3.gif) 
 
 7. Return to Control Hub to assign the Flow to your **Channel (Entry Point)**. Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
-8. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
-. In **Entry Point** settings section change the following, then click **Save** button:
+8. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**. In **Entry Point** settings section change the following, then click **Save** button:
 
     > - Routing flow: **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
     >
@@ -124,7 +123,7 @@ Your mission is to:
 
 4. Answer the call and then drop the call either on Agent Desktop or on caller side.
 
-5. Observe the actions taken by the contact center system once a burnout event is detected.
+5. Click on **Take a Break** on AI Assistant pop-up window. Observe the actions taken by the contact center system once a burnout event is detected.
     ![Profiles](../graphics/Lab1_AI_Agent/AI_ABurn4.gif) 
 
 

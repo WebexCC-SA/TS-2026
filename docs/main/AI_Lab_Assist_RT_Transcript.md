@@ -4,7 +4,7 @@ icon: material/medal
 ---
 
 
-🚨 **<span style="color: blue;">Important Lab Dependency</span>**
+🚨 **<span style="color: red;">Important Lab Dependency</span>**
 
 This mission requires configuration created in the following missions:
 

@@ -39,19 +39,39 @@ Your mission is to:
 
 ### Task 2. Test Call Drop Summary Feature
 
-1. Make sure the agent is in the **Available** status.
+1. Switch to Control Hub and navigate to **Channels** under Customer Experience Section
+    
+    > - Locate your Inbound Channel (you can use the search):  **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+    > 
+    > - Select the Routing Flow: **<span class="attendee-id-container">AutonomousAIFlow_2000_<span class="attendee-id-placeholder" data-prefix="AutonomousAIFlow_2000_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
+    > 
+    > - Select the Version Label: **Latest**
+    > 
+    > - Click **Save** in the lower right corner of the screen
+
+    ![Profiles](../graphics/Lab1_AI_Agent/2.53.gif)<br>
+
+2. Your Agent Desktop session should still be active. If it is not, launch **Desktop** using the cross-launch link in **Control Hub**.
+
+    **<details><summary>See how to run Agent Desktop from the Control Hub</summary>**
+
+    ![Profiles](../graphics/Lab1/RunAgentDesktop.gif)
+
+    </details>
+
+3. Make your agent **Available** and you're ready to make a call.
    ![Profiles](../graphics/Lab1_AI_Agent/3.15.png)
 
-2. Place the test call to the number that is associated with you Channel **<w class="attendee"></w>\_2000_Channel**, and ask to talk to an agent.
+4. Place the test call to the number that is associated with your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**. 
 
-3. Stay on the call for 35 - 45 seconds, as a customer ask questions such as that you want to order flowers for a friend.
+5. Stay on the call for 35 - 45 seconds, as a customer ask questions such as that you want to order flowers for a friend.
 
-4. After 35-45 seconds, end the call from the customer side.
+6. After 35-45 seconds, end the call from the customer side.
    ![Profiles](../graphics/Lab1_AI_Agent/3.19.png)
 
-5. Call back from the same number. Ask to talk to an agent.
+7. Call back from the same number. Ask to talk to an agent.
 
-6. Make sure you are **Available** on the Agent Desktop and answer the call. You will see AI Assistant Widget will have Call Drop Summary and the Agent Transfer Summary.
+8. Make sure you are **Available** on the Agent Desktop and answer the call. You will see AI Assistant Widget will have Call Drop Summary and the Agent Transfer Summary.
    ![Profiles](../graphics/Lab1_AI_Agent/3.20.png)
 
 <p style="text-align:center"><strong>Congratulations, you have officially completed this mission! 🎉🎉 </strong></p>
