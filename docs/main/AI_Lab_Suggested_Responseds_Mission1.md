@@ -26,11 +26,12 @@ Your mission is to:
 ### Task 1. Create Knowledge Base
 
 1. Download the .xlsx file [Flowrs_Catalog](https://docs.google.com/spreadsheets/d/1A5d1ZEPWmPE_38Bi8bVULKLhCH0wyGX4/edit?usp=sharing&ouid=100862210011127627593&rtpof=true&sd=true){:target="\_blank"}.
-   > **Flower_Catalog.xlsx** - file contains information on the available single flowers and bouquets, including the price of the flowers or bouquets and occasions that suit the flowers.
-   ![Profiles](../graphics/Lab1_AI_Agent/2.74.png)
 
     !!! Note
         This is same file that used for the [AI Agent Track: Mission 1 – Create AI Autonomous Agent**](../AI_Lab_Aut_Mission1/). You can skip this step if you already completed that mission.<br>
+
+   > **Flower_Catalog.xlsx** - file contains information on the available single flowers and bouquets, including the price of the flowers or bouquets and occasions that suit the flowers.
+   ![Profiles](../graphics/Lab1_AI_Agent/2.74.png)
 
 2. From **Control Hub**, go to Contact Center and open **Webex AI Agent Studio** portal.
    ![Profiles](../graphics/Lab1_AI_Agent/9.1.png)
@@ -55,7 +56,7 @@ Your mission is to:
 2. Select **Start from scratch** and click **Next**.
    ![Profiles](../graphics/Lab1_AI_Agent/9.7.gif)
 
-3. Name the skill as **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Suggested_Responses_Skill">Your_Attendee_ID</span>_Suggested_Responses_Skill<span class="copy" title="Click to copy!"></span></span>**. Add the following text into the **Goal** section **<span class="copy-static" data-copy-text="Answer question about flower suggestion, flower availability, prices, delivery cost and order status."><span class="copy" title="Click to copy!"></span></span>. And then click on **Create**.
+3. Name the skill as **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Suggested_Responses_Skill">Your_Attendee_ID</span>_Suggested_Responses_Skill<span class="copy" title="Click to copy!"></span></span>**. Add the following text into the **Goal** section **Answer question about flower suggestion, flower availability, prices, delivery cost and order status.<span class="copy-static" data-copy-text="Answer question about flower suggestion, flower availability, prices, delivery cost and order status."><span class="copy" title="Click to copy!"></span></span>**. And then click on **Create**.
    ![Profiles](../graphics/Lab1_AI_Agent/9.8.gif)
 
 4. Link your knowledge base **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Suggested_Responses_Knowledge">Your_Attendee_ID</span>_Suggested_Responses_Knowledge<span class="copy" title="Click to copy!"></span></span>** to the skill in the **Knowledge** section. **Save** and **Publish** the changes.
@@ -68,7 +69,7 @@ Your mission is to:
 2. Click on Assign AI Assistant skills. In the following window, select the skill that you created in the previous task, **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Suggested_Responses_Skill">Your_Attendee_ID</span>_Suggested_Responses_Skill<span class="copy" title="Click to copy!"></span></span>**, and add your queue **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**. Then click **Save**.
    ![Profiles](../graphics/Lab1_AI_Agent/9.10.gif)
 
-### Add "Start Media Stream" block to the voice flow
+### Task 4. Add "Start Media Stream" block to the voice flow
 
 1. In the Webex Control hub, find and open your flow **<span class="attendee-id-container">AutonomousAIFlow_2000_<span class="attendee-id-placeholder" data-prefix="AutonomousAIFlow_2000_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**.
    ![Profiles](../graphics/Lab1_AI_Agent/9.11.gif)

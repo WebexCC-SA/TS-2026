@@ -54,23 +54,23 @@ Your mission is to:
 4. Click on **Integration** and select **Fulfillment action**.
    ![Profiles](../graphics/Lab1_AI_Agent/SR.Fulfillment.png)
 
-5. Name the Action as track_order<span class="copy-static" data-copy-text="track_order"><span class="copy" title="Click to copy!"></span></span>. <br>
+5. Name the Action as **track_order**<span class="copy-static" data-copy-text="track_order"><span class="copy" title="Click to copy!"></span></span>. <br>
    
-   > In the **Action description** provide the following: If the customer want to track and order, collect the order number. With the order number execute the fulfillment and return the customer the order status.<span class="copy-static" data-copy-text="If the customer want to track and order, collect the order number. With the order number execute the fulfillment and return the customer the order status."><span class="copy" title="Click to copy!"></span></span><br>
-   > Select the **Action scope** as **Slot filling and fulfillment.**
+    > In the **Action description** provide the following: **If the customer want to track and order, collect the order number. With the order number execute the fulfillment and return the customer the order status.**<span class="copy-static" data-copy-text="If the customer want to track and order, collect the order number. With the order number execute the fulfillment and return the customer the order status."><span class="copy" title="Click to copy!"></span></span><br>
+    > Select the **Action scope** as **Slot filling and fulfillment.**
    
-   ![Profiles](../graphics/Lab1_AI_Agent/9.23.png)
+    ![Profiles](../graphics/Lab1_AI_Agent/9.23.png)
 
 6. Add **New input entity**. Configure it with the following:<br>
-   > Name: **orderNumber**<br><span class="copy-static" data-copy-text="orderNumber"><span class="copy" title="Click to copy!"></span></span>
+   > Name: **orderNumber**<span class="copy-static" data-copy-text="orderNumber"><span class="copy" title="Click to copy!"></span></span>
    > Entity type: **String**<br>
    > Entity description: **If the customer wants to track an order, collect the order number to this entity.**<span class="copy-static" data-copy-text="If the customer wants to track an order, collect the order number to this entity."><span class="copy" title="Click to copy!"></span></span><br>
-   > Entity example: **17<span class="copy-static" data-copy-text="17"><span class="copy" title="Click to copy!"></span></span><br>
+   > Entity example: **17**<span class="copy-static" data-copy-text="17"><span class="copy" title="Click to copy!"></span></span><br>
    > Required: **Yes**<br>
    > Input field display name: **orderNumber**<span class="copy-static" data-copy-text="orderNumber"><span class="copy" title="Click to copy!"></span></span>
    ![Profiles](../graphics/Lab1_AI_Agent/9.24.png)
 
-7. For the fulfillment flow, select the Service **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_2000_Service">Your_Attendee_ID</span>_2000_Service<span class="copy" title="Click to copy!"></span></span>** and the flow <span class="copy-static" data-copy-text="Track_Order_Flowers"><span class="copy" title="Click to copy!"></span></span>, that you have created in the previous tasks. Then click **Add**.
+7. For the fulfillment flow, select the Service **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_2000_Service">Your_Attendee_ID</span>_2000_Service<span class="copy" title="Click to copy!"></span></span>** and the flow **Track_Order_Flowers**<span class="copy-static" data-copy-text="Track_Order_Flowers"><span class="copy" title="Click to copy!"></span></span>, that you have created in the previous tasks. Then click **Add**.
    ![Profiles](../graphics/Lab1_AI_Agent/9.25.png)
 
 8. **Publish** the recent changes of the skill.
@@ -155,7 +155,7 @@ Your mission is to:
    ![Profiles](../graphics/Lab1_AI_Agent/9.36a.png)
 
 9. (Optional) To see all order information you can by placing this URL in your browser. <br>
-   **https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/flowers?id=3<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/flowers?id=3"><span class="copy" title="Click to copy!"></span></span>** <br>
+   **https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/flowers<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/flowers"><span class="copy" title="Click to copy!"></span></span>** <br>
    ![Profiles](../graphics/Lab1_AI_Agent/9.37.png)
 
 <p style="text-align:center"><strong>Congratulations, you have officially completed this mission! 🎉🎉 </strong></p>
