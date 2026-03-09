@@ -137,7 +137,7 @@ nav:
             - "Mission 1: Create AI Autonomous Agent": ./main/AI_Lab_Aut_Mission1.md
             - "Mission 2: Integrating the AI Agent with Flow for Voice Calls": ./main/AI_Lab_Aut_Mission2.md
             - "Mission 3: Send Custom data to Autonomous AI Agent": ./main/AI_Lab_Aut_Mission3_CustomData.md
-            - "Mission 4: Configure Fulfilment Action to create an order": ./main/AI_Lab_Aut_Mission4.md
+            - "Mission 4: Configure Fulfillment Action to create an order": ./main/AI_Lab_Aut_Mission4.md
             - "Mission 5: Configure Transfer Action for a Specific Queue": ./main/AI_Lab_Aut_Mission5_Transfer.md
             - "Mission 6: Configure Transfer Action for Webex AI Agent": ./main/AI_Lab_Aut_Mission6_Transfer2.md
             - "(Optional) Mission 7: Configure Action with MCP": ./main/AI_Lab_Aut_Mission7_MCP.md
@@ -146,10 +146,10 @@ nav:
       - Scripted AI Agent [BONUS]:
             - "Lab overview": ./main/AI_Lab_Scripted_Overview.md
             - "Mission 1: Configure Scripted Agent to answer basic questions": ./main/AI_Lab_Scripted_Mission1.md
-            - "Mission 2 : Integrate Scripted Agent with Voice Flow.": ./main/AI_Lab_Scripted_Mission3.md
-            - "Mission 3 : Configure flow to track an order": ./main/AI_Lab_Scripted_Mission4.md
-            - "Mission 4 : Configure the fulfillment": ./main/AI_Lab_Scripted_Mission5.md
-            - "Mission 5 : Deliver fulfillment results to the caller": ./main/AI_Lab_Scripted_Mission6.md
+            - "Mission 2: Integrate Scripted Agent with Voice Flow": ./main/AI_Lab_Scripted_Mission2.md
+            - "Mission 3: Configure flow to track an order": ./main/AI_Lab_Scripted_Mission3.md
+            - "Mission 4: Configure the fulfillment": ./main/AI_Lab_Scripted_Mission4.md
+            - "Mission 5: Deliver fulfillment results to the caller": ./main/AI_Lab_Scripted_Mission5.md
       - Conclusion: ./main/AI_Lab_Agent_Conclusion.md
   - AI ASSISTANT:
       - AI Assistant Features:  
