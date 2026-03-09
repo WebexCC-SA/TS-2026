@@ -12,7 +12,7 @@ This mission requires configuration created in the following missions:
 5. **[AI Agent Track: Mission 5 - Configure Transfer Action for a Specific Queue](../AI_Lab_Aut_Mission5/)**<br>
 6. **[AI Agent Track: Mission 6 - Configure Transfer Action for Webex AI Agent](../AI_Lab_Aut_Mission6/)**<br>
 
-If this mission was not completed, some steps in current mission will not function correctly.
+If these missions were not completed, some steps in current mission will not function correctly.
 
 ---
 

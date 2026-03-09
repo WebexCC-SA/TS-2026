@@ -10,7 +10,7 @@ This mission requires configuration created in the following missions:
 1. **[Core Track: Mission 1 - Basic Call Routing (Flow Template, TTS, Language)](../CoreTrack_Mission1/)**<br>
 2. **[Callback Track: Mission 1 - Adding Callback Functionality](../CallbackTrack_Mission1/)**<br>
 
-If this mission was not completed, some steps in current mission will not function correctly.
+If these missions were not completed, some steps in current mission will not function correctly.
 
 ---
 

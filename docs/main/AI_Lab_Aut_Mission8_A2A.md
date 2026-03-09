@@ -13,7 +13,7 @@ This mission requires configuration created in the following missions:
 6. **[AI Agent Track ⮕ Autonomous AI Agent: Mission 6 - Configure Transfer Action for Webex AI Agent](../AI_Lab_Aut_Mission6/)**<br>
 7. **[AI Agent Track ⮕ Autonomous AI Agent: Mission 7 - Configure Transfer Action for Webex AI Agent](../AI_Lab_Aut_Mission7/)**<br>
 
-If this mission was not completed, some steps in current mission will not function correctly.
+If these missions were not completed, some steps in current mission will not function correctly.
 
 ---
 

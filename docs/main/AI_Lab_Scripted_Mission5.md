@@ -12,7 +12,7 @@ This mission requires configuration created in the following missions:
 3. **[AI Agent Track ⮕ Scripted Agent: Mission 3 - Configure flow to track an order](../AI_Lab_Scripted_Mission3/)**<br>
 4. **[AI Agent Track ⮕ Scripted Agent: Mission 4 - Configure the fulfillment](../AI_Lab_Scripted_Mission4/)**<br>
 
-If this mission was not completed, some steps in current mission will not function correctly.
+If these missions were not completed, some steps in current mission will not function correctly.
 
 ---
 

@@ -10,7 +10,7 @@ This mission requires configuration created in the following missions:
 1. **[AI Agent Track ⮕ Scripted Agent: Mission 1 - Configure Scripted Agent to answer basic questions](../AI_Lab_Scripted_Mission1/)**<br>
 2. **[AI Agent Track ⮕ Scripted Agent: Mission 2 - Integrate Scripted Agent with Voice Flow](../AI_Lab_Scripted_Mission2/)**<br>
 
-If this mission was not completed, some steps in current mission will not function correctly.
+If these missions were not completed, some steps in current mission will not function correctly.
 
 ---
 

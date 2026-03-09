@@ -10,7 +10,7 @@ This mission requires configuration created in the following missions:
 3. **[AI Agent Track ⮕ Autonomous AI Agent: Mission 3 - Send Custom data to Autonomous AI Agent](../AI_Lab_Aut_Mission3/)**<br>
 
 
-If this mission was not completed, some steps in current mission will not function correctly.
+If these missions were not completed, some steps in current mission will not function correctly.
 
 ---
 

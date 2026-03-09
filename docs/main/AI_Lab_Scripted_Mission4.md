@@ -11,7 +11,7 @@ This mission requires configuration created in the following missions:
 2. **[AI Agent Track ⮕ Scripted Agent: Mission 2 - Integrate Scripted Agent with Voice Flow](../AI_Lab_Scripted_Mission2/)**<br>
 3. **[AI Agent Track ⮕ Scripted Agent: Mission 3 - Configure flow to track an order](../AI_Lab_Scripted_Mission3/)**<br>
 
-If this mission was not completed, some steps in current mission will not function correctly.
+If these missions were not completed, some steps in current mission will not function correctly.
 
 ---
 

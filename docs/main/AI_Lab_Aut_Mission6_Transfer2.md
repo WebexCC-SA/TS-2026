@@ -11,7 +11,7 @@ This mission requires configuration created in the following missions:
 4. **[AI Agent Track ⮕ Autonomous AI Agent: Mission 4 - Configure Fulfillment Action and create an order](../AI_Lab_Aut_Mission4/)**<br>
 5. **[AI Agent Track ⮕ Autonomous AI Agent: Mission 5 - Configure Transfer Action for a Specific Queue](../AI_Lab_Aut_Mission5/)**<br>
 
-If this mission was not completed, some steps in current mission will not function correctly.
+If these missions were not completed, some steps in current mission will not function correctly.
 
 ---
 

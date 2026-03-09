@@ -13,7 +13,7 @@ This mission requires configuration created in the following missions:
 2. **[Callback Track: Mission 1 - Adding Callback Functionality](../CallbackTrack_Mission1/)**<br>
 3. **[Callback Track: Mission 2 - Callback on Global Error](../CallbackTrack_Mission2/)**<br>
 
-If this mission was not completed, some steps in current mission will not function correctly.
+If these missions were not completed, some steps in current mission will not function correctly.
 
 ---
 
