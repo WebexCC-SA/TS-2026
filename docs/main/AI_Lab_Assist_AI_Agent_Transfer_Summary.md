@@ -12,6 +12,8 @@ icon: material/medal
 
  If these missions were not completed, some steps in current mission will not function correctly.
 
+---
+
 ## Feature Description
 
 AI Agent Transfer Summary enhances agent efficiency and elevate customer experiences.

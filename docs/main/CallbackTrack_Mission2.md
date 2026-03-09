@@ -3,169 +3,248 @@
 icon: material/medal
 ---
 
+🚨 **<span style="color: red;">Important Lab Dependency</span>**
+
+This mission requires configuration created in the following missions:
+
+- **[Core Track: Mission 1: Basic Call Routing (Flow Template, TTS, Language)](../CoreTrack_Mission1/)**<br>
+- **[Callback Track: Mission 1: Adding Callback Functionality](../CallbackTrack_Mission1/)**<br>
+
+If this mission was not completed, some steps in current mission will not function correctly.
+
+---
+
+🚨 **<span style="color: red;">Important Lab Dependency</span>**
+
+This mission requires configuration created in the following missions:
+
+- **[Core Track: Mission 1: Basic Call Routing (Flow Template, TTS, Language)](../CoreTrack_Mission1/)**<br>
+- **[Callback Track: Mission 1: Adding Callback Functionality](../CallbackTrack_Mission1/)**<br>
+
+If this mission was not completed, some steps in current mission will not function correctly.
+
+---
+
 ## Story 
-
-Callback functionality is an essential feature in a modern contact center, providing a solution that enhances both customer satisfaction and operational efficiency.
-
-Imagine a customer calls to upgrade their service but faces a 20-minute wait, they can request a callback instead of staying on hold. If no agents are available, they’ll be offered the choice to remain in the queue or opt for a callback. Upon choosing the callback, they provide their number, which is validated, and the system schedules the call. Once an agent is free, the system connects with the customer. This ensures businesses retain leads while providing a seamless customer experience.
+Imagine a caller is navigating an IVR menu when, suddenly, the call drops due to an unexpected error in the flow. This unplanned interruption leaves the customer disconnected without completing their request. In this scenario we are going to configure our flow to schedule a callback to the caller when such failure scenario occurs.
 
 
 ## Call Flow Overview
 
 1. A new call enters the flow. </br>
-2. The flow executes the logic configured in previous steps.</br>
+2. The flow executes the logic by querying external database for Outbound Channel and ANI.</br>
 3. The call is routed to the appropriate queue, but no agents are available.</br>
-4. Since no agents are available, a callback option is offered to the caller.</br>
-5. Once an agent becomes available, the callback is initiated to the provided number.</br>
+4. On a callback offering a new option should be selected to simulate an error and drop the call. </br>
+5. Once an agent becomes available, the callback is initiated to the  number.</br>
 
 ## Mission Details
 
-Your mission is to: </br>
+Your mission is to:
 
-1. Continue to use same flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** </br>
-2. Add aditional callback functionality to your **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**.
+1. Simulate a global error scenario to trigger a Global Error Event and initiate a workflow to reconnect with a caller whose call was disconnected due to an undefined error. </br>
+2. Configure an API POST request to schedule a callback when global error happens. You cannot rely on the Callback node in Main Flow because the call leg is no longer active after termination. Instead, you must design a custom solution to address this limitation.</br>
+3. You do not need to configure Outdial Channel and Ourdial Queue as they have been preconfigured for you: </br>
+    - **<span class="attendee-id-container">Outdial_<span class="attendee-id-placeholder" data-prefix="Outdial_" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** </br>
+    - Outdial queue **<span class="attendee-id-container">Outdial_<span class="attendee-id-placeholder" data-prefix="Outdial_" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** to which your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Team** has been assigned. </br>
+4. Simulate a real API server. You will use [**MockAPI**](https://mockapi.io/){:target="_blank"} to retrieve the Outdial channel ID and the target callback number. The retrieved Outdial channel ID will then be used in the Callback API POST request.
+
+    **<details><summary>Good to Know <span style="color: orange;">[Optional]</span></summary>**
+
+      We are starting to use Webex Contact Center APIs in this mission. More information can be found in the [**Webex Contact Center for Developers**](https://developer.webex.com/){:target="_blank"} portal.
+ 
+      - [**[ADVANCED] Use MockAPI to enhance your Demos - PART 1**](https://app.vidcast.io/share/ce058b71-109e-4929-b9ca-46b83d94f7e3){:target="_blank"}
+
+      - [**[ADVANCED] Use MockAPI to enhance your Demos - PART 2**](https://app.vidcast.io/share/1e259a34-7e9e-44d9-aa5a-5d76e07256a3){:target="_blank"}
+
+    </details>
 
 
 ## Build
 
-1. Switch to the Flow Designer. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**. Make sure **Edit** toggle is **ON**.
-2. Delete  connection from **Queue** node to **Music**.
-3. Add **Menu** node:
-
-    > Rename Activity Label to **WantCallback**<span class="copy-static" title="Click to copy!" data-copy-text="WantCallback"><span class="copy"></span></span>
-    >
-    > Enable Text-To-Speech
-    >
-    > Select the Connector: **Cisco Cloud Text-to-Speech**
-    >
-    > Click the **Add Text-to-Speech Message** button and paste text: ***All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue.***<span class="copy-static" title="Click to copy!" data-copy-text="All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue."><span class="copy"></span></span>
-    >
-    > Delete the selection for Audio File
-    >
-    > Set the checkbox **Make Prompt Interruptible**
-    >
-    > Under Custom Menu Links:
-    >>
-    >> Change first Digit Number **0** to **1**, add Link Description as **Callback** 
-    >>
-    >> Add New Digit Number as **2** with Link Description **Stay in queue**
-    >
-    > Connect existing **Queue** node to **WantCallBack** node
-    >
-    > Connect **No-Input Timeout** to the front of the **WantCallBack** node
-    >
-    > Connect **Unmatched Entry** to the front of the **WantCallBack** node
-
-    ![profiles](../graphics/Lab1/AM1-WantCallback.gif)
+!!! Note
+    **We are going to extend the same flow by adding additional functionality to simulate a global error scenario which will trigger a callback to a caller.** 
 
 
+1. Switch to the Flow Designer. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and make sure **Edit** toggle is **ON**.
+2. On the right-hand side, in the **Global Flow Properties** panel, scroll down to locate the **Flow Variables** section under **Custom Variables**. Click the **Add Flow Variable** button and add the following 4 flow variables:  
 
-4. Add **Collect Digits** node:
+    - Outdial Entry Point Variable :
     
-    > Rename Activity Label to **NewNumber**<span class="copy-static" title="Click to copy!" data-copy-text="NewNumber"><span class="copy"></span></span>
-    >
-    > Enable Text-To-Speech
-    >
-    > Select the Connector: **Cisco Cloud Text-to-Speech**
-    >
-    > Click the **Add Text-to-Speech Message** button and paste text: ***Please enter your 11 digits phone number to which we should call you back.***<span class="copy-static" title="Click to copy!" data-copy-text="Please enter your 11 digits phone number to which we should call you back."><span class="copy"></span></span>
-    >
-    > Delete the Selection for Audio File
-    >
-    > Set the checkbox **Make Prompt Interruptible**
-    >   
-    > Advanced Settings:
-    >
-    >> No-Input Timeout: **5** 
-    >>
-    >> Minimum Digits: **9**
-    >>
-    >> Maximum Digits: **15**
-    >       
-    > Connect **No-Input Timeout** to the front of the **NewNumber** node
-    >
-    > Connect **Unmatched Entry** to the front of the **NewNumber** node
-    >   
-    > Connect **Callback** from **WantCallback** node created in step 3 to **NewNumber** node
-    >
-    > Connect **Stay in queue** from **WantCallback** node created in step 3 to **Music** node
-
-    ![profiles](../graphics/Lab1/AM1-NewNumber.gif)
-
-
-
-5. Add one more **Menu** node:
+      >
+      > Name: **outdialcbid**<span class="copy-static" data-copy-text="outdialcbid"><span class="copy" title="Click to copy!"></span></span>
+      >
+      > Type: **String**
+      >
+      > Default Value: leave it empty
     
-    > Rename Activity Label to **VerifyNumber**<span class="copy-static" title="Click to copy!" data-copy-text="VerifyNumber"><span class="copy"></span></span>
+    - Custom ANI variable:
+      
+      >
+      > Name: **customani**<span class="copy-static" data-copy-text="customani"><span class="copy" title="Click to copy!"></span></span>
+      >
+      > Type: **String**
+      >
+      > Default Value: leave it empty
+
+    - HTTP GET Result variable:
+      
+      >
+      > Name: **getresult**<span class="copy-static" data-copy-text="getresult"><span class="copy" title="Click to copy!"></span></span>
+      >
+      > Type: **String**
+      >
+      > Default Value: leave it empty
+
+    - Simulated Error variable:
+      
+      >
+      > Name: **simulatederror**<span class="copy-static" data-copy-text="simulatederror"><span class="copy" title="Click to copy!"></span></span>
+      >
+      > Type: **String**
+      >
+      > Default Value: leave it empty
+
+    ![profiles](../graphics/Lab2/AM1_AddFlowVars.gif)
+
+3. Click on **WantCallback** node  
+  
+    > Add Option 3. Name it as **Simulate an error**
     >
-    > Enable Text-To-Speech
+    > Text-to-Speech Message: ***All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue. Press 3 to simulate global error.***<span class="copy-static" data-copy-text="All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue. Press 3 to simulate global error."><span class="copy" title="Click to copy!"></span></span>. We are extending the existing message by adding Option 3.
+    
+    ![profiles](../graphics/Lab2/AM2_AddOption3.gif)
+
+4. Add an **HTTP Request** node for our query. We are going to fetch Outbound Channel/Entry Point ID and custom ANI. Remember we used the same Cisco Worldwide Technical Support contact number in Mission 2 of a Callback Track - "Adding Callback Functionality".
+    
     >
-    > Select the Connector: **Cisco Cloud Text-to-Speech**
+    > Connect **WantCallback** Option 3 to this HTTP node
     >
-    > Click the **Add Text-to-Speech Message** button and paste the following:
+    > We will connct **HTTP Request** node in next step
     >
-    ```JSON
-    <speak>
-    You entered <say-as interpret-as="telephone">{{NewNumber.DigitsEntered}}</say-as>. 
-    Press 1 if the number is correct. 
-    Press 2 if you want to re-enter the number. 
-    </speak>
+    > Activity Name: **GET_CBID**<span class="copy-static" data-copy-text="GET_CBID"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Use Authenticated Endpoint: **Off**
+    >
+    > Requestt URL: ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}***<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={{NewPhoneContact.DNIS | slice(2) }}"><span class="copy" title="Click to copy!"></span></span>
+    > 
+    > Method: **GET**
+    > 
+    > Content Type: **Application/JSON**
+    >
+    > **Parsing Settings:**
+    >
+    > Content Type: **JSON** 
+    >
+    > Output Variable: **outdialcbid**<span class="copy-static" data-copy-text="outdialcbid"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Path Expression: **$[0].outboundcallbackep**<span class="copy-static" data-copy-text="$[0].outboundcallbackep"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Click **Add New**
+    >
+    > Output Variable: **customani**<span class="copy-static" data-copy-text="customani"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Path Expression: **$[0].tacnumber**<span class="copy-static" data-copy-text="$[0].tacnumber"><span class="copy" title="Click to copy!"></span></span>
+
+    ![profiles](../graphics/Lab2/AM2_HTTPRequest1.gif)
+
+    <details><summary>**Test your API Source <span style="color: orange;">[Optional]</span>**</summary>
+    
+    1. Test your API resource. **https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={DNIS}**<span class="copy-static" data-copy-text="https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn={DNIS}"><span class="copy" title="Click to copy!"></span></span>
+    
+    2. Replace DNIS with the provided DNIS number stripping **+1**.
+        <span style="color: orange;">[For example:]</span> If your number **+14694096861**, then your GET Query should be ***https://674481b1b4e2e04abea27c6e.mockapi.io/flowdesigner/Lab/DynVars?dn=4694096861***
+    
+    3. Open Chrome browser, paste your Get query URL into the Browser address line and press Enter. You should get the JSON response like this:
+    
+        ![Profiles](../graphics/Lab2/BM2-8-Chrometest.gif)
+    
+    4. Open the new browser tab and navigate to [JSONPath Online Evaluator](https://jsonpath.com/){:target="_blank"}
+    
+    5. Copy the JSON response (including square brackets) you obtained above and paste it into **Document** window of **JSONPath Online Evaluator**.
+    
+    6. In **JSONPath** box copy and paste one of the path expression from **FetchFlowSettings** to verify your results. For example, **$[0].businessHours**
+    
+        ![Profiles](../graphics/Lab2/BM2-10-JSONPath.gif)
+    
+    </details>
+
+
+5. Add **Set Variable** node
+    
+    >
+    > Activity Label: **SetGetResult**<span class="copy-static" data-copy-text="SetGetResult"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Connect **GET_CBID** to this node
+    >
+    > We will connct **Set Variable** node in next step
+    >
+    > Variable: **getresult**<span class="copy-static" data-copy-text="getresult"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Set Variable: **GET_CBID.httpResponseBody**<span class="copy-static" data-copy-text="GET_CBID.httpResponseBody"><span class="copy" title="Click to copy!"></span></span>
+    >
+
+    ![profiles](../graphics/Lab2/AM2_SetGetResult.gif)
+
+6. Add one more **Set Variable** and **Disconnect Contact** nodes. We are going to intentionally configure an incorrect value in the **Set Variable** node to forcibly trigger a Global Error.
+    
+    >
+    > Activity Label: **SimulateGlobalError**<span class="copy-static" data-copy-text="SimulateGlobalError"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Connect **SetGetResult** to this node
+    >
+    > Connect this node to **Disconnect Contact** node
+    >
+    > Variable: **simulatederror**<span class="copy-static" data-copy-text="simulatederror"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Set Value: ***{{ ANI | 123}}***<span class="copy-static" data-copy-text="{{ ANI | 123}}"><span class="copy" title="Click to copy!"></span></span>
+    >
+    ![profiles](../graphics/Lab2/AM2_SimulateGlobalError.gif)    
+
+7. Navigate to **Event Flows** and delete connection from **OnGlobalError** to **EndFlow**.
+8. Add **HTTP Request** node to the flow. In this step we are going to build a **Create Task** API POST request. See [**Create Task API**](https://developer.webex.com/webex-contact-center/docs/api/v1/tasks-call-control/create-task){:target="_blank"} for details.
+
+    > Activity Label: **CallBackAPI_HTTPRequest**<span class="copy-static" data-copy-text="CallBackAPI_HTTPRequest"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Connect the **OnGlobalError** output edge node to this node
+    > 
+    > Use Authentication Endpoint: **On**
+    >
+    > Connector: **WxCC_API**
+    >
+    > Request Path: **/v1/tasks**<span class="copy-static" data-copy-text="/v1/tasks"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Method: **POST**
+    >
+    > Content Type: **Application/JSON**
+    >
+    > Request Body:
+    ``` JSON
+    {
+        "entryPointId": "{{outdialcbid}}",
+        "destination": "{{customani}}",
+        "attributes": {"Message":"tester","To Queue":"sales"},
+        "outboundType": "CALLBACK",
+        "mediaType": "telephony",
+        "callback": {
+        "callbackOrigin": "web",
+        "callbackType": "immediate"
+        }
+    }
     ```
-    >
-    > Delete the selection for Audio File
-    >
-    > Set the checkbox **Make Prompt Interruptible**
-    >    
-    > Custom Menu Links:
-    >>
-    >> Change first Digit Number from **0** to **1**, add Link Description as **Number OK**
-    >>
-    >> Add New Digit Number as **2** with Link Description **Number Not OK**
-    >
-    > Connect **No-Input Timeout** to the front of the **VerifyNumber** node
-    >
-    > Connect **Unmatched Entry** to the front of the **VerifyNumber** node
-    >    
-    > Connect **NewNumber** created in step 4 to **VerifyNumber** node
-    >
-    > Connect **Number Not OK** from **VerifyNumber** node to **NewNumber** node (aka, **Collect Digits** node) created in Step 4
-    
-    ![profiles](../graphics/Lab1/AM1-VerifyNumber.gif)
+    ![profiles](../graphics/Lab2/AM2_EventHTTP.gif) 
 
-
-6. Add **Callback** node:
+9. Add **Condition** node. In this node we are going to check the status of our API POST request. If HTTP response is **201 Created** the output will be **True** and if other than **201** then **False**.
     
-    > Callback Dial Number select  ***NewNumber.DigitsEntered***<span class="copy-static" data-copy-text="NewNumber.DigitsEntered"><span class="copy" title="Click to copy!"></span></span> from dropdown list
-    >    
-    > Callback Queue:
-    >> Static Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
     > 
-    > Callback ANI: Choose any number from dropdown list.
-    > 
-    > Connect **Number OK** from **VerifyNumber** node created in step 5 to this **CallBack** node
-
-
-7. Add **Play Message** node as follows:
+    > Activity Label: **HTTPStatusCode**<span class="copy-static" data-copy-text="HTTPStatusCode"><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Connect the output node edge from the **CallBackAPI_HTTPRequest** node to this node
+    >
+    > Connect both **True** and **False** exists to **EndFlow** node. We will be able to see in Debug tool whether request was succsesful or not. 
+    >
+    > In the Expression section write an expresion ***{{CallBackAPI_HTTPRequest.httpStatusCode == 201}}***<span class="copy-static" data-copy-text="{{CallBackAPI_HTTPRequest.httpStatusCode == 201}}"><span class="copy" title="Click to copy!"></span></span>
     
-    > Enable Text-To-Speech
-    >
-    > Select the Connector: **Cisco Cloud Text-to-Speech**
-    >
-    > Click the **Add Text-to-Speech Message** button and paste text: **Your call has been successfully scheduled for a callback. Good Bye.**<span class="copy-static" data-copy-text="You call has been successfully scheduled for a callback. Good Bye."><span class="copy" title="Click to copy!"></span></span>
-    >
-    > Delete the selection for Audio File
-    >
-    > Connect **CallBack** node created in step 6 to this **Play Message** node
-    >
-    > Connect the output of this **Play Message** node to **Disconnect Contact** node
-
-
-8. Add **Disconnect Contact** and connect the output of the **Play Message** node you created at step #7 to this **Disconnect Contact** node
-
-    ![profiles](../graphics/Lab1/AM1-SetCallBack.gif)
-
-
-9. Validate and publish the flow:
+10. Validate and publish the flow:
 
     > Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
     >
@@ -173,16 +252,43 @@ Your mission is to: </br>
     >
     > In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
 
+    ![profiles](../graphics/Lab2/AM2_EventCondition.gif) 
+
+11.  Switch to **Control Hub**. Navigate to **Channels** under **Customer Experience Section**, locate your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**.
+12. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
+13. In **Entry Point** settings section change the following, then click **Save** button:
     
+    >
+    > Routing Flow: **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
+    >
+    > Version Label: **Latest**
+
 ## Testing
-    
-1. Make sure you're logged into the Webex CC Desktop as an Agent and set the status to **Not Available**. In this case, the call will not be assigned to an agent, and a callback will be proposed to the caller.
-2. Make a call to the Support Number provided to you. If your flow is set up correctly, you should hear a message that you configured, offering you the option to schedule a callback.
-3. When callback is proposed, press 1 on Webex App Keypad to request a callback. 
-4. When asked, provide a new number for a callback. Because in the current lab we have number limitations, we are going to provide a well-known Cisco Worldwide Technical Support contact number **1 408 526 7209**<span class="copy-static" title="Click to copy!" data-copy-text="+14085267209"><span class="copy"></span></span> as a callback number. Use the Keypad in Webex app to provide the Cisco Technical Support number, then confirm when asked.
-5. Once done, another message about successful scheduling should play.
-6. Make your agent **Available**. Webex Contact Center will reserve you right away and propose to answer a callback call.
-7. Answer the call and wait until you are connected to a Cisco Technical Support IVR and hear a welcome prompt. Then disconnect the call in agent desktop.
+
+
+1. Make sure you're logged into Webex CC Desktop as Agent and set status to **Not Available** (select any Idle state). In this case call will not be assigned to an agent and callback will be proposed to a caller.
+
+2. Make a call to the Support Number and if success you should hear configured messages.
+
+3. Next message will propose you options to request callback, stay in queue or simulate an error. Press **3** on Webex App Keypad to simulate an error. 
+
+4. If everything configured correctly your call should be disconnected.
+
+5. Open Debug tool in your **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** and click on first call in the list which should be the last call you made. Look for **WantCallback** in Activity Name column and make sure the call left **WantCallback** out of Option 3 and continue through **GET_CBID**.
+
+6. Click on either **GET_CBID** node of the flow or on Activity Name **GET_CBID** in the Debug tool and scroll to the bottom the right-hand side section of Debug tool. Under **Modified Variables** you should see values assigned to **outdialcbid** and **customani** flow variables. Where **outdialcbid** is ID of your **<span class="attendee-id-container">Outdial_<span class="attendee-id-placeholder" data-prefix="Outdial_" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** and **customani** is a well known Cisco Worldwide Support contact number **1 408 526 7209**. The same number we used in previous exercise.  This time we used an external database as well as GET API call to extract that number.
+
+7. While still on Debug tool, click on **SetGetResult** to see full response from HTTP request that we wrote into **getresult** flow variable.
+
+8. Make sure **SimulateGlobalError** activity name has an **Error** next to it in **Outcome** column. That mean you successfully simulated **Global Error** event.
+
+9. Click on next activity name **GlobalErrorHandling** which goes after **SimulateGlobalError** activity name. Flow Designer automatically will open **Event Flows** tab.
+
+10. Observe **Condition** node to make sure exit went out via **True** exit. This tells you that HTTP response is **201 Created** and callback has been scheduled successfully. 
+
+11. On Webex Desktop, make your agent **Available**. Webex Contact Center will reserve your agent right away and propose to answer a callback call.
+
+12. Answer the call and wait until you are connected to a Cisco Technical Support IVR and hear a welcome prompt. Then disconnect the call in agent desktop.
 
 ---
-<p style="text-align:center"><strong>Congratulations, you have succesfully completed Adding Callback Functionality mission! 🎉🎉 </strong></p>
+<p style="text-align:center"><strong>Congratulations, you have succesfully completed Callback on Global Error mission! 🎉🎉 </strong></p>

@@ -11,6 +11,8 @@ This mission requires configuration created in the following missions:
 
 If this mission was not completed, some steps in current mission will not function correctly.
 
+---
+
 ## Feature Description
 
 The Webex Contact Center **Wrap-up Summary AI** feature is part of the AI Assistant capabilities designed to enhance agent productivity and customer experience. This feature automatically generates the conversations summaries based on the interactions between the agent and the customer during a contact center session. It helps agents by summarizing the conversation and recommending next actions, reducing manual effort and improving accuracy in post-call documentation.

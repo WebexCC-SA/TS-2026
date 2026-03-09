@@ -3,209 +3,196 @@
 icon: material/medal
 ---
 
-!!! Note
-    The input in the images that follow are only examples. They do not reflect the input you need to use in the lab exercises. In some cases, the input in the images may not follow the same attendee or pod ID from previous images. They are for representation only
+🚨 **<span style="color: red;">Important Lab Dependency</span>**
 
+This mission requires configuration created in the following missions:
 
-## Story
-Imagine calling a contact center, seeking quick, personalized help. Behind the scenes, a flow smoothly routes your call based on your needs.
+- **[Core Track: Mission 1: Basic Call Routing (Flow Template, TTS, Language)](../CoreTrack_Mission1/)**<br>
 
-### Call Flow Overview
-1. A new call enters the flow. *(This initiates the interaction and triggers the defined call-handling process.)*
-2. The flow determines the caller's language preference and plays a preconfigured Text-to-Speech (TTS) prompt. *(This ensures the caller receives information in their preferred language.)*
-3. The call is routed to the appropriate queue. *(This directs the caller to the right team on the flow logic.)*
+If this mission was not completed, some steps in current mission will not function correctly.
 
-### Mission Details
-
-Your mission is to:
-
-1. Configure key flow elements for efficient caller journeys. </br>
-2. Explore Flow Templates to streamline flow creation. </br>
-3. Set up routing with conditions, such as language preference. </br>
-4. Gain the skills to design flows for real-world scenarios. </br>
-
- **<details><summary>Why Flow Templates? <span style="color: orange;">[Optional]</span></summary>**
- Flow Templates in Webex Contact Center are an essential feature for flow developers, offering a range of benefits that streamline the development process and enhance the efficiency and consistency of flow creation. Here’s what they bring to the table:
-
-  - **Consistency and Standards**: Templates ensure that flows adhere to best practices, creating consistent experiences across multiple projects.
-
-  - **Time Savings**: Prebuilt structures reduce the need to start from scratch, enabling faster setup and allowing more focus on customization.
-
-  - **Reduced Errors**: Using tested templates lowers the risk of mistakes and minimizes troubleshooting.
-
-  - **Easy Onboarding**: New developers or partners can learn quickly by using templates as guides.
-
-  - **Scalability**: Templates allow developers to replicate and adapt solutions efficiently across different flows or deployments.
-
-  - **Innovation**: Developers can spend more time on unique features and integrations rather than reconfiguring basics.
-
-Flow Templates are designed to empower developers, speed up the development lifecycle, and maintain high-quality standards across flows, making them a core asset in Webex Contact Center flow design.
-
-</details>
 ---
 
-### Build
+## Story 
 
-1. Login into [Webex Control Hub](https://admin.webex.com){:target="_blank"} by using your Admin profile. 
-   Your login will be of the format **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. You will see another login screen with Webex logo on it where you may need to enter the email address again and the password provided to you.
+Callback functionality is an essential feature in a modern contact center, providing a solution that enhances both customer satisfaction and operational efficiency.
 
-    ![profiles](../graphics/Lab1/L1M1_Admin_Login.gif)
+Imagine a customer calls to upgrade their service but faces a 20-minute wait, they can request a callback instead of staying on hold. If no agents are available, they’ll be offered the choice to remain in the queue or opt for a callback. Upon choosing the callback, they provide their number, which is validated, and the system schedules the call. Once an agent is free, the system connects with the customer. This ensures businesses retain leads while providing a seamless customer experience.
 
-    !!! Note
-        Remember to take up the offer from Chrome to save your password
 
-2. This is the **Administration interface** for Webex Contact Center and is also known as the Control Hub. Look for the contact center option in the left pane under **SERVICES – Contact Center** and click on it.
-3. Navigate to **Flows**, click on **Manage Flows** dropdown list and select **Create Flows**.
-4. **Create a new flow** tab will be opened. Navigate to **Flow Templates**.
-5. Choose **Simple Inbound Call to Queue** template and click **Next**.
+## Call Flow Overview
 
-    !!! Note
-        You can press **View Details** link under the template name to observe flow structure and read flow description before proceeding with the template.
+1. A new call enters the flow. </br>
+2. The flow executes the logic configured in previous steps.</br>
+3. The call is routed to the appropriate queue, but no agents are available.</br>
+4. Since no agents are available, a callback option is offered to the caller.</br>
+5. Once an agent becomes available, the callback is initiated to the provided number.</br>
 
-6. Name your flow as <span class="attendee-id-container">**Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** Then click on **Create Flow**.
+## Mission Details
 
-    ![profiles](../graphics/Lab1/2-Create_Flow_Template.gif)
+Your mission is to: </br>
 
-7. If **Discover New Features** popup window appears in front of flow canvas, set the checkbox **Don't show this again** at the bottom and press **Get Started** button to close it and and go to the flow designer.
+1. Continue to use same flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>** </br>
+2. Add aditional callback functionality to your **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**.
 
-    !!! Note
-        **Edit** should be set to **On** when you create new flow, but if not switch it from **Edit: Off** mode to **Edit: On** at the top of the page.
 
-    ![profiles](../graphics/Lab1/L1M1_Close_Popup.gif)
+## Build
 
-8. Select **Play Message** node with label **WelcomePrompt** and on the node settings modify **Text-to-Speech Message** to any greetings you like. This message will be the first message you hear while calling to your script.
+1. Switch to the Flow Designer. Open your flow **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**. Make sure **Edit** toggle is **ON**.
+2. Delete  connection from **Queue** node to **Music**.
+3. Add **Menu** node:
 
-9. Select **Queue** node. On the **General settings** keep Static Queue checked and select queue **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>** from the dropdown list
+    > Rename Activity Label to **WantCallback**<span class="copy-static" title="Click to copy!" data-copy-text="WantCallback"><span class="copy"></span></span>
+    >
+    > Enable Text-To-Speech
+    >
+    > Select the Connector: **Cisco Cloud Text-to-Speech**
+    >
+    > Click the **Add Text-to-Speech Message** button and paste text: ***All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue.***<span class="copy-static" title="Click to copy!" data-copy-text="All agents are busy. Please press 1 if you want to schedule a callback. Press 2 if you want to wait in queue."><span class="copy"></span></span>
+    >
+    > Delete the selection for Audio File
+    >
+    > Set the checkbox **Make Prompt Interruptible**
+    >
+    > Under Custom Menu Links:
+    >>
+    >> Change first Digit Number **0** to **1**, add Link Description as **Callback** 
+    >>
+    >> Add New Digit Number as **2** with Link Description **Stay in queue**
+    >
+    > Connect existing **Queue** node to **WantCallBack** node
+    >
+    > Connect **No-Input Timeout** to the front of the **WantCallBack** node
+    >
+    > Connect **Unmatched Entry** to the front of the **WantCallBack** node
+
+    ![profiles](../graphics/Lab1/AM1-WantCallback.gif)
+
+
+
+4. Add **Collect Digits** node:
     
-    !!! Note
-        As mentioned in **Getting Started**, all queues have been preconfigured so you don't need to change them at current step.
-
-10. <span style="color: orange;">[Optional]</span> Select **Play Message** node (the one which goes after **Queue** and **Play Music** nodes) and on the **Node settings** modify **Text-to-Speech Message** to any message you like. This message will be played while the caller is waiting in the queue.
-
-11. Validate and publish the flow:
-
-    > - Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
+    > Rename Activity Label to **NewNumber**<span class="copy-static" title="Click to copy!" data-copy-text="NewNumber"><span class="copy"></span></span>
     >
-    > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
+    > Enable Text-To-Speech
     >
-    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**. 
-
-    ![profiles](../graphics/Lab1/3-Publish_BasicFlow.gif)
-
-12. Return to Control Hub to assign the Flow to your **Channel (Entry Point)**. Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
-13. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
-14. In **Entry Point** settings section change the following, then click **Save** button:
-
-    > - Routing flow: **Main_Flow_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**
+    > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > - Music on hold: **defaultmusic_on_hold.wav**
+    > Click the **Add Text-to-Speech Message** button and paste text: ***Please enter your 11 digits phone number to which we should call you back.***<span class="copy-static" title="Click to copy!" data-copy-text="Please enter your 11 digits phone number to which we should call you back."><span class="copy"></span></span>
     >
-    > - Version label: **Latest**
+    > Delete the Selection for Audio File
+    >
+    > Set the checkbox **Make Prompt Interruptible**
+    >   
+    > Advanced Settings:
+    >
+    >> No-Input Timeout: **5** 
+    >>
+    >> Minimum Digits: **9**
+    >>
+    >> Maximum Digits: **15**
+    >       
+    > Connect **No-Input Timeout** to the front of the **NewNumber** node
+    >
+    > Connect **Unmatched Entry** to the front of the **NewNumber** node
+    >   
+    > Connect **Callback** from **WantCallback** node created in step 3 to **NewNumber** node
+    >
+    > Connect **Stay in queue** from **WantCallback** node created in step 3 to **Music** node
 
-    ![profiles](../graphics/Lab1/4-ChannelCreation.gif.gif)
+    ![profiles](../graphics/Lab1/AM1-NewNumber.gif)
 
---- 
 
-### Checkpoint Test
 
-1. Launch **Webex CC Desktop** by clicking on **Desktop** cross-launch link in **Control Hub**.
-
-    ![Profiles](../graphics/Lab1/RunAgentDesktop.gif)
-
-2. Select Team **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Team**. Click **Submit**. 
-
-3. Allow notifications and browser to access Microphone by clicking **Allow** in the relevant pop-up prompts.<br>
-4. Make your agent **Available** and you're ready to make a call.
-
-    !!! Note
-        - Remember that your **<span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>** admin user has a Premium Agent license assigned, hence can play 2 roles in your lab.<br>
-
-        - This is the only time during the lab when you need to log in to **Webex Contact Center Desktop**. The system is configured to keep your agent session active for the entire duration of the lab.<br>
-
-        - If you are logged out for any reason (for example, due to a network issue, manual logout, or closing the browser tab), launch **Desktop** using the cross-launch link from **Control Hub**, as described above.<br>
-
-5. Open your Webex App and dial the Support Number provided to you, which is configured in your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** configuration.
-
-    ![profiles](../graphics/Lab1/WxApp_Test.gif)
-
-6. Ensure that you hear a welcome prompt configured in your flow and receive an incoming call in your agent desktop. Answer the call in the agent desktop and confirm that it has been successfully established. Then end the call, select any value from the **Wrap Up Reasons** dropdown list on the agent desktop, and press the **Submit Wrap Up** button.
-
-    ![profiles](../graphics/Lab1/L1M1_Agent_Answer.gif)
-
----
-
-## Enhance you flow with Language and Voice Name
-
-### Enhancement Details
-
-Your mission is to:
-
-  - Use the same flow created in the previous section.
-  - Add Language and Voice Name global variables to the flow.
-  - Modify Text-To-Speech (TTS) settings to use Australian English language and Male Voice.
-  - Place a call to verify and validate the speech functionality.
-
- **<details><summary>Text-to-Speech (TTS) in Webex Contact Center <span style="color: orange;">[Optional]</span></summary>**
-All supported TTS Languages and Voice Names can be found in the table here: [Text-to-Speech-(TTS)-in-Webex-Contact-Center](https://help.webex.com/en-us/article/ntkjqhw/Text-to-Speech-(TTS)-in-Webex-Contact-Center){:target="_blank"} 
-</details>
-
-### Build
-
-1. Open your flow **<span class="attendee-id-container">Main_Flow_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Make sure **Edit** toggle is **ON**.
-
-2. Navigate to the **Global Flow Properties** panel on the right-hand side.
+5. Add one more **Menu** node:
     
-    > - Scroll down and Locate the **Predefined Variables** section.
+    > Rename Activity Label to **VerifyNumber**<span class="copy-static" title="Click to copy!" data-copy-text="VerifyNumber"><span class="copy"></span></span>
     >
-    > - Click on the **Add Global Variables** button.
+    > Enable Text-To-Speech
     >
-    > - Search for **Global_Language**<span class="copy-static" data-copy-text="Global_Language"><span class="copy" title="Click to copy!"></span></span> variable and click on **Add** button.
+    > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > - Click on the **Add Global Variables** button one more time.
+    > Click the **Add Text-to-Speech Message** button and paste the following:
     >
-    > - Search for **Global_VoiceName**<span class="copy-static" data-copy-text="Global_VoiceName"><span class="copy" title="Click to copy!"></span></span> variable and click on **Add** button.
+    ```JSON
+    <speak>
+    You entered <say-as interpret-as="telephone">{{NewNumber.DigitsEntered}}</say-as>. 
+    Press 1 if the number is correct. 
+    Press 2 if you want to re-enter the number. 
+    </speak>
+    ```
+    >
+    > Delete the selection for Audio File
+    >
+    > Set the checkbox **Make Prompt Interruptible**
+    >    
+    > Custom Menu Links:
+    >>
+    >> Change first Digit Number from **0** to **1**, add Link Description as **Number OK**
+    >>
+    >> Add New Digit Number as **2** with Link Description **Number Not OK**
+    >
+    > Connect **No-Input Timeout** to the front of the **VerifyNumber** node
+    >
+    > Connect **Unmatched Entry** to the front of the **VerifyNumber** node
+    >    
+    > Connect **NewNumber** created in step 4 to **VerifyNumber** node
+    >
+    > Connect **Number Not OK** from **VerifyNumber** node to **NewNumber** node (aka, **Collect Digits** node) created in Step 4
+    
+    ![profiles](../graphics/Lab1/AM1-VerifyNumber.gif)
 
-    ![profiles](../graphics/Lab1/6-GlobalVar.gif)
 
-3. Add a **Set Variable** node from the activity library on the left with following configuration:
-  
-    > - Navigate to the **Variable Settings** section.
-    >
-    > - Click on the **Variable** drop-down list and select **Global_Language**.
-    >
-    > - Set Value: **en-AU**<span class="copy-static" data-copy-text="en-AU"><span class="copy" title="Click to copy!"></span></span>.
-    >
-    > - Click on the **+ Add New** button under the variable you have just added to add another one.
-    >
-    > - Click on the **Variable** drop-down list and select **Global_VoiceName**.
-    >
-    > - Set Value: **en-AU-Chris**<span class="copy-static" data-copy-text="en-AU-Chris"><span class="copy" title="Click to copy!"></span></span>.
-    > <br/><br/>
-    > - Return to the flow canvas and delete connection between **NewPhoneContact** and **WelcomePrompt** nodes.
-    >
-    > - Connect **NewPhoneContact** to **Set Variable**.
-    >
-    > - Connect **Set Variable** to **WelcomePrompt**.
+6. Add **Callback** node:
+    
+    > Callback Dial Number select  ***NewNumber.DigitsEntered***<span class="copy-static" data-copy-text="NewNumber.DigitsEntered"><span class="copy" title="Click to copy!"></span></span> from dropdown list
+    >    
+    > Callback Queue:
+    >> Static Queue: **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">Your_Attendee_ID</span>_Queue<span class="copy" title="Click to copy!"></span></span>**
+    > 
+    > Callback ANI: Choose any number from dropdown list.
+    > 
+    > Connect **Number OK** from **VerifyNumber** node created in step 5 to this **CallBack** node
 
-    ![profiles](../graphics/Lab1/7-Set_lan_GV.gif)
 
-4. Validate and publish the flow:
-
-    > - Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
+7. Add **Play Message** node as follows:
+    
+    > Enable Text-To-Speech
     >
-    > - If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
+    > Select the Connector: **Cisco Cloud Text-to-Speech**
     >
-    > - In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**. 
+    > Click the **Add Text-to-Speech Message** button and paste text: **Your call has been successfully scheduled for a callback. Good Bye.**<span class="copy-static" data-copy-text="You call has been successfully scheduled for a callback. Good Bye."><span class="copy" title="Click to copy!"></span></span>
+    >
+    > Delete the selection for Audio File
+    >
+    > Connect **CallBack** node created in step 6 to this **Play Message** node
+    >
+    > Connect the output of this **Play Message** node to **Disconnect Contact** node
 
-### Testing
 
-1. Open your Webex Desktop and make your agent is **Available**, and you're ready to make a call.
+8. Add **Disconnect Contact** and connect the output of the **Play Message** node you created at step #7 to this **Disconnect Contact** node
 
-2. Open your Webex App and dial the Support Number provided to you, which is configured in your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** configuration.
+    ![profiles](../graphics/Lab1/AM1-SetCallBack.gif)
 
-    ![profiles](../graphics/Lab1/WxApp_Test.gif)
 
-3. Listen to the welcome prompt to confirm the TTS language and voice have changed.
+9. Validate and publish the flow:
+
+    > Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
+    >
+    > If there are no **Flow Errors** after validation is complete, click on **Publish Flow** next to it.
+    >
+    > In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
+
+    
+## Testing
+    
+1. Make sure you're logged into the Webex CC Desktop as an Agent and set the status to **Not Available**. In this case, the call will not be assigned to an agent, and a callback will be proposed to the caller.
+2. Make a call to the Support Number provided to you. If your flow is set up correctly, you should hear a message that you configured, offering you the option to schedule a callback.
+3. When callback is proposed, press 1 on Webex App Keypad to request a callback. 
+4. When asked, provide a new number for a callback. Because in the current lab we have number limitations, we are going to provide a well-known Cisco Worldwide Technical Support contact number **1 408 526 7209**<span class="copy-static" title="Click to copy!" data-copy-text="+14085267209"><span class="copy"></span></span> as a callback number. Use the Keypad in Webex app to provide the Cisco Technical Support number, then confirm when asked.
+5. Once done, another message about successful scheduling should play.
+6. Make your agent **Available**. Webex Contact Center will reserve you right away and propose to answer a callback call.
+7. Answer the call and wait until you are connected to a Cisco Technical Support IVR and hear a welcome prompt. Then disconnect the call in agent desktop.
 
 ---
-<p style="text-align:center"><strong>Congratulations, you have succesfully completed Basci Call Routing mission! 🎉🎉 </strong></p>
+<p style="text-align:center"><strong>Congratulations, you have succesfully completed Adding Callback Functionality mission! 🎉🎉 </strong></p>

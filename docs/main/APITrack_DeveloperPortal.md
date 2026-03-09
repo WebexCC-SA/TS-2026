@@ -19,14 +19,13 @@ icon: material/medal
   document.getElementById("json-addr-book").textContent = JSON.stringify(json, null, 2);
 </script>
 
-> 🚨 **Important Lab Dependency**
->
-> This mission requires configuration created in the following missions:
->
-> - **Core Track: Mission 1: Basic Call Routing (Flow Template, TTS, Language)**<br>
->
-> If this mission was not completed, some steps in current mission will not function correctly.
+🚨 **<span style="color: red;">Important Lab Dependency</span>**
 
+ This mission requires configuration created in the following missions:
+
+ - **<span style="color: green;">NO DEPENDENCY</span>**
+
+---
 
 # Using Webex Contact Center Developer Portal
 

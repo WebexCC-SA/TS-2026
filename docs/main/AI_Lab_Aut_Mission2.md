@@ -3,7 +3,15 @@
 icon: material/medal
 ---
 
-# Mission 2: Integrating the AI Agent with Flow for Voice Calls
+🚨 **<span style="color: red;">Important Lab Dependency</span>**
+
+This mission requires configuration created in the following missions:
+
+- **[AI Agent Track: Mission 1: Create AI Autonomous Agent](../AI_Lab_Aut_Mission1/)**<br>
+
+If this mission was not completed, some steps in current mission will not function correctly.
+
+---
 
 ## Mission overview
 

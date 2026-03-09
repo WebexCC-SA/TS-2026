@@ -12,6 +12,8 @@ This mission requires configuration created in the following missions:
 
 If this mission was not completed, some steps in current mission will not function correctly.
 
+---
+
 ## Feature Description
 
 You can enhance communication efficiency and quality assurance in your contact center with the real-time transcripts feature. It allows agents to access real-time transcriptions of customer interactions directly on their Agent Desktop, enabling them to follow conversations more accurately and respond effectively.

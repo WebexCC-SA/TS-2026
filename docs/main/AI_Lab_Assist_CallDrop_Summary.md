@@ -11,6 +11,8 @@ This mission requires configuration created in the following missions:
 
 If this mission was not completed, some steps in current mission will not function correctly.
 
+---
+
 ## Feature Description
 
 Customers find it frustrating to repeat themselves, especially after a call drop. Now, agents can pick up where the call left off, reducing frustration and handling time, while empowering agents to work more efficiently.
@@ -69,14 +71,37 @@ Your mission is to:
 
 4. Place the test call to the number that is associated with your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**. 
 
-5. Stay on the call for 35 - 45 seconds, as a customer ask questions such as that you want to order flowers for a friend.
+5. Answer the call on Agent Desktop and use the provided script to simulate an agent/customer conversation (minimum 30 seconds).
 
-6. After 35-45 seconds, end the call from the customer side.
-   ![Profiles](../graphics/Lab1_AI_Agent/3.19.png)
+    <!-- md:option type:note -->
+    
+    !!! note "Call Drop Summary Script"
+        **Agent**: Good morning, thank you for calling Airway Express. My name is Michelle. How can I assist you today?</br>
+        **You**: Hi Michelle, I'm having an issue trying to make an adjustment to a flight I have with you. I booked a flight from Amsterdam to London, but now I need to add a leg to go from London to New York a couple of days later. I just can't seem to do it through the website.</br>
+        **Agent**: I'm sorry to hear you're experiencing issues with our app. I can definitely help you with that. Could I have your flight confirmation number to start with, please?</br>
+        **You**: <..Silence..></br>
+        **Agent**: Hello, hello, hello</br>
 
-7. Call back from the same number. Ask to talk to an agent.
 
-8. Make sure you are **Available** on the Agent Desktop and answer the call. You will see AI Assistant Widget will have Call Drop Summary and the Agent Transfer Summary.
-   ![Profiles](../graphics/Lab1_AI_Agent/3.20.png)
+6. From the Agent Call Controls, transfer the call to transfer call to the Queue **CCBU_ExecDemo_Q_CallDrop**. Click the “Queue” radio button to search for this Queue.
 
-<p style="text-align:center"><strong>Congratulations, you have officially completed this mission! 🎉🎉 </strong></p>
+  ![Profiles](../graphics/AI_Track/CallDropSum_Transfer.gif)
+
+7. **Wait for the call to timeout and disconnect. This simulates an accidental call drop.**
+
+    !!! Note
+        Since the call drop must be system initiated, the queue **CCBU_ExecDemo_Q_CallDrop** has been pre-configured with a maximum time in queue of 10 seconds (pictured on screenshot from Control Hub). Wait in the queue for about 10 seconds for the system to drop the call "automatically". 
+    
+    ![Profiles](../graphics/Lab2/CallDropSum_DummyQueue.png)
+
+8. Make sure your agent session is active and your agent is in **Available** state.
+
+9. Dial the support number assigned to your **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel** channel again. This will simulate a customer calling back after a call was dropped and trying to connect again to resolve the original issue.
+
+10. Accept the call on the Agent Desktop. The AI Assistant notifies the agent of the available call drop summary.
+
+11. Open the AI Assistant to review the summary. This summary can be used by the agent to pick up where the previous agent left off, reducing customer frustration and need for them to repeat themselves.
+
+![Profiles](../graphics/Lab2/Call_Drop_Summary.gif)
+
+<p style="text-align:left"><strong>Congratulations, you have officially completed the Call Drop Summary lab! 🎉🎉 </strong></p>

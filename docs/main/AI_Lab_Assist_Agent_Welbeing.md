@@ -12,6 +12,8 @@ This mission requires configuration created in the following missions:
 
 If this mission was not completed, some steps in current mission will not function correctly.
 
+---
+
 ## Feature Description 
 
 **Agent Wellbeing (Burnout Detection)** feature in Webex Contact Center uses Cisco’s proprietary AI algorithms to analyze specific call metrics and transcripts to identify signs of stress and burnout in agents. The system continuously monitors shifts in agent performance, schedule, and other operational data to calculate a unique burnout index for each agent, tailored individually with separate thresholds. When an agent’s burnout level crosses a defined threshold, the AI Assistant proactively offers a 1-minute wellness break between call assignments to help the agent reset and reduce stress.

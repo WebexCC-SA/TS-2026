@@ -3,7 +3,13 @@
 icon: material/medal
 ---
 
+🚨 **<span style="color: red;">Important Lab Dependency</span>**
 
+ This mission requires configuration created in the following missions:
+
+ - **<span style="color: green;">NO DEPENDENCY</span>**
+
+---
 
 # Mission 5: Personalized Customer Notification with Functions
 

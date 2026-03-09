@@ -9,6 +9,7 @@ icon: material/medal
 
  - **<span style="color: green;">NO DEPENDENCY</span>**
 
+---
 
 ## Feature Description
 

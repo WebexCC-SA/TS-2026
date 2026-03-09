@@ -124,12 +124,12 @@ nav:
       - Conclusion: ./main/APITrack_Conclusion.md
   - CALLBACK TRACK:
       - Lab Guide:
-            - "Mission 1: Basic Call Routing (Flow Template, TTS, Language)": ./main/CallbackTrack_Mission1.md ## Same as CoreTrack Mission1
-            - "Mission 2: Adding Callback Functionality": ./main/CallbackTrack_Mission2.md ## Same as CoreTrack Mission3
-            - "Mission 3: CallBack on Global Error": ./main/CallbackTrack_Mission3.md
-            - "Mission 4: Preventing Callback Duplication": ./main/CallbackTrack_Mission4.md
-            - "Mission 5: Adding Scheduled IVR Callback": ./main/CallbackTrack_Mission5.md
-            - "Mission 6: Adding Personalized Callback": ./main/CallbackTrack_Mission6.md  
+##            - "Mission 1: Basic Call Routing (Flow Template, TTS, Language)": ./main/CallbackTrack_Mission1.md ## Same as CoreTrack Mission1
+            - "Mission 1: Adding Callback Functionality": ./main/CallbackTrack_Mission1.md ## Same as CoreTrack Mission3
+            - "Mission 2: CallBack on Global Error": ./main/CallbackTrack_Mission2.md
+            - "Mission 3: Preventing Callback Duplication": ./main/CallbackTrack_Mission3.md
+            - "Mission 4: Adding Scheduled IVR Callback": ./main/CallbackTrack_Mission4.md
+            - "Mission 5: Adding Personalized Callback": ./main/CallbackTrack_Mission5.md  
       - Conclusion: ./main/CallbackTrack_Conclusion.md
   - AI AGENT TRACK:
       - Autonomous AI Agent:
