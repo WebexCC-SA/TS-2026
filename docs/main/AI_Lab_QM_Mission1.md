@@ -3,7 +3,13 @@
 icon: material/medal
 ---
 
-# Mission 1: Configure flow to Evaluate the agents' answers.
+🚨 **<span style="color: red;">Important Lab Dependency</span>**
+
+This mission requires configuration created in the following missions:
+
+- **[Core Track: Mission 1: Basic Call Routing (Flow Template, TTS, Language)](../CoreTrack_Mission1/)**<br>
+
+If this mission was not completed, some steps in current mission will not function correctly.
 
 ## Mission overview
 
@@ -15,15 +21,15 @@ Your mission is to:
 
 ## Build
 
-### Task 1. Create Evaluation form
+### Create Evaluation form
 
 1. In your browser, open **New Incognito Window** (need a new Desktop window to login as Supervisor).
    ![Profiles](../graphics/Lab1_AI_Agent/12.1.gif)
 
-2. In this Incognito Window open up https://desktop.wxcc-us1.cisco.com/<span class="copy-static" data-copy-text="https://desktop.wxcc-us1.cisco.com/"><span class="copy" title="Click to copy!"></span></span>.
+2. In this Incognito Window open up **<span style="color: blue;">https://desktop.wxcc-us1.cisco.com/</span>**<span class="copy-static" data-copy-text="https://desktop.wxcc-us1.cisco.com/"><span class="copy" title="Click to copy!"></span></span>.
    ![Profiles](../graphics/Lab1_AI_Agent/12.2.gif)
 
-3. Login with your Supervisor user **<span class="attendee-id-container">wxcclabs+supvr_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+supvr_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. Password is the same as for you Admin user.
+3. Login with your Supervisor user **<span class="attendee-id-container">wxcclabs+supvr_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+supvr_ID" data-suffix="@gmail.com">Your_Attendee_ID</span>@gmail.com<span class="copy" title="Click to copy!"></span></span>**. Password is the same as for your Admin user.
 
 
 4. In the **"Set your interaction preferences"** pop-up window, select Role as **Supervisor** and Handle calls using **Desktop**. Allow using microphone.
@@ -51,7 +57,7 @@ Your mission is to:
 10. **Publish** the form.
    ![Profiles](../graphics/Lab1_AI_Agent/12.9.gif)<br>
 
-### Task 2. Evaluate agent using the Evaluation form
+### Evaluate agent using the Evaluation form
 
 1. Return to Control Hub to assign the Flow to your **Channel (Entry Point)**. Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
 2. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
@@ -81,7 +87,7 @@ Your mission is to:
 
 7. Complete the call.
 
-8. Switch back to your **Supervisor Desktop** in the Incognito Window (https://desktop.wxcc-us1.cisco.com/<span class="copy-static" data-copy-text="https://desktop.wxcc-us1.cisco.com/"><span class="copy" title="Click to copy!"></span></span>), click on **Interactions** and select **Completed**.
+8. Switch back to your **Supervisor Desktop** in the Incognito Window (**<span style="color: blue;">https://desktop.wxcc-us1.cisco.com/</span>**<span class="copy-static" data-copy-text="https://desktop.wxcc-us1.cisco.com/"><span class="copy" title="Click to copy!"></span></span>), click on **Interactions** and select **Completed**.
    ![Profiles](../graphics/Lab1_AI_Agent/12.12.png)<br>
 
 8. Find the **Customize** option and add **Automated evaluation** column.

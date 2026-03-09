@@ -3,6 +3,13 @@
 icon: material/medal
 ---
 
+🚨 **<span style="color: red;">Important Lab Dependency</span>**
+
+This mission requires configuration created in the following missions:
+
+- **[Core Track: Mission 1: Basic Call Routing (Flow Template, TTS, Language)](../CoreTrack_Mission1/)**<br>
+
+If this mission was not completed, some steps in current mission will not function correctly.
 
 !!! Note
     The current mission does not include any configuration steps, but it focuses on additional Flow Designer tools that facilitate flow troubleshooting and might provide you with ideas on how to optimize your flow logic.
