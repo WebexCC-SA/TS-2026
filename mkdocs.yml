@@ -172,7 +172,7 @@ nav:
   - AI QM:
       - Quality Managment:
             - "Lab overview": ./main/AI_Lab_QM_Overview.md
-            - "Mission 1": ./main/AI_Lab_QM_Mission1.md
+            - "Mission 1: Webex AI Quality Management": ./main/AI_Lab_QM_Mission1.md
       - Conclusion: ./main/AI_Lab_QM_Conclusion.md
   - FINAL CHALLENGE:
       - Troubleshooting Mission:
