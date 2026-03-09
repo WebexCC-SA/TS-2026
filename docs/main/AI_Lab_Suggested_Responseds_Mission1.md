@@ -92,8 +92,8 @@ Your mission is to:
 ### Task 5. Test Real-Time Assist Feature
 
 1. Switch to Control Hub to assign the Flow to your **Channel (Entry Point)**. Go to **Channels**, search for your channel **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
-7. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
-8. In **Entry Point** settings section change the following, then click **Save** button:
+2. Click on **<span class="attendee-id-placeholder">Your_Attendee_ID</span>_Channel**
+3. In **Entry Point** settings section change the following, then click **Save** button:
 
     > - Routing flow: **<span class="attendee-id-container">AutonomousAIFlow_2000_<span class="attendee-id-placeholder" data-prefix="AutonomousAIFlow_2000_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
     >
@@ -103,7 +103,7 @@ Your mission is to:
 
     ![profiles](../graphics/Lab1/4-ChannelCreation.gif.gif)
 
-2. Your Agent Desktop session should still be active. If it is not, launch **Desktop** using the cross-launch link in **Control Hub**.
+4. Your Agent Desktop session should still be active. If it is not, launch **Desktop** using the cross-launch link in **Control Hub**.
 
     **<details><summary>See how to run Agent Desktop from the Control Hub</summary>**
 
@@ -111,12 +111,12 @@ Your mission is to:
 
     </details>
 
-3. Make your agent **Available** and you're ready to make a call.
+5. Make your agent **Available** and you're ready to make a call.
    ![Profiles](../graphics/Lab1_AI_Agent/3.15.png)
 
-4. Place the test call to the number that is associated with your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**. 
+6. Place the test call to the number that is associated with your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**. 
 
-5. Once the call is connected to your Agent Desktop, click on the **AI Assistant** module. You will see the option **Get Suggestion**. Click on it and try to order some flowers. You should see that the AI Agent will suggest flower availability and prices to the human agent based on the Knowledge Base.
+7. Once the call is connected to your Agent Desktop, click on the **AI Assistant** module. You will see the option **Get Suggestion**. Click on it and try to order some flowers. You should see that the AI Agent will suggest flower availability and prices to the human agent based on the Knowledge Base.
    ![Profiles](../graphics/Lab1_AI_Agent/9.14a.png)
 
 <p style="text-align:center"><strong>Congratulations, you have officially completed this mission! 🎉🎉 </strong></p>
