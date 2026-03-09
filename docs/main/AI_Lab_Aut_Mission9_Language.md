@@ -3,8 +3,8 @@
 icon: material/medal
 ---
 
-1. **[AI Agent Track: Mission 1: Create AI Autonomous Agent](../AI_Lab_Aut_Mission1/)**<br>
-2. **[AI Agent Track: Mission 2: Integrating the AI Agent with Flow for Voice Calls](../AI_Lab_Aut_Mission2/)**<br>
+1. **[AI Agent Track ⮕ Autonomous AI Agent: Mission 1 - Create AI Autonomous Agent](../AI_Lab_Aut_Mission1/)**<br>
+2. **[AI Agent Track ⮕ Autonomous AI Agent: Mission 2 - Integrating the AI Agent with Flow for Voice Calls](../AI_Lab_Aut_Mission2/)**<br>
 
 If this mission was not completed, some steps in current mission will not function correctly.
 

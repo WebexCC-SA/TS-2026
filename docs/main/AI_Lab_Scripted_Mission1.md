@@ -3,6 +3,14 @@
 icon: material/medal
 ---
 
+🚨 **<span style="color: red;">Important Lab Dependency</span>**
+
+This mission requires configuration created in the following missions:
+
+1. **<span style="color: green;">NO DEPENDENCY</span>**
+
+---
+
 ## Mission Details
 
 Your mission is to create a new Scripted AI Agent from the template and configure basic Scripted AI Agent functionalities by adding intents and responses.

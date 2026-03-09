@@ -10,7 +10,7 @@ icon: material/medal
 
  1. **[AI Agent Track: Mission 1 – Create AI Autonomous Agent](../AI_Lab_Aut_Mission1/)**<br>
  2. **[AI Agent Track: Mission 2 – Integrating the AI Agent with Flow for Voice Calls](../AI_Lab_Aut_Mission1/)**<br>
- 3. **[AI Assistant Track: Real-Time Assist (Suggested Responses): Mission 1: Configure Real-Time Assist in Knowledge Base](../AI_Lab_Suggested_Responseds_Mission1/)**
+ 3. **[AI Assistant Track: Real-Time Assist (Suggested Responses): Mission 1 - Configure Real-Time Assist in Knowledge Base](../AI_Lab_Suggested_Responseds_Mission1/)**
 
  If these missions were not completed, some steps in current mission will not function correctly.
 
