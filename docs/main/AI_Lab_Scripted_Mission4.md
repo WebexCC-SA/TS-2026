@@ -30,6 +30,7 @@ In the previous **Mission 3**, you created intents, entities, and responses to e
 
     > Event Name: **order_details**<span class="copy-static" data-copy-text="order_details"><span class="copy" title="Click to copy!"></span></span> </br>
     > Event payload: 
+    >
     > ``` JSON
     > {"ordernumber":"${entity.order_number}"}
     > ```
@@ -114,7 +115,7 @@ In the previous **Mission 3**, you created intents, entities, and responses to e
 
 13. Switch to Control Hub and navigate to **Channels** under Customer Experience Section
     
-    > - Locate your Inbound Channel (you can use the search):  **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+    > - Locate your Inbound Channel (you can use the search): **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
     > 
     > - Select the Routing Flow: **<span class="attendee-id-container">Autonomous_Scripted_Flow_2000_<span class="attendee-id-placeholder" data-prefix="Autonomous_Scripted_Flow_2000_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
     > 
