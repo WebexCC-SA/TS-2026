@@ -8,35 +8,38 @@ icon: material/medal
 This mission requires configuration created in the following missions:
 
 1. **[AI Agent Track ⮕ Scripted Agent: Mission 1 - Configure Scripted Agent to answer basic questions](../AI_Lab_Scripted_Mission1/)**<br>
+2. **[AI Agent Track ⮕ Autonomous AI Agent: Mission 1 - Create AI Autonomous Agent](../AI_Lab_Aut_Mission1/)**<br>
+3. **[AI Agent Track ⮕ Autonomous AI Agent: Mission 2 - Integrating the AI Agent with Flow for Voice Calls](../AI_Lab_Aut_Mission2/)**<br>
 
-If this mission was not completed, some steps in current mission will not function correctly.
+If these missions were not completed, some steps in current mission will not function correctly.
 
 ---
 
 ## Mission Details
 
-Your mission is to integrate the Scripted AI agent with the Voice flow to enable it to answer questions about store hours.
+Your mission is to integrate the **Scripted AI Agent** with the Voice flow so it can answer questions about store hours. In the next steps, you will extend your **Webex Contact Center** flow to use the **Scripted AI Agent** together with the **Autonomous AI Agent**.
 
 ## Build
 
 ### Task 1. Add the newly created Scripted Agent to the Voice flow.
 
-1. In [Control Hub](https://admin.webex.com){:target="_blank"}, go to **Contact Center**, click on **Flows**, and search for the flow with name \*\*<copy>AutonomousAI_Flow_2000_<w class="attendee"></w></copy>\*\* (that you created during the Autonomous AI lab).
+
+1. In [Webex Control Hub](https://admin.webex.com){:target="_blank"}, go to **Contact Center**, click on **Flows**, and search for the flow with name **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_2000_AutoAI_Lab">Your_Attendee_ID</span>_2000_AutoAI_Lab<span class="copy" title="Click to copy!"></span></span>** (that you created during the Autonomous AI lab).
    ![Profiles](../graphics/Lab1_AI_Agent/6.27.gif)
 
-2. Click on **Edit** and rename the flow to **<copy>Autonomous*Scripted_Flow_2000*<w class="attendee"></w></copy>**. Publish the flow.
+2. Click on **Edit** and rename the flow to **<span class="attendee-id-container">Autonomous_Scripted_Flow_2000_<span class="attendee-id-placeholder" data-prefix="Autonomous_Scripted_Flow_2000_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Publish the flow.
    ![Profiles](../graphics/Lab1_AI_Agent/6.28.gif)
 
-3. Add a **Menu** node in front of the VirtualAgentV2 node.
+3. Add a **Menu** node in front of the **VirtualAgentV2** node.
    ![Profiles](../graphics/Lab1_AI_Agent/6.29.gif)
 
-4. Click on the **Menu** node and Enable Text-to-Speech. Select native **Cisco Cloud Text-to-Speech** connector, add Text-to-Speech message, remove the Audio File option. Finally, enter the text: **_<copy>Press 1 to create a new order. Press 2 to track an order or check the store hours.</copy>_**
+4. Click on the **Menu** node and Enable Text-to-Speech. Select native **Cisco Cloud Text-to-Speech** connector, add Text-to-Speech message, remove the Audio File option. Finally, enter the text: ***Press 1 to create a new order. Press 2 to track an order or check the store hours.***<span class="copy-static" data-copy-text="Press 1 to create a new order. Press 2 to track an order or check the store hours."><span class="copy" title="Click to copy!"></span></span><br>
    ![Profiles](../graphics/Lab1_AI_Agent/6.30.gif)
 
 5. Adjust the **Menu** node to have options 1 and 2.
    ![Profiles](../graphics/Lab1_AI_Agent/6.31.gif)
 
-6. Bring one more VirtualAgentV2 node. Click on it. In the Contact Center AI Config search for scripted and select **Webex AI Agent (Scripted)**. Under the Virtual Agent option, search for the Scripted AI Agent with name **<copy><w class="attendee"></w>\_Scripted_AI_Agent</copy>**.
+6. Bring one more **VirtualAgentV2** node. Click on it. In the Contact Center AI Config search for scripted and select **Webex AI Agent (Scripted)**. Under the Virtual Agent option, search for the Scripted AI Agent with name **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Scripted_AI_Agent">Your_Attendee_ID</span>_Scripted_AI_Agent<span class="copy" title="Click to copy!"></span></span>**<br>
    ![Profiles](../graphics/Lab1_AI_Agent/6.32.gif)
 
 7. Connect Option 1 of the **Menu** to the **VirtualAgentV2** node that is configured with Autonomous AI agent. And connect Option 2 to the **VirtualAgentV2** node that is configured with your Scripted AI Agent.
