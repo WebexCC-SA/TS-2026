@@ -22,7 +22,7 @@ Your mission is to configure intents, entities, and responses to check the statu
 
 ### Task 1. Test the Order tracking flow
 
-1. While in **AI Agent Portal**, access your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Scripted_AI_Agent">Your_Attendee_ID</span>_Scripted_AI_Agent<span class="copy" title="Click to copy!"></span></span>** and click on the **Preview** button on the top right side to test the bot. Try the bot flow by typing **I want to track my order**<span class="copy-static" data-copy-text="I want to track my order"><span class="copy" title="Click to copy!"></span></span><br>. You will see that the Scripted AI agent is not yet configured to assist with this task.
+1. While in **AI Agent Studio** portal, access your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Scripted_AI_Agent">Your_Attendee_ID</span>_Scripted_AI_Agent<span class="copy" title="Click to copy!"></span></span>** and click on the **Preview** button on the top right side to test the bot. Try the bot flow by typing **I want to track my order**<span class="copy-static" data-copy-text="I want to track my order"><span class="copy" title="Click to copy!"></span></span><br>. You will see that the Scripted AI agent is not yet configured to assist with this task.
    ![Profiles](../graphics/Lab1_AI_Agent/6.14.png)
 
 ### Task 2. Configure intents, entities, and responses
