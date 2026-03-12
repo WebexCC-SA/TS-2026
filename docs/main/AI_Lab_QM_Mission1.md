@@ -8,6 +8,7 @@ icon: material/medal
 This mission requires configuration created in the following missions:
 
 1. **[Core Track: Mission 1 - Basic Call Routing (Flow Template, TTS, Language)](../CoreTrack_Mission1/)**<br>
+2. **[AI Assistant Track ⮕ AI Assistant Features: Mission 1 - Real Time Transcript](../AI_Lab_Assist_RT_Transcript/)**<br>
 
 If this mission was not completed, some steps in current mission will not function correctly.
 

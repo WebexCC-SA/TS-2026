@@ -47,7 +47,7 @@ Your mission is to:
    ![Profiles](../graphics/Lab1_AI_Agent/2.2.gif)
 
 
-8. <span style="color: red;">[Read Only]</span> : You can also natively create a Knowledge Base document by clicking on **Documents**, then **Create Document** and paste the content. **Save** it.
+8. <span style="color: red;">[Read Only]</span> You can also natively create a Knowledge Base document by clicking on **Documents**, then **Create Document** and paste the content. **Save** it.
    ![Profiles](../graphics/Lab1_AI_Agent/2.75KBDocument.gif)
 
 9. Navigate to **AI Agents** from the left-hand side menu panel and click on **Create Agent**.
