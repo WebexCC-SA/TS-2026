@@ -85,7 +85,7 @@ icon: material/bullseye-arrow
 
 ## Get Your Credentials
 
-### 🚨 <span style="color: red;">Make sure you download the file whose name starts with the **attendee ID** **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="">Your_Attendee_ID</span></span>** you received from the lab instructor.</span>
+### 🚨 <span style="color: red;">Make sure you download the file whose name starts with the attendee ID **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="">Your_Attendee_ID</span></span>** you received from the lab instructor.</span>
 
 1. **[DOWNLOAD](https://drive.google.com/drive/folders/143wQmqXRyuFmgS1bWvr50HnPB9XM08_Y?usp=drive_link)**{:target="\_blank"} **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix=" - WxCC Lab Credentials.txt">Your_Attendee_ID</span> - WxCC Lab Credentials.txt<span class="copy" title="Click to copy!"></span></span>** file to your computer.
 

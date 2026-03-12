@@ -2,9 +2,9 @@
 
 The Autonomous AI Agent can handle various tasks, including:
 
-- Natural Language Processing (NLP) — Understand and respond to human language in a natural and conversational manner.
-- Decision making — Make informed choices based on available information and predefined rules.
-- Automation — Automate repetitive or time-consuming tasks.
+- **Natural Language Processing (NLP)** — Understand and respond to human language in a natural and conversational manner.
+- **Decision making** — Make informed choices based on available information and predefined rules.
+- **Automation** — Automate repetitive or time-consuming tasks.
 </details>
 
 ## Story
