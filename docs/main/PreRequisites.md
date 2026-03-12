@@ -3,11 +3,6 @@
 icon: material/bullseye-arrow
 ---
 
-## Learning Objectives
-1. Ensure that you have **<span class="attendee-id-container">ID<span class="attendee-id-placeholder" data-prefix="ID" data-suffix=" - WxCC Lab Credentials.txt">Your_Attendee_ID</span> - WxCC Lab Credentials.txt<span class="copy"></span></span>** file on your desktop with instructions and credentials to access your lab. If you do not, please ask your lab proctor now.
-2. Understand your configuration instructions
-3. Familiarize yourself how we will use Google Chrome profiles to simulate various scenarios covered in the next labs.
-
 ### Know before you start
 
 1. We will be using a shared lab tenant for simulations, meaning all attendees will work within the same Webex Contact Center environment. To avoid conflicts, ensure that any entities you configure are tagged with the Attendee ID assigned to you.

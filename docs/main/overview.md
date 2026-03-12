@@ -83,6 +83,12 @@ icon: material/bullseye-arrow
     <p>Your stored Attendee ID is: <b><span id="display-attendee">No ID stored</span></b></p>
 </div>
 
+## Get Your Credentials
+
+### 🚨 <span style="color: red;">Make sure you download the file that start with attendee ID you cog from the lab instructor - **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** in the name.</span>
+
+1. Download **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix=" - WxCC Lab Credentials.txt">Your_Attendee_ID</span> - WxCC Lab Credentials.txt<span class="copy" title="Click to copy!"></span></span>** from **[CREDENTIALS](https://drive.google.com/drive/folders/143wQmqXRyuFmgS1bWvr50HnPB9XM08_Y?usp=drive_link)**{:target="\_blank"}.
+
 # Overview
 
 ## Learning Objectives
