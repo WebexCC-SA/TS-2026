@@ -85,17 +85,17 @@ icon: material/bullseye-arrow
 
 ## Get Your Credentials
 
-### 🚨 <span style="color: red;">Make sure you download the file that start with attendee ID you cog from the lab instructor - **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** in the name.</span>
+### 🚨 <span style="color: red;">Make sure you download the file whose name starts with the **attendee ID** **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="">Your_Attendee_ID</span></span>** you received from the lab instructor.</span>
 
-1. Download **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix=" - WxCC Lab Credentials.txt">Your_Attendee_ID</span> - WxCC Lab Credentials.txt<span class="copy" title="Click to copy!"></span></span>** from **[CREDENTIALS](https://drive.google.com/drive/folders/143wQmqXRyuFmgS1bWvr50HnPB9XM08_Y?usp=drive_link)**{:target="\_blank"}.
+1. **[DOWNLOAD](https://drive.google.com/drive/folders/143wQmqXRyuFmgS1bWvr50HnPB9XM08_Y?usp=drive_link)**{:target="\_blank"} **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix=" - WxCC Lab Credentials.txt">Your_Attendee_ID</span> - WxCC Lab Credentials.txt<span class="copy" title="Click to copy!"></span></span>** file to your computer.
 
 # Overview
 
 ## Learning Objectives
 
-Welcome to **"From Good to Great - Enhancing Customer Experience with the Webex Contact Center Flow Designer"** Instructor-led Lab
+Welcome to **"Partner Technical Summit Lab"**.
 
-This advanced lab is designed to empower you with the skills to craft exceptional customer journeys using the **Webex Contact Center Flow Designer**. Over the course of this lab, you’ll work hands-on with features and integrations that bring intelligence and efficiency to every interaction. Take your time to explore and complete each step—you have 2 weeks of pod access.</br>
+This advanced lab is designed to empower you with the skills to craft exceptional customer journeys using the **Webex Contact Center Flow Designer and AI features**. During this lab, you’ll get hands-on experience with features and integrations designed to bring more intelligence and efficiency to every interaction. Take your time to explore and complete each step — you have **2 weeks of pod access**.</br>
 
 In this lab, you will:
 
@@ -103,7 +103,7 @@ In this lab, you will:
 
 - **Leverage AI and Automation:** Explore integrations with pre-configured AI tools such as **Webex AI Agent** or interactive customer interactions and **Cisco Text-to-Speech** for dynamic responses.
 
-- **Optimize Routing Logic:** Implement advanced routing capabilities, such as callback handling, last agent routing and using Global ariables to facilitate routing logic .
+- **Optimize Routing Logic:** Implement advanced routing capabilities, such as callback handling, last agent routing and using Global Variables to facilitate routing logic .
 
 - **Invoking Flow API:** Advance decision-making by using the Analyzer database on the fly.
 
@@ -117,5 +117,5 @@ Additionally, you will explore side missions for optional deep dives into:
     
 ## Disclaimer
 The lab design and configuration examples provided are for educational purposes. For production design queries, please consult your Cisco representative or an authorized Cisco partner.
-Let’s get started and discover how **Webex Contact Center Flow Designer** takes customer experiences from good to great!
+Let’s get started and discover how **Webex Contact Center** takes customer experiences from good to great!
 
