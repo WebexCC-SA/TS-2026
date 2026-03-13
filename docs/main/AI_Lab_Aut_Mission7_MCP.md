@@ -3,6 +3,8 @@
 icon: material/medal
 ---
 
+🚨 **<span style="color: red;">Important Lab Dependency</span>**
+
 This mission requires configuration created in the following missions:
 
 1. **[AI Agent Track: Mission 1 - Create AI Autonomous Agent](../AI_Lab_Aut_Mission1/)**<br>
