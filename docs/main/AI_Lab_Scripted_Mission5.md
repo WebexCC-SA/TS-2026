@@ -18,7 +18,7 @@ If these missions were not completed, some steps in current mission will not fun
 
 ## Mission Details
 
-In the previous **Mission 4**, you configured a fulfillment flow that executes an API call in the WxCC Voice flow based on the order number and parses the order status. In this mission, you will configure the flow to return this status to **Webex AI Agent Studio** so that the Scripted AI agent can deliver the result back to the caller.
+ - In the previous **Mission 4**, you configured a fulfillment flow that executes an API call in the WxCC Voice flow based on the order number and parses the order status. In this mission, you will configure the flow to return this status to **Webex AI Agent Studio** so that the Scripted AI agent can deliver the result back to the caller.
 
 ## Build
 
@@ -55,7 +55,7 @@ In the previous **Mission 4**, you configured a fulfillment flow that executes a
 
 2. Configure the **State Event** with the following: </br>
 
-    > Event Name: **order_status**<span class="copy-static" data-copy-text="BlaBlaBla"><span class="copy" title="Click to copy!"></span></span><br>
+    > Event Name: **order_status**<span class="copy-static" data-copy-text="order_status"><span class="copy" title="Click to copy!"></span></span><br>
     > Event Data: 
     >
     > ``` JSON
@@ -63,15 +63,18 @@ In the previous **Mission 4**, you configured a fulfillment flow that executes a
     > ```
     ![Profiles](../graphics/Lab1_AI_Agent/6.63.gif)
 
-3. Understand the **State Event** configuration. See the picture below.
-   ![Profiles](../graphics/Lab1_AI_Agent/6.64.png)
-
-4. You can publish the flow at this point.
+3. You can publish the flow at this point.
    ![Profiles](../graphics/Lab1_AI_Agent/6.61.gif)
 
-### Task 3. Review the order_status Response configuration
+**<details><summary>Good to Know: <span style="color: blue;">Understand the *State Event* configuration.</span></summary>**
 
-1. Go to **Webex AI Agent Studio** and open your Scripted Agent. If you followed all the steps the name of the Scripted Agent should be **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Scripted_AI_Agent">Your_Attendee_ID</span>_Scripted_AI_Agent<span class="copy" title="Click to copy!"></span></span>**.
+   ![Profiles](../graphics/Lab1_AI_Agent/6.64.png)
+
+</details>
+
+### Task 3. Review the **order_status** Response configuration
+
+1. Switch to **Webex AI Agent Studio** and open your Scripted Agent. If you followed all the steps the name of the Scripted Agent should be **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Scripted_AI_Agent">Your_Attendee_ID</span>_Scripted_AI_Agent<span class="copy" title="Click to copy!"></span></span>**.
    ![Profiles](../graphics/Lab1_AI_Agent/6.65.gif)
 
 2. Go to **Script ⮕ Responses** and search for the **Response** with the name **order_status**. This response is preconfigured in this lab for you. Go to **Voice** channel and review the configurations.

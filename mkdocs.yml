@@ -151,7 +151,7 @@ nav:
             - "Mission 4: Configure the fulfillment": ./main/AI_Lab_Scripted_Mission4.md
             - "Mission 5: Deliver fulfillment results to the caller": ./main/AI_Lab_Scripted_Mission5.md
       - Conclusion: ./main/AI_Lab_Agent_Conclusion.md
-  - AI ASSISTANT:
+  - AI ASSISTANT TRACK:
       - AI Assistant Features:  
             - "Lab overview": ./main/AI_Lab_Features_Overview.md
             - "Mission 1: Real Time Transcript": ./main/AI_Lab_Assist_RT_Transcript.md
@@ -164,12 +164,12 @@ nav:
             - "Lab overview": ./main/AI_Lab_Suggested_Responses_Overview.md
             - "Mission 1: Configure Real-Time Assist in Knowledge Base": ./main/AI_Lab_Suggested_Responseds_Mission1.md
             - "Mission 2: Configure Fulfillment Flow ": ./main/AI_Lab_Suggested_Responseds_Mission2.md
-      - Topic Analytics:
-            - "Lab overview": ./main/AI_Lab_Topic_Overview.md
-            - "Mission 1: Explore Topic Analytics": ./main/AI_Lab_Topic_Mission1.md
-            - "(Read Only) Mission 2: Explore Real-Time Topic Analytics": ./main/AI_Lab_Real_Time_Topic_Mission1.md 
+##      - Topic Analytics:
+##            - "Lab overview": ./main/AI_Lab_Topic_Overview.md
+##            - "Mission 1: Explore Topic Analytics": ./main/AI_Lab_Topic_Mission1.md
+##            - "(Read Only) Mission 2: Explore Real-Time Topic Analytics": ./main/AI_Lab_Real_Time_Topic_Mission1.md 
       - Conclusion: ./main/AI_Lab_Assistant_Conclusion.md
-  - AI QM:
+  - AI QM TRACK:
       - Quality Managment:
             - "Lab overview": ./main/AI_Lab_QM_Overview.md
             - "Mission 1: Webex AI Quality Management": ./main/AI_Lab_QM_Mission1.md
