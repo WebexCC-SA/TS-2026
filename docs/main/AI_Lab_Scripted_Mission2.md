@@ -17,7 +17,7 @@ If these missions were not completed, some steps in current mission will not fun
 
 ## Mission Details
 
-Your mission is to integrate the **Scripted AI Agent** with the Voice flow so it can answer questions about store hours. In the next steps, you will extend your **Webex Contact Center** flow to use the **Scripted AI Agent** together with the **Autonomous AI Agent**.
+ - Your mission is to integrate the **Scripted AI Agent** with the Voice flow so it can answer questions about store hours. In the next steps, you will extend your **Webex Contact Center** flow to use the **Scripted AI Agent** together with the **Autonomous AI Agent**.
 
 ## Build
 
@@ -42,20 +42,39 @@ Your mission is to integrate the **Scripted AI Agent** with the Voice flow so it
 6. Bring one more **VirtualAgentV2** node. Click on it. In the Contact Center AI Config search for scripted and select **Webex AI Agent (Scripted)**. Under the Virtual Agent option, search for the Scripted AI Agent with name **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Scripted_AI_Agent">Your_Attendee_ID</span>_Scripted_AI_Agent<span class="copy" title="Click to copy!"></span></span>**<br>
    ![Profiles](../graphics/Lab1_AI_Agent/6.32.gif)
 
-7. Connect Option 1 of the **Menu** to the **VirtualAgentV2** node that is configured with Autonomous AI agent. And connect Option 2 to the **VirtualAgentV2** node that is configured with your Scripted AI Agent.
+7. Configure the following connections of the **Menu** node:
+
+    > Connect Option 1 of the **Menu** to the **VirtualAgentV2** that is configured with Autonomous AI agent
+    >
+    > Connect Option 2 to the **VirtualAgentV2** node that is configured with your Scripted AI Agent.
+    >
+    > Connect **No-Input Timeout** to the front of the **Menu** node
+    >
+    > Connect **Unmatched Entry** to the front of the **Menu** node
+
    ![Profiles](../graphics/Lab1_AI_Agent/6.33.gif)
 
 8. Connect **Escalated** output from the **VirtualAgentV2** node to the **Queue** node. Connect **Handled** output to the **Disconnect Contact** node.
    ![Profiles](../graphics/Lab1_AI_Agent/6.34.gif)
 
-9. **Validate** and Publish the Flow.
+9. **Validate** and **Publish** the Flow.
    ![Profiles](../graphics/Lab1_AI_Agent/6.35.gif)
 
-10. From Control Hub, make sure that the Channel **<copy><w class="attendee"></w>\_2000_Channel</copy>**.
-    ![Profiles](../graphics/Lab1_AI_Agent/6.36.gif)
+10. Switch to Control Hub and navigate to **Channels** under Customer Experience section
+    
+    > - Locate your Inbound Channel (you can use the search):  **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>**
+    > 
+    > - Select the Routing Flow: **<span class="attendee-id-container">Autonomous_Scripted_Flow_2000_<span class="attendee-id-placeholder" data-prefix="Autonomous_Scripted_Flow_2000_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**
+    > 
+    > - Select the Version Label: **Latest**
+    > 
+    > - Click **Save** in the lower right corner of the screen
 
-11. Dial the number that is associated with **<span class="attendee-id-placeholder">Your_Attendee_ID</span>\_2000_Channel** Channel.
-    ![Profiles](../graphics/Lab1_AI_Agent/6.37.png)
+    ![Profiles](../graphics/Lab1_AI_Agent/2.53.gif)<br>
+
+
+11. Dial the support number assigned to your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Channel">Your_Attendee_ID</span>_Channel<span class="copy" title="Click to copy!"></span></span>** to test the Autonomous AI Agent over a voice call.
+    ![Profiles](../graphics/Lab1_AI_Agent/2.84.png)
 
 12. During IVR, press 2 and ask **What are the store hours?**
 
