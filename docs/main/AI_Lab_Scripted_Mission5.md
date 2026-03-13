@@ -80,8 +80,11 @@ If these missions were not completed, some steps in current mission will not fun
 2. Go to **Script ⮕ Responses** and search for the **Response** with the name **order_status**. This response is preconfigured in this lab for you. Go to **Voice** channel and review the configurations.
    ![Profiles](../graphics/Lab1_AI_Agent/6.66.gif)
 
-3. Understand the **order_status** configuration. Please see the picture below.
+**<details><summary>Good to Know: <span style="color: blue;">Understand the *order_status* configuration.</span></summary>**
+
    ![Profiles](../graphics/Lab1_AI_Agent/6.67.png)
+
+</details>
 
 ### Task 4. Test Scripted AI agent order status flow
 
