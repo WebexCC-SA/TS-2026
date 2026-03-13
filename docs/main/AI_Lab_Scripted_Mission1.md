@@ -38,7 +38,7 @@ This mission requires configuration created in the following missions:
 
     > **Sorry, I was unable to understand your query accurately.**
 
-   ![Profiles](../graphics/Lab1_AI_Agent/6.1.png)
+    ![Profiles](../graphics/Lab1_AI_Agent/6.1.png)
 
 9.  The initial response can be customized, and we also need to configure intents and responses to enable the Scripted AI Agent to answer questions about store hours.
 
@@ -68,35 +68,36 @@ Once a customer asks a question, the AI engine and Natural Language Understandin
     > **What are the store hours?**<span class="copy-static" data-copy-text="What are the store hours?"><span class="copy" title="Click to copy!"></span></span><br>
     > **What is the business hours for this store?**<span class="copy-static" data-copy-text="What is the business hours for this store?"><span class="copy" title="Click to copy!"></span></span><br>
 
-    ![Profiles](../graphics/Lab1_AI_Agent/6.3.gif)
+    ![Profiles](../graphics/Lab1_AI_Agent/6.4.gif)
 
 3.  Click on the **Generate** button to utilize Generative AI for creating additional training phrases.
 
 4.  Enter a description such as **Generate intents store business hours**<span class="copy-static" data-copy-text="Generate intents store business hours"><span class="copy" title="Click to copy!"></span></span> Set the Number of Variants to **10**, which will determine the number of new phrases to be generated. Click **Generate**.
 
     > Make a note of newly created **Utterances**.<br>
+    
     ![Profiles](../graphics/Lab1_AI_Agent/6.5.gif)
 
-5.  Now, we need to configure a response that would be related to this intent. Scroll down and click on **Create new**.
+5.  Now, we need to configure a response that would be related to this intent. Scroll down to **Response** and click ***Select a response*** drop down menu and click on **Create new**.
     ![Profiles](../graphics/Lab1_AI_Agent/6.6.gif)
 
-6.  Name the response as **store_hours**<span class="copy-static" data-copy-text="store_hours"><span class="copy" title="Click to copy!"></span></span>. Update Variant 1 text to **The store hours are from 9 am to 5 pm. Please let me know if you have any other questions.**<span class="copy-static" data-copy-text="The store hours are from 9 am to 5 pm. Please let me know if you have any other questions."><span class="copy" title="Click to copy!"></span></span> Move to next step before clicking **Create**.
+6.  Name the response as **store_hours**<span class="copy-static" data-copy-text="store_hours"><span class="copy" title="Click to copy!"></span></span>. Update Variant 1 text to **The store hours are from 9 am to 5 pm. Please let me know if you have any other questions.**<span class="copy-static" data-copy-text="The store hours are from 9 am to 5 pm. Please let me know if you have any other questions."><span class="copy" title="Click to copy!"></span></span>.
     ![Profiles](../graphics/Lab1_AI_Agent/6.7.gif)
 
-7.  Add one more Variant and provide the text: **The store is open from 9 am to 5 pm. Is there anything else I can do for you?**<span class="copy-static" data-copy-text="The store is open from 9 am to 5 pm. Is there anything else I can do for you?"><span class="copy" title="Click to copy!"></span></span>
+7.  Add one more Variant and provide the text: **The store is open from 9 am to 5 pm. Is there anything else I can do for you?**<span class="copy-static" data-copy-text="The store is open from 9 am to 5 pm. Is there anything else I can do for you?"><span class="copy" title="Click to copy!"></span></span>. Then click on **Create**.
     ![Profiles](../graphics/Lab1_AI_Agent/6.8.gif)
 
-8.  Add **Voice Channel**.
+8.  Click on **Manage selected response** to add **Voice Channel**. Click on **"+"** next to **Default (web)** and select **Voice**.
     ![Profiles](../graphics/Lab1_AI_Agent/6.9.gif)
 
-9. Configure **Voice Channel** with the same Variants and click on **Create**.</br>
+9. Configure **Voice Channel** with the same Variants and click on **Save**.</br>
 
     > **The store is open from 9 am to 5 pm. Is there anything else I can do for you?**<span class="copy-static" data-copy-text="The store is open from 9 am to 5 pm. Is there anything else I can do for you?"><span class="copy" title="Click to copy!"></span></span></br>
     > **The store hours are from 9 am to 5 pm. Please let me know if you have any other questions**.<span class="copy-static" data-copy-text="The store hours are from 9 am to 5 pm. Please let me know if you have any other questions"><span class="copy" title="Click to copy!"></span></span>
 
     ![Profiles](../graphics/Lab1_AI_Agent/6.10.gif)
 
-10. After we added the response to our intent, we can complete the intent configuration. Click on **Add** on the right bottom corner. **Save** and **Publish** the Scripted AI Agent.
+10. After we added the response to our intent, we can complete the intent configuration. Click on **Add** on the right bottom corner. **Save changes** and **Publish** the Scripted AI Agent. Add publishing comment if required.
     ![Profiles](../graphics/Lab1_AI_Agent/6.11.gif)
 
 11. Click on the **Preview** button on the top right side to test the bot. Try the bot flow by typing **What are the store hours?**<span class="copy-static" data-copy-text="What are the store hours?"><span class="copy" title="Click to copy!"></span></span>
