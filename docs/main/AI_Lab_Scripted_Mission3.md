@@ -16,18 +16,18 @@ If these missions were not completed, some steps in current mission will not fun
 
 ## Mission Details
 
-Your mission is to configure intents, entities, and responses to check the status of an existing order. In the next **Mission 4**, you will configure Fulfillment for this order tracking flow.
+ - Your mission is to configure intents, entities, and responses to check the status of an existing order. In the next **Mission 4**, you will configure Fulfillment for this order tracking flow.
 
 ## Build
 
 ### Task 1. Test the Order tracking flow
 
-1. While in **AI Agent Studio** portal, access your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Scripted_AI_Agent">Your_Attendee_ID</span>_Scripted_AI_Agent<span class="copy" title="Click to copy!"></span></span>** and click on the **Preview** button on the top right side to test the bot. Try the bot flow by typing **I want to track my order**<span class="copy-static" data-copy-text="I want to track my order"><span class="copy" title="Click to copy!"></span></span><br>. You will see that the Scripted AI agent is not yet configured to assist with this task.
+1. While in **AI Agent Studio** portal, access your **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Scripted_AI_Agent">Your_Attendee_ID</span>_Scripted_AI_Agent<span class="copy" title="Click to copy!"></span></span>** and click on the **Preview** button on the top right side to test the bot. Try the bot flow by typing **I want to track my order**<span class="copy-static" data-copy-text="I want to track my order"><span class="copy" title="Click to copy!"></span></span>. You will see that the Scripted AI agent is not yet configured to assist with this task.
    ![Profiles](../graphics/Lab1_AI_Agent/6.14.png)
 
 ### Task 2. Configure intents, entities, and responses
 
-1. While on the **Script** configuration page, switch to **Entities** tab and click on the **Create entity** option. Provide the name as **order_number**<span class="copy-static" data-copy-text="order_number"><span class="copy" title="Click to copy!"></span></span>. Entity type select as **Digits**. Provide **Length** as **2**.
+1. While on the **Script** configuration page, switch to **Entities** tab and click on the **Create entity** option. Provide the name as **order_number**<span class="copy-static" data-copy-text="order_number"><span class="copy" title="Click to copy!"></span></span>. Entity type select as **Digits**. Provide **Length** as **2**. Then click **Create**.
    ![Profiles](../graphics/Lab1_AI_Agent/6.17.gif)
 
 2. While on the **Script** configuration page, switch to **Intents** tab and click on the **Create Intent** button located in the top right corner.
@@ -49,13 +49,13 @@ Your mission is to configure intents, entities, and responses to check the statu
 7. You can review it later, but for your information, the **order_number** response was preconfigured for you for this lab. In this response, the AI agent simply asks for the order number. Refer to the picture below. This is an interim response needed to fill the entity.
    ![Profiles](../graphics/Lab1_AI_Agent/6.20.png)
 
-8. Scroll down and click on **Create new** response.
+8. Scroll down to **Response** and click ***Select a response*** drop down menu and click on **Create new**..
    ![Profiles](../graphics/Lab1_AI_Agent/6.21.gif)
 
-9. Name the response as **track_order**<span class="copy-static" data-copy-text="track_order"><span class="copy" title="Click to copy!"></span></span>. Update Text>Variant 1 to **Please wait while I check the order status.**<span class="copy-static" data-copy-text="Please wait while I check the order status."><span class="copy" title="Click to copy!"></span></span>
+9. Name the response as **track_order**<span class="copy-static" data-copy-text="track_order"><span class="copy" title="Click to copy!"></span></span>. Update text of Variant 1 to **Please wait while I check the order status.**<span class="copy-static" data-copy-text="Please wait while I check the order status."><span class="copy" title="Click to copy!"></span></span>
    ![Profiles](../graphics/Lab1_AI_Agent/6.22.gif)
 
-10. Add **Voice Channel**.
+10. Click on **"+"** next to **Default (web)** and select **Voice**..
     ![Profiles](../graphics/Lab1_AI_Agent/6.23.gif)
 
 11. Configure **Voice Channel** with the same variants and click on **Create**. </br>
@@ -64,7 +64,7 @@ Your mission is to configure intents, entities, and responses to check the statu
 
     ![Profiles](../graphics/Lab1_AI_Agent/6.24.gif)
 
-12. Now after we added the response to our intent we can complete the intent configuration. Click on **Add** on the right bottom corner. **Save** and **Publish** the Scripted AI Agent.
+12. Now after we added the response to our intent we can complete the intent configuration. Click on **Add** on the right bottom corner. **Save** and **Publish** the Scripted AI Agent. Enter publishing text in the popup comment window, then click **Publish**
     ![Profiles](../graphics/Lab1_AI_Agent/6.25.gif)
 
 13. Click on the **Preview** button on the top right side to test the bot. Try the bot flow by typing **I would like to track my order**<span class="copy-static" data-copy-text="I would like to track my order"><span class="copy" title="Click to copy!"></span></span><br> and provide an order number that you created earlier. The AI agent will not respond with actual order status but it will provide the interim message.  
