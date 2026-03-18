@@ -3,7 +3,7 @@
 icon: material/bullseye-arrow
 ---
 
-## Welcome to Your Lab Adventure!
+## Welcome to Your Lab Adventure! **<span style="color: red;">Work in progress.</span>**
 
 ### Overview
 In this session, we’ve designed 15 unique labs for you to explore, grouped into 4 distinct tracks to create a focused and engaging learning experience. Each track is crafted to help you develop specific skills.
