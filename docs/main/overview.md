@@ -83,6 +83,13 @@ icon: material/bullseye-arrow
     <p>Your stored Attendee ID is: <b><span id="display-attendee">No ID stored</span></b></p>
 </div>
 
+**<details><summary><span style="color: blue;">How to set Attendee ID</span></summary>**
+
+![profiles](../graphics/overview/Set_ID.gif)
+
+</details>
+
+
 ## Get Your Credentials
 
 🚨 <span style="color: red;">Make sure you download the file whose name starts with the attendee ID **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="">Your_Attendee_ID</span></span>** you received from the lab instructor.</span>
