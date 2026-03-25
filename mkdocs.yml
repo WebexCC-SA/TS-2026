@@ -175,9 +175,9 @@ nav:
             - "Lab overview": ./main/AI_Lab_QM_Overview.md
             - "Mission 1: Webex AI Quality Management": ./main/AI_Lab_QM_Mission1.md
       - Conclusion: ./main/AI_Lab_QM_Conclusion.md
-##  - FINAL CHALLENGE:
-##      - Troubleshooting Mission:
-##            - "Final Challenge: Production flow is failing!": ./main/FinalBossFight_Mission.md
+  - FINAL CHALLENGE:
+      - Troubleshooting Mission:
+            - "Final Challenge: Production flow is failing!": ./main/FinalBossFight_Mission.md
 ###            - "Hint for Final Challenge Mission!": ./main/FinalBossFight_Hint1.md
 ###            - "Solution Guidance for Final Challenge Fight Mission!": ./main/FinalBossFight_Solution.md
   - Quick Links: quicklinks.md
