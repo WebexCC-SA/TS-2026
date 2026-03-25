@@ -9,11 +9,11 @@ This mission requires configuration created in the following missions:
 
 1. **[AI Agent Track ⮕ Autonomous AI Agent: Mission 1 - Create AI Autonomous Agent](../AI_Lab_Aut_Mission1/)**<br>
 2. **[AI Agent Track ⮕ Autonomous AI Agent: Mission 2 - Integrating the AI Agent with Flow for Voice Calls](../AI_Lab_Aut_Mission2/)**<br>
-3. **[AI Agent Track ⮕ Autonomous AI Agent: Mission 3 - Send Custom data to Autonomous AI Agent](../AI_Lab_Aut_Mission3/)**<br>
+3. **[AI Agent Track ⮕ Autonomous AI Agent: Mission 3 - Send Custom data to Autonomous AI Agent](../AI_Lab_Aut_Mission3_CustomData/)**<br>
 4. **[AI Agent Track ⮕ Autonomous AI Agent: Mission 4 - Configure Fulfillment Action and create an order](../AI_Lab_Aut_Mission4/)**<br>
-5. **[AI Agent Track ⮕ Autonomous AI Agent: Mission 5 - Configure Transfer Action for a Specific Queue](../AI_Lab_Aut_Mission5/)**<br>
-6. **[AI Agent Track ⮕ Autonomous AI Agent: Mission 6 - Configure Transfer Action for Webex AI Agent](../AI_Lab_Aut_Mission6/)**<br>
-7. **[AI Agent Track ⮕ Autonomous AI Agent: Mission 7 - Configure Transfer Action for Webex AI Agent](../AI_Lab_Aut_Mission7/)**<br>
+5. **[AI Agent Track ⮕ Autonomous AI Agent: Mission 5 - Configure Transfer Action for a Specific Queue](../AI_Lab_Aut_Mission5_Transfer/)**<br>
+6. **[AI Agent Track ⮕ Autonomous AI Agent: Mission 6 - Configure Transfer Action for Webex AI Agent](../AI_Lab_Aut_Mission6_Transfer2/)**<br>
+7. **[AI Agent Track ⮕ Autonomous AI Agent: Mission 7 - Configure Transfer Action for Webex AI Agent](../AI_Lab_Aut_Mission7_MCP/)**<br>
 
 If these missions were not completed, some steps in current mission will not function correctly.
 
