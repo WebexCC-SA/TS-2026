@@ -65,7 +65,7 @@ Your mission is to:
     >
     > Agent's goal: **This is Flower Shop. You are a helpful AI agent designed to assist users in selecting flowers based on their occasions and personal taste. You can also set up delivery and send a confirmation SMS with the order details.**<span class="copy-static" title="Click to copy!" data-copy-text="This is Flower Shop. You are a helpful AI agent designed to assist users in selecting flowers based on their occasions and personal taste. You can also set up delivery and send a confirmation SMS with the order details."><span class="copy"></span></span>
 
-    **<span style="color: red;">[Read Only]</span> Here you can find the best practices on how to write the Agent's goal. [Do's and Don'ts when writing goals](https://help.webex.com/en-us/article/nelkmxk/Guidelines-and-best-practices-for-automating-with-AI-agent#concept-template_96114022-037a-46be-80ce-bf8c6b0d67c0){:target="_blank"}**
+    **<span style="color: red;">[Read Only]</span> Here you can find the best practices on how to write the Agent's goal. [Do's and Don'ts when writing goals](https://help.webex.com/en-us/article/nelkmxk/Guidelines-and-best-practices-for-automating-with-AI-agent#concept-template_96114022-037a-46be-80ce-bf8c6b0d67c0){:target="\_blank"}**
 
 
     ![Profiles](../graphics/Lab1_AI_Agent/2.3.gif)
