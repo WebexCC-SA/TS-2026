@@ -56,7 +56,7 @@ Imagine an unfortunate situation where a customer is ordering flowers over the p
 ### Task 2. Test A2A Action
 
 1. You can test the functionality using the chat **Preview** option. Type to the AI Agent for example this: **Oh my God, I just got into a car crash and my head is bleeding. What should I do?**<span class="copy-static" data-copy-text="Oh my God, I just got into a car crash and my head is bleeding. What should I do?"><span class="copy" title="Click to copy!"></span></span>
-**
+
     ![Profiles](../graphics/Lab1_AI_Agent/16.5.png)
 
 2. Open up the interaction transcripts in the **Session** to confirm that result came from the A2A integration.
