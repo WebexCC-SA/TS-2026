@@ -119,7 +119,7 @@ Your mission is to:
 
     ![Profiles](../graphics/Lab1_AI_Agent/2.4.png)
 
-15. <span style="color: red;">[Read Only]</span> Here you can find the best practices on how to write the Instructions: **[Prompt engineering tips when writing instructions]**(https://help.webex.com/en-us/article/nelkmxk/Guidelines-and-best-practices-for-automating-with-AI-agent#concept-template_96114022-037a-46be-80ce-bf8c6b0d67c0){:target="_blank"}
+15. <span style="color: red;">[Read Only]</span> Here you can find the best practices on how to write the Instructions: **[Prompt engineering tips when writing instructions]**(https://help.webex.com/en-us/article/nelkmxk/Guidelines-and-best-practices-for-automating-with-AI-agent#concept-template_96114022-037a-46be-80ce-bf8c6b0d67c0){:target="\_blank"}
 
 16. Switch to **Knowledge** tab and from **Knowledge base** drop-down list, select **<span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_2000_AutoAI_Lab">Your_Attendee_ID</span>_2000_AutoAI_Lab<span class="copy" title="Click to copy!"></span></span>**.
     ![Profiles](../graphics/Lab1_AI_Agent/2.5.gif)
