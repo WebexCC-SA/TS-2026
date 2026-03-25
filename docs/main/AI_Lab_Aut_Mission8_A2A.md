@@ -13,7 +13,7 @@ This mission requires configuration created in the following missions:
 4. **[AI Agent Track ⮕ Autonomous AI Agent: Mission 4 - Configure Fulfillment Action and create an order](../AI_Lab_Aut_Mission4/)**<br>
 5. **[AI Agent Track ⮕ Autonomous AI Agent: Mission 5 - Configure Transfer Action for a Specific Queue](../AI_Lab_Aut_Mission5_Transfer/)**<br>
 6. **[AI Agent Track ⮕ Autonomous AI Agent: Mission 6 - Configure Transfer Action for Webex AI Agent](../AI_Lab_Aut_Mission6_Transfer2/)**<br>
-7. **[AI Agent Track ⮕ Autonomous AI Agent: Mission 7 - Configure Transfer Action for Webex AI Agent](../AI_Lab_Aut_Mission7_MCP/)**<br>
+7. **[AI Agent Track ⮕ Autonomous AI Agent: Mission 7 - Configure Action with MCP](../AI_Lab_Aut_Mission7_MCP/)**<br>
 
 If these missions were not completed, some steps in current mission will not function correctly.
 
