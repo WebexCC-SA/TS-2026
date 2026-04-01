@@ -16,7 +16,7 @@ icon: material/medal
 
 !!! Note
     Current usecase was covered in **Cisco Live 2026** and **Partner Technical Summits 2026**. 
-    **Boosting Customer Experience with Flow Orchestration in Webex Contact Center - BRKCCT-2345****](https://www.ciscolive.com/on-demand/on-demand-library.html?search=BRKCCT-2345&search=BRKCCT-2345#/session/1770243038329001vrUy){:target="\_blank"} (login required)
+    **Boosting Customer Experience with Flow Orchestration in Webex Contact Center - BRKCCT-2345**](https://www.ciscolive.com/on-demand/on-demand-library.html?search=BRKCCT-2345&search=BRKCCT-2345#/session/1770243038329001vrUy){:target="\_blank"} (login required)
 
 ## Story 
 In this mission, you will use a **Function** node in Webex Contact Center to select a language based on caller's ANI. By analyzing ANI our function will return a country name that we can use further in script logic to either select language or redirect to a specific team. This approach allows you to collapse 10 messy nodes into one elegant script. 
@@ -42,7 +42,7 @@ Your mission is to:
 
 1. Switch to Control Hub, then navigate to **Functions**, click on **Create a function**. 
 
-2. New Tab will be opened. Select **Start Fresh** and provide name **<span class="attendee-id-container">CountryCase_Function_<span class="attendee-id-placeholder" data-prefix="Function_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Leave **Function Language** as **JavaScript**, then click **Create Function**.
+2. New Tab will be opened. Select **Start Fresh** and provide name **<span class="attendee-id-container">CountryCase_Function_<span class="attendee-id-placeholder" data-prefix="CountryCase_Function_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Leave **Function Language** as **JavaScript**, then click **Create Function**.
 
     ![Profiles](../graphics/APIFunction/API_Function2-2.gif)
 
@@ -99,7 +99,7 @@ Your mission is to:
     ```
 
     !!! Note
-        You can add more country codes into  **// Country code map**. As an example, to add **Spain** country code
+        You can add more country codes into  **// Country code map**. Se the following example of how to add **Spain** country code
         ``` JSON        
         const countryCodes = {
           "+380": "Ukraine",
@@ -298,20 +298,20 @@ Your mission is to:
     > - Variable: **`CountryName`**<span class="copy-static" data-copy-text="CountryName"><span class="copy" title="Click to copy!"></span></span>
     >
     > In **LINK DESCRIPTION**
-    > - Change **Case 0** to **Ukraine**
+    > - Change **Case 0** to **Ukraine**<span class="copy-static" data-copy-text="Ukraine"><span class="copy" title="Click to copy!"></span></span>
     >
-    > - Change **Case 1** to **United Kingdom**
+    > - Change **Case 1** to **United Kingdom**<span class="copy-static" data-copy-text="United Kingdom"><span class="copy" title="Click to copy!"></span></span>
     >
-    > - Click **Add New**. Change **Case 2** and to **Poland**
+    > - Click **Add New**. Change **Case 2** and to **Poland**<span class="copy-static" data-copy-text="Poland"><span class="copy" title="Click to copy!"></span></span>
     >
-    > - Click **Add New**. Change **Case 3** and to **United States**
+    > - Click **Add New**. Change **Case 3** and to **United States**<span class="copy-static" data-copy-text="United States"><span class="copy" title="Click to copy!"></span></span>
     >
     > - We will connect the all cases in future steps.  
 
     ![Profiles](../graphics/APIFunction/API_Function2-9.gif)
 
-7. Switch to **Activity** tab in the left menu. Add **Play Message** and **Disconnect Contact** nodes 
-    >
+7. Switch to **Activity** tab in the left menu. Add **Play Message** and **Disconnect Contact** nodes
+
     > Connect all **Case** node edges except **Undefined Errors** to the **Play Message** node
     >
     > Enable Text-To-Speech
@@ -365,7 +365,7 @@ Your mission is to:
 
 5. Click on **<span class="attendee-id-container">CountryCase_Function_<span class="attendee-id-placeholder" data-prefix="Function_">Your_Attendee_ID</span></span>**. Scroll down to see **Activity Inputs**, **Activity Outputs** and **Modified Variables**.
 
-6. Click on **Case** step and check if selected path correspnds your selected country name value 
+6. Click on **Case** step and check if selected path corresponds to your selected country name value. 
 
     ![Profiles](../graphics/APIFunction/API_Function2-12.gif)
 
