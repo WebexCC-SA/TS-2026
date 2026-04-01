@@ -357,7 +357,7 @@ Your mission is to:
 
 4. Click on **SetANI** and on the right-hand side window scroll to the bottom. In **Modified Variables** check if **ANI** variable has your ANI assigned.
 
-5. Click on **<span class="attendee-id-container">CountryCase_Function_<span class="attendee-id-placeholder" data-prefix="Function_">Your_Attendee_ID</span></span>**. Scroll down to see **Activity Inputs**, **Activity Outputs** and **Modified Variables**.
+5. Click on **<span class="attendee-id-container">CountryCase_Function_<span class="attendee-id-placeholder" data-prefix="CountryCase_Function_">Your_Attendee_ID</span></span>**. Scroll down to see **Activity Inputs**, **Activity Outputs** and **Modified Variables**.
 
 6. Click on **Case** step and check if selected path corresponds to your selected country name value. 
 
