@@ -48,19 +48,12 @@ Your mission is to:
 
 3. Add following variable by clicking **Add Input Variables** on the right-hand side:
 
-
-    - ANI variable:
-    
-      >
-      > Name: **ANI**<span class="copy-static" data-copy-text="ANI"><span class="copy" title="Click to copy!"></span></span>
-      >
-      > Type: **String**
-      >
-    
+    > Name: **ANI**<span class="copy-static" data-copy-text="ANI"><span class="copy" title="Click to copy!"></span></span></br>
+    > Type: **String**
+ 
 4. Add output variable **CountryName**<span class="copy-static" data-copy-text="personalizedMessage"><span class="copy" title="Click to copy!"></span></span> in **Output Variable Definition** field.</br>
 
     ![Profiles](../graphics/APIFunction/API_Function2-3.gif)
-
 
 5. Clear the editor from the default code and paste the following JavaScript code into Function editor.
 
@@ -195,10 +188,11 @@ Your mission is to:
 
     > `ANI`: **+48123211853**<span class="copy-static" data-copy-text="+48123211853"><span class="copy" title="Click to copy!"></span></span>
 
+    ![Profiles](../graphics/APIFunction/API_Function2-5.gif)
 
 7. Click on **Publish Function** in the bottom right corner of the page. Then click **Publish Function** in pop up window.
 
-    ![Profiles](../graphics/APIFunction/API_Function2-5.gif)
+    ![Profiles](../graphics/APIFunction/API_Function2-6.gif)
 
 ---
 
@@ -210,7 +204,7 @@ Your mission is to:
 
 2. Enter flow name **<span class="attendee-id-container">CountryCaseFlow_<span class="attendee-id-placeholder" data-prefix="FunctionFlow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and click on **Create Flow**.
 
-    ![Profiles](../graphics/APIFunction/API_Function2-6.gif)
+    ![Profiles](../graphics/APIFunction/API_Function2-7.gif)
 
 
 3. Add these flow variables:
@@ -249,7 +243,7 @@ Your mission is to:
     > Set Variable: **`NewPhoneContact.ANI`**<span class="copy-static" data-copy-text="NewPhoneContact.ANI"><span class="copy" title="Click to copy!"></span></span>
     >
 
-    ![Profiles](../graphics/APIFunction/API_Function2-7.gif)
+    ![Profiles](../graphics/APIFunction/API_Function2-8.gif)
 
 6. Add **Play Message** node 
     
@@ -286,7 +280,7 @@ Your mission is to:
     >>
     >> Path Expression **`$.Country`**<span class="copy-static" data-copy-text="$.Country"><span class="copy" title="Click to copy!"></span></span>
 
-    ![Profiles](../graphics/APIFunction/API_Function2-8.gif)
+    ![Profiles](../graphics/APIFunction/API_Function2-9.gif)
 
 
 7. Switch to **Activity** tab in the left menu. Add "Case" node
@@ -308,7 +302,7 @@ Your mission is to:
     >
     > - We will connect the all cases in future steps.  
 
-    ![Profiles](../graphics/APIFunction/API_Function2-9.gif)
+    ![Profiles](../graphics/APIFunction/API_Function2-10.gif)
 
 7. Switch to **Activity** tab in the left menu. Add **Play Message** and **Disconnect Contact** nodes
 
@@ -334,7 +328,7 @@ Your mission is to:
     >
     > In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
 
-    ![Profiles](../graphics/APIFunction/API_Function2-10.gif)
+    ![Profiles](../graphics/APIFunction/API_Function2-11.gif)
 </br>
 
 9. Map your flow to your inbound channel
@@ -349,7 +343,7 @@ Your mission is to:
     >
     > Click **Save** in the lower right corner of the screen
 
-    ![Profiles](../graphics/APIFunction/API_Function2-11.gif)
+    ![Profiles](../graphics/APIFunction/API_Function2-12.gif)
 
 ## Testing
 
@@ -367,7 +361,7 @@ Your mission is to:
 
 6. Click on **Case** step and check if selected path corresponds to your selected country name value. 
 
-    ![Profiles](../graphics/APIFunction/API_Function2-12.gif)
+    ![Profiles](../graphics/APIFunction/API_Function2-13.gif)
 
 ---
 <p style="text-align:center"><strong>Congratulations, you have succesfully completed Country Case mission! 🎉🎉 </strong></p>
