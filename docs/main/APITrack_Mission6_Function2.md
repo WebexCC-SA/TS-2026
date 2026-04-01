@@ -16,7 +16,7 @@ icon: material/medal
 
 !!! Note
     Current usecase was covered in **Cisco Live 2026** and **Partner Technical Summits 2026**. 
-    **Boosting Customer Experience with Flow Orchestration in Webex Contact Center - BRKCCT-2345**](https://www.ciscolive.com/on-demand/on-demand-library.html?search=BRKCCT-2345&search=BRKCCT-2345#/session/1770243038329001vrUy){:target="\_blank"} (login required)
+    [**Boosting Customer Experience with Flow Orchestration in Webex Contact Center - BRKCCT-2345**](https://www.ciscolive.com/on-demand/on-demand-library.html?search=BRKCCT-2345&search=BRKCCT-2345#/session/1770243038329001vrUy){:target="\_blank"} (login required)
 
 ## Story 
 In this mission, you will use a **Function** node in Webex Contact Center to select a language based on caller's ANI. By analyzing ANI our function will return a country name that we can use further in script logic to either select language or redirect to a specific team. This approach allows you to collapse 10 messy nodes into one elegant script. 
