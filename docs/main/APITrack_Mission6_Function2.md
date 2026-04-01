@@ -202,12 +202,12 @@ Your mission is to:
 
 2. Select **Start from scratch** and click next
 
-2. Enter flow name **<span class="attendee-id-container">CountryCaseFlow_<span class="attendee-id-placeholder" data-prefix="FunctionFlow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and click on **Create Flow**.
+3. Enter flow name **<span class="attendee-id-container">CountryCaseFlow_<span class="attendee-id-placeholder" data-prefix="FunctionFlow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** and click on **Create Flow**.
 
     ![Profiles](../graphics/APIFunction/API_Function2-7.gif)
 
 
-3. Add these flow variables:
+4. Add these flow variables:
   
     - ANI variable:
     
@@ -247,7 +247,6 @@ Your mission is to:
 
 6. Add **Play Message** node 
     
-    >
     > Connect the **SetANI** node edge to the **Play Message** node
     >
     > We will connect this **Play Message** node in next step
@@ -262,10 +261,10 @@ Your mission is to:
     >
     > Text-to-Speech Message: **Welcome to Zen of Simplicity flow.**<span class="copy-static" data-copy-text="Welcome to Zen of Simplicity flow."><span class="copy" title="Click to copy!"></span></span></br>
     >
+    ![Profiles](../graphics/APIFunction/API_Function2-9.gif)
 
-6. Switch to **Functions** tab at the panel on the left-hand side. Then drag **<span class="attendee-id-container">CountryCase_Function_<span class="attendee-id-placeholder" data-prefix="Function_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** node to the canvas.
+7. Switch to **Functions** tab at the panel on the left-hand side. Then drag **<span class="attendee-id-container">CountryCase_Function_<span class="attendee-id-placeholder" data-prefix="Function_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>** node to the canvas.
 
-    >
     > Connect **SetANI** node you added at the previous step to this node
     >
     > We will connect this node in next step
@@ -280,10 +279,10 @@ Your mission is to:
     >>
     >> Path Expression **`$.Country`**<span class="copy-static" data-copy-text="$.Country"><span class="copy" title="Click to copy!"></span></span>
 
-    ![Profiles](../graphics/APIFunction/API_Function2-9.gif)
+    ![Profiles](../graphics/APIFunction/API_Function2-10.gif)
 
 
-7. Switch to **Activity** tab in the left menu. Add "Case" node
+8. Switch to **Activity** tab in the left menu. Add **Case** node
   
     > - Activity Label: **Country_Case_Check**<span class="copy-static" data-copy-text="Country_Case_Check"><span class="copy" title="Click to copy!"></span></span>
     > 
@@ -302,9 +301,9 @@ Your mission is to:
     >
     > - We will connect the all cases in future steps.  
 
-    ![Profiles](../graphics/APIFunction/API_Function2-10.gif)
+    ![Profiles](../graphics/APIFunction/API_Function2-11.gif)
 
-7. Switch to **Activity** tab in the left menu. Add **Play Message** and **Disconnect Contact** nodes
+9. Switch to **Activity** tab in the left menu. Add **Play Message** and **Disconnect Contact** nodes
 
     > Connect all **Case** node edges except **Undefined Errors** to the **Play Message** node
     >
@@ -320,7 +319,7 @@ Your mission is to:
     >
     > Connect the **Play Message** node edge to this **Disconnect Contact** node
 
-8.  Validate and publish the flow:
+10.  Validate and publish the flow:
 
     > Enable the **Validation** toggle in the bottom right corner of the flow designer window to check for any potential flow errors and recommendations.
     >
@@ -328,10 +327,10 @@ Your mission is to:
     >
     > In the pop-up window, ensure that the **Latest** label is selected in the **Add Version Label(s)** list, then click **Publish Flow**.
 
-    ![Profiles](../graphics/APIFunction/API_Function2-11.gif)
+    ![Profiles](../graphics/APIFunction/API_Function2-12.gif)
 </br>
 
-9. Map your flow to your inbound channel
+11. Map your flow to your inbound channel
     
     > Navigate to Control Hub > Contact Center > Channels
     >
@@ -343,7 +342,7 @@ Your mission is to:
     >
     > Click **Save** in the lower right corner of the screen
 
-    ![Profiles](../graphics/APIFunction/API_Function2-12.gif)
+    ![Profiles](../graphics/APIFunction/API_Function2-13.gif)
 
 ## Testing
 
@@ -361,7 +360,7 @@ Your mission is to:
 
 6. Click on **Case** step and check if selected path corresponds to your selected country name value. 
 
-    ![Profiles](../graphics/APIFunction/API_Function2-13.gif)
+    ![Profiles](../graphics/APIFunction/API_Function2-14.gif)
 
 ---
 <p style="text-align:center"><strong>Congratulations, you have succesfully completed Country Case mission! 🎉🎉 </strong></p>
