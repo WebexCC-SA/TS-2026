@@ -122,6 +122,7 @@ nav:
             - "Mission 3: Last Agent Routing": ./main/APITrack_Mission3.md
             - "Mission 4: Routing Returning Callers": ./main/APITrack_Mission4.md
             - "Mission 5: Personalized Customer Notification with Functions": ./main/APITrack_Mission5.md
+            - "Mission 6: The Zen of Simplicity (UI vs. Code). Using Functions to simplify flow logic.": ./main/APITrack_Mission6_Function2.md
       - Conclusion: ./main/APITrack_Conclusion.md
   - CALLBACK TRACK:
       - Lab Guide:
