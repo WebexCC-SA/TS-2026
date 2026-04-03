@@ -27,7 +27,7 @@ MCP, or Model Context Protocol, is a standardized framework designed to facilita
 
 ## Mission overview
 
-MCP Action is still in development and is currently available only for customer demos. In this mission, you will not be creating an MCP server or adding it to the tenant, as this functionality is not yet available to customers. The MCP server has already been created and added to the tenant for this lab. Your task is to create an action using this MCP server and test how it works.
+In this mission, you will not be creating an MCP server or adding it to the tenant, as this functionality is not yet available to customers. The MCP server has already been created and added to the tenant for this lab. Your task is to create an action using this MCP server and test how it works.
 
 For this mission, the MCP server was created to search external database for Flower Store locations. Your mission is to create a new action with this MCP server and test the results.<br>
 ![Profiles](../graphics/Lab1_AI_Agent/MCPAction.png)
