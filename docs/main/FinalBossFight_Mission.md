@@ -3,17 +3,48 @@
 icon: material/bullseye-arrow
 ---
 
-# **<span style="color: red;">Ooops! Something went wrong...</span>**
-```
-> Searching for a challenge guide...
-> System error - The challenge guide has been deleted.
-> Please ask for help via the chat in the bottom-right corner.
-```
-![profiles](../graphics/Lab2/CartoonUltron1.png)
+# Final Challenge: Get the Call Through
 
+Your attendee flow has been preconfigured with a few problems. Find and fix them so a test call reaches speaker's Agent Desktop.
 
-<div id="divicw" data-bind="8876169B-218C-4AA0-832E-1528DA7A20EB" data-org="" data-guid="84ba4cc0-a68f-455e-8954-20d4a17855c2"></div><script>{3}var i={t:function(){try{var e=document.getElementById("divicw"),t=document.createElement("script");t.src="https://attachments-ldn.imiengage.io/widgeteu/js/imichatinit.js?t="+new Date().toISOString(),e.insertAdjacentElement("afterend",t),t.addEventListener("load",function(){console.log(new Date().toISOString(),"Livechat script loaded successfully!")}),t.addEventListener("error",function(){console.log(new Date().toISOString(),"Error loading Livechat script");i.o(e)})}catch(e){console.error(e)}},o:function(e){e.insertAdjacentHTML("afterend",'<iframe id="tls_al_frm" frameborder="0" style="overflow:hidden;height:208px;width:394px;position:fixed;display:block;right:48px;bottom:12px;z-index:99999;display:none;"></iframe>');var t=document.getElementById("tls_al_frm"),n=t.contentWindow,d=n.document;d.open();d.write("<!doctype html><html><head><meta charset='utf-8'><title>Untitled Document</title><style>body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:#99a0b0;font-size:14px}.popover__content{background-color:#fbfbfe;padding:1.5rem;border-radius:5px;width:300px;box-shadow:0 2px 5px 0 rgba(0,0,0,0.26);position:relative}.popover__message{font-weight:600;color:#56627c;font-size:16px}.pull-left{float:left}.clearfix{clear:both}.hdr-txt{width:218px;margin-top:3px}.para-txt a{text-decoration:none;color:#005cde}.close-btn{position:absolute;right:15px;top:15px}.close-btn a{text-decoration:none;font-weight:400;color:#56627c;font-size:16px}</style></head><body><div class='popover__content'><div class='close-btn'><a href='#' onclick='closeTLSAlert()'>X</a></div><div class='popover__message'><div class='pull-left hdr-txt'>This browser version is not supported on LiveChat.</div></div><div class='clearfix'></div><p class='para-txt'>Please update your browser to the latest version and re-open the website to access the widget.</p></div><script>function closeTLSAlert(){window.parent.postMessage({key:'close_tls_alert',value:'close_tls_alert',action:'close_tls_alert'},'*');}<\/script></body></html>");d.close();t.style.display='block';window.addEventListener('message',function(e){'close_tls_alert'===e.data.action&&i.s()})},s:function(){var e=document.getElementById('tls_al_frm');e&&e.remove()}};i.t();</script>
+## Goal
 
-</div>
+Be the first attendee whose Agent Desktop rings with the challenge call. When it rings, let the facilitator know that you have won.
 
-<script src='../template_assets/load.js'><script>
+## What is ready for you
+
+- Your individual flow is named **TS2026_Challenge_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**.
+- Your individual dialed number is mapped to that flow. Use the number assigned to you on the **Credentials** page or provided by the facilitator.
+
+!!! Note
+    - Dialed Numbers are based in US, hence calls from your mobile might be charged.
+    - Use IP Phones on your desks to dial.
+
+## Challenge
+
+1. Sign in to **Agent Desktop** with your assigned agent credentials. Set your agent state to **Available** and leave Agent Desktop open.
+
+    ![Sign in to Webex Contact Center Desktop](../graphics/Lab1/L1M1_Agent_Login.gif)
+
+2. In a separate tab, sign in to [Webex Control Hub](https://admin.webex.com){:target="_blank"} with your provided admin credentials. Go to **Contact Center > Flows**.
+
+    ![Example of the Contact Center navigation and Flows link in Control Hub](../graphics/Lab1/RunAgentDesktop.gif)
+
+3. Find and open **TS2026_Challenge_<span class="attendee-id-placeholder">Your_Attendee_ID</span>**. Make sure you are working on your own attendee flow.
+
+4. Open the flow's **Debug** view, then call your assigned dialed number. Use the Debug results to trace what happens and identify the flow problem.
+
+    ![Example of the Debug tab in Flow Designer](../graphics/Lab1/FlowDebug1.gif)
+
+5. Switch to **Edit** mode, correct the issue, and validate and publish the flow. Place another test call and check the Debug results again. Repeat until the call reaches your Agent Desktop.
+
+!!! Hint
+    There are **three mistakes** in the flow: one incorrect node connection and two mistakes inside nodes.
+
+## You win
+
+When your Agent Desktop rings with the challenge call, let the facilitator know. That is the finish line; no further flow changes are needed.
+
+---
+
+<p style="text-align:center"><strong>Good luck, and happy troubleshooting!</strong></p>
