@@ -13,12 +13,13 @@ Be the first attendee whose Agent Desktop rings with the challenge call. When it
 
 ## What is ready for you
 
-- Your individual flow is named **TS2026_Challenge_<span class="attendee-id-placeholder">Your_Attendee_ID<span class="copy" title="Click to copy!"></span></span>**.
-- Your individual dialed number is mapped to that flow. Use the number assigned to you on the **Credentials** page or provided by the facilitator.
+- Your individual flow is named <span class="attendee-id-container">**TS2026_Challenge_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**.
+- Your individual dialed number <span class="attendee-dn-container"><span id="attendee-dn">Set your Attendee ID first</span><span class="copy" title="Click to copy!"></span></span> is mapped to that flow. You will also find the number on the **Credentials** page.
 
 !!! Note
     - Dialed Numbers are based in US, hence calls from your mobile might be charged.
     - Use IP Phones on your desks to dial.
+    - Ask any speaker in the room to help you dial your DN.
 
 ## Challenge
 
@@ -26,7 +27,7 @@ Be the first attendee whose Agent Desktop rings with the challenge call. When it
 
     ![Example of login in to Control Hub](../graphics/Lab1/L1M1_Admin_Login.gif)
 
-3. Go to **Contact Center > Flows**. Find and open **TS2026_Challenge_<span class="attendee-id-placeholder">Your_Attendee_ID<span class="copy" title="Click to copy!"></span></span>**. Make sure you are working on your own attendee flow.
+3. Go to **Contact Center > Flows**. Find and open <span class="attendee-id-container">**TS2026_Challenge_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Make sure you are working on your own attendee flow.
 
 4. Open the flow's **Debug** view, then call your assigned dialed number. Use the Debug results to trace what happens and identify the flow problem.
 
@@ -45,7 +46,7 @@ Be the first attendee whose Agent Desktop rings with the challenge call. When it
 
 ## You win
 
-When your Agent Desktop rings with the challenge call, let the facilitator know. That is the finish line; no further flow changes are needed.
+If Agent Desktop rings with your Attendee ID. That is the finish line; no further flow changes are needed.
 
 ---
 
