@@ -29,9 +29,10 @@ Be the first attendee whose Agent Desktop rings with the challenge call. When it
 3. Go to **Contact Center > Flows**. Find and open **TS2026_Challenge_<span class="attendee-id-placeholder">Your_Attendee_ID<span class="copy" title="Click to copy!"></span></span>**. Make sure you are working on your own attendee flow.
 
 4. Open the flow's **Debug** view, then call your assigned dialed number. Use the Debug results to trace what happens and identify the flow problem.
+
     !!! Note
-    - Decryption has been enabled on your flow.
-    - First call to your flow has been made already. 
+        - Decryption has been enabled on your flow.
+        - First call to your flow has been made already. 
 
     ![Example of the Debug tab in Flow Designer](../graphics/tshoot/Tshoot_Flow-1.gif)
 
