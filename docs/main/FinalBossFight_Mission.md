@@ -22,24 +22,25 @@ Be the first attendee whose Agent Desktop rings with the challenge call. When it
 
 ## Challenge
 
-2. In Incognito/Private mode of your browser, sign in to [Webex Control Hub](https://admin.webex.com){:target="_blank"} with your provided admin credentials. Go to **Contact Center > Flows**.
+2. In Incognito/Private mode of your browser, sign in to [Webex Control Hub](https://admin.webex.com){:target="_blank"} with your provided admin credentials.
 
     ![Example of login in to Control Hub](../graphics/Lab1/L1M1_Admin_Login.gif)
 
-3. Find and open **TS2026_Challenge_<span class="attendee-id-placeholder">Your_Attendee_ID<span class="copy" title="Click to copy!"></span></span>**. Make sure you are working on your own attendee flow.
+3. Go to **Contact Center > Flows**. Find and open **TS2026_Challenge_<span class="attendee-id-placeholder">Your_Attendee_ID<span class="copy" title="Click to copy!"></span></span>**. Make sure you are working on your own attendee flow.
 
 4. Open the flow's **Debug** view, then call your assigned dialed number. Use the Debug results to trace what happens and identify the flow problem.
-
-    ![Example of the Debug tab in Flow Designer](../graphics/tshoot/Tshoot_Flow-1.gif)
-
-!!! Note
+    !!! Note
     - Decryption has been enabled on your flow.
     - First call to your flow has been made already. 
 
+    ![Example of the Debug tab in Flow Designer](../graphics/tshoot/Tshoot_Flow-1.gif)
+
+
+
 5. Switch to **Edit** mode, correct the issue, and validate and publish the flow. Place another test call and check the Debug results again. Repeat until the call reaches your Agent Desktop.
 
-!!! Hint
-    There are **three mistakes** in the flow: one incorrect node connection and two mistakes inside nodes.
+    !!! Hint
+        There are **three mistakes** in the flow: one incorrect node connection and two mistakes inside nodes.
 
 ## You win
 
