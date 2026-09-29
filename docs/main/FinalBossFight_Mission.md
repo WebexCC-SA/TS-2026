@@ -13,8 +13,8 @@ Be the first attendee whose Agent Desktop rings with the challenge call. When it
 
 ## What is ready for you
 
-- Your individual flow is named <span class="attendee-id-container">**TS2026_Challenge_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**.
-- Your individual dialed number <span class="attendee-dn-container"><span id="attendee-dn">Set your Attendee ID first</span><span class="copy" title="Click to copy!"></span></span> is mapped to that flow. You will also find the number on the **Credentials** page.
+- Your individual flow is named <span class="attendee-id-container">**TS2026_Challenge_<span class="attendee-id-placeholder" data-prefix="TS2026_Challenge_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**.
+- Your individual dialed number **<span class="attendee-dn-container"><span id="attendee-dn">Set your Attendee ID first</span><span class="copy" title="Click to copy!"></span></span>** is mapped to that flow. You will also find the number on the **Credentials** page.
 
 !!! Note
     - Dialed Numbers are based in US, hence calls from your mobile might be charged.
@@ -27,7 +27,7 @@ Be the first attendee whose Agent Desktop rings with the challenge call. When it
 
     ![Example of login in to Control Hub](../graphics/Lab1/L1M1_Admin_Login.gif)
 
-3. Go to **Contact Center > Flows**. Find and open <span class="attendee-id-container">**TS2026_Challenge_<span class="attendee-id-placeholder" data-prefix="Main_Flow_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Make sure you are working on your own attendee flow.
+3. Go to **Contact Center > Flows**. Find and open <span class="attendee-id-container">**TS2026_Challenge_<span class="attendee-id-placeholder" data-prefix="TS2026_Challenge_">Your_Attendee_ID</span><span class="copy" title="Click to copy!"></span></span>**. Make sure you are working on your own attendee flow.
 
 4. Open the flow's **Debug** view, then call your assigned dialed number. Use the Debug results to trace what happens and identify the flow problem.
 
@@ -42,7 +42,7 @@ Be the first attendee whose Agent Desktop rings with the challenge call. When it
 5. Switch to **Edit** mode, correct the issue, and validate and publish the flow. Place another test call and check the Debug results again. Repeat until the call reaches your Agent Desktop.
 
     !!! Hint
-        There are **three mistakes** in the flow: one incorrect node connection and two mistakes inside nodes.
+        There are **three mistakes** in the flow.
 
 ## You win
 
